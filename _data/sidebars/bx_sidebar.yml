@@ -1,0 +1,87 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  product: Проект на CMS 1С-Битрикс
+  version: 1.0
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage
+      output: pdf
+      type: frontmatter
+
+  - title: Введение
+    output: web, pdf
+    folderitems:
+
+    - title: Обучение
+      url: /bx_index.html
+      output: web, pdf
+      type: homepage
+
+  - title: Структура
+    output: web, pdf
+    folderitems:
+
+    - title: Технологии
+      url: /bx_tehnologii.html
+      output: web, pdf
+      type: homepage
+
+    - title: Структура папок и файлов
+      url: /bx_structura.html
+      output: web, pdf
+
+  - title: Front-end
+    output: web, pdf
+    folderitems:
+
+    - title: 6.0 Release notes
+      url: /mydoc_release_notes_60.html
+      output: web, pdf
+
+    - title: 5.0 Release notes
+      url: /mydoc_release_notes_50.html
+      output: web, pdf
+
+  - title: Back-end
+    output: web, pdf
+    folderitems:
+
+    - title: About Ruby, Gems, Bundler, etc.
+      url: /mydoc_about_ruby_gems_etc.html
+      output: web, pdf
+
+    - title: Install Jekyll on Mac
+      url: /mydoc_install_jekyll_on_mac.html
+      output: web, pdf
+
+    - title: Install Jekyll on Windows
+      url: /mydoc_install_jekyll_on_windows.html
+      output: web, pdf
+
+  - title: Group 1
+    output: web, pdf
+    folderitems:
+
+    - title: Link 1
+      url: /mydoc_pages.html
+      output: web, pdf
+
+      subfolders:
+      - title: Group 2
+        output: web
+        subfolderitems:
+
+        - title: Link 2
+          url: /tag_formatting.html
+          output: web
