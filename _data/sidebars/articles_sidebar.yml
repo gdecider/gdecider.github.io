@@ -1,0 +1,70 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  product: Статьи
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage
+      output: pdf
+      type: frontmatter
+
+  - title: Рабочее окружение
+    output: web, pdf
+    folderitems:
+
+    - title: Vagrant
+      url: /articles_env_vagrant.html
+      output: web, pdf
+      type: homepage
+
+    - title: Apache
+      url: /articles_env_apache.html
+      output: web, pdf
+      type: homepage
+
+    - title: Nginx
+      url: /articles_env_nginx.html
+      output: web, pdf
+      type: homepage
+
+    - title: Php
+      url: /articles_env_php.html
+      output: web, pdf
+      type: homepage
+
+    - title: MySql
+      url: /articles_env_mysql.html
+      output: web, pdf
+      type: homepage
+
+    - title: Решение проблем
+      url: /articles_env_reshenie-problem.html
+      output: web, pdf
+      type: homepage
+
+  - title: Group 1
+    output: web, pdf
+    folderitems:
+
+    - title: Link 1
+      url: /mydoc_pages.html
+      output: web, pdf
+
+      subfolders:
+      - title: Group 2
+        output: web
+        subfolderitems:
+
+        - title: Link 2
+          url: /tag_formatting.html
+          output: web
