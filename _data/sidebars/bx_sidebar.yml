@@ -3,7 +3,7 @@
 entries:
 - title: sidebar
   product: Проект на CMS 1С-Битрикс
-  version: 1.0
+  version:
   folders:
 
   - title:
@@ -33,40 +33,60 @@ entries:
     folderitems:
 
     - title: Технологии
-      url: /bx_tehnologii.html
+      url: /bx_struktura-tehnologii.html
       output: web, pdf
       type: homepage
 
     - title: Структура папок и файлов
-      url: /bx_structura.html
+      url: /bx_struktura-proekta.html
+      output: web, pdf
+
+    - title: Структура шаблона сайта
+      url: /bx_struktura-shablona-saita.html
       output: web, pdf
 
   - title: Front-end
     output: web, pdf
     folderitems:
 
-    - title: 6.0 Release notes
+    - title: Правила передачи верстки
       url: /mydoc_release_notes_60.html
       output: web, pdf
 
-    - title: 5.0 Release notes
+    - title: HTML Code Style
       url: /mydoc_release_notes_50.html
+      output: web, pdf
+
+    - title: SASS Code Style
+      url: /mydoc_release_notes_50.html
+      output: web, pdf
+
+    - title: JS Code Style
+      url: /mydoc_release_notes_50.html
+      output: web, pdf
+
+    - title: Рекомендуемые плагины
+      url: /mydoc_release_notes_50.html
+      output: web, pdf
+
+    - title: Шаблоны верстки
+      url: /mydoc_install_jekyll_on_mac.html
       output: web, pdf
 
   - title: Back-end
     output: web, pdf
     folderitems:
 
-    - title: About Ruby, Gems, Bundler, etc.
+    - title: PHP Code Style
       url: /mydoc_about_ruby_gems_etc.html
       output: web, pdf
 
-    - title: Install Jekyll on Mac
+    - title: Рекомендации
       url: /mydoc_install_jekyll_on_mac.html
       output: web, pdf
 
-    - title: Install Jekyll on Windows
-      url: /mydoc_install_jekyll_on_windows.html
+    - title: Шаблонные решения для Битрикс
+      url: /mydoc_install_jekyll_on_mac.html
       output: web, pdf
 
   - title: Group 1

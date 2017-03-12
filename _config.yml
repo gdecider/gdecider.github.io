@@ -37,7 +37,7 @@ feedback_email: gdecider@gmail.com
 # feedback_disable: true
 # if you uncomment the previous line, the Feedback link gets removed
 
-# feedback_text: "Need help?"
+feedback_text: "Напишите нам"
 # if you uncomment the previous line, it changes the Feedback text
 
 # feedback_link: "http://helpy.io/"
@@ -83,6 +83,16 @@ defaults:
   -
     scope:
       path: ""
+      type: "articles"
+    values:
+      layout: "page"
+      comments: true
+      search: true
+      sidebar: articles_sidebar
+
+  -
+    scope:
+      path: ""
       type: "posts"
     values:
       layout: "post"
@@ -94,6 +104,7 @@ defaults:
 
 sidebars:
 - bx_sidebar
+- articles_sidebar
 - home_sidebar
 - mydoc_sidebar
 - product1_sidebar
