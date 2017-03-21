@@ -40,61 +40,68 @@ toc: false
    *  [1С - Битрикс Документация по обмену и прочему](http://1c.1c-bitrix.ru/support/doc.php)
    *  [Учебный курс 1С - Битрикс Документация по обмену и прочему](http://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=42&CHAPTER_ID=1158)
 
+*  Документация
+   * [Документация для разработчиков](https://dev.1c-bitrix.ru/api_help/index.php)
+   * [Документация по D7](https://dev.1c-bitrix.ru/api_d7/)
+   * [Пользовательская документация](https://dev.1c-bitrix.ru/user_help/)
+
+*  Прочее
+   * [Центр поддержки разработчиков](https://dev.1c-bitrix.ru/)
+   * [Модуль Живое АПИ](https://marketplace.1c-bitrix.ru/solutions/bitrix.liveapi/)
+
 *  Многочисленные блоги и форумы, вот несколько интересных:
-   *  http://meet.bitrix.expert/
+   *  http://meet.bitrix.expert/      
+   *  http://samokhvalov.info/blog/
+   *  http://bitrix.expert/index.html
+   *  http://bedrosova.blogspot.ru
+   *  https://www.youtube.com/watch?v=5R2_TyklEpg
+   *  http://blog.d-it.ru/dev/
+   *  http://zhurov.me/blog/      
+   *  http://dev.1c-bitrix.ru/api_d7/index.php
       
-      http://samokhvalov.info/blog/
-      http://bitrix.expert/index.html
-      http://bedrosova.blogspot.ru
-      https://www.youtube.com/watch?v=5R2_TyklEpg
-      http://blog.d-it.ru/dev/
-      http://zhurov.me/blog/
+   *  http://epages.su/blog/
       
-      http://dev.1c-bitrix.ru/api_d7/index.php
+   *  http://quickstart.info-expert.ru/documentation
       
-      http://epages.su/blog/
+   *  http://bitrixcode.ru
       
-      http://quickstart.info-expert.ru/documentation
+   *  http://ydmitry.ru/
       
-      http://bitrixcode.ru
+   *  https://verstaem.com/
       
-      http://ydmitry.ru/
+   *  https://www.olegpro.ru/post/
       
-      https://verstaem.com/
+   *  https://tuning-soft.ru/articles/
       
-      https://www.olegpro.ru/post/
+   *  http://thisis-blog.ru/category/1s-bitrix/
       
-      https://tuning-soft.ru/articles/
+   *  http://www.intervolga.ru/blog/
       
-      http://thisis-blog.ru/category/1s-bitrix/
+   *  https://mrcappuccino.ru/blog/
       
-      http://www.intervolga.ru/blog/
+   *  https://dev.1c-bitrix.ru/community/blogs/product_features/
       
-      https://mrcappuccino.ru/blog/
+   *  http://kreativsites.ru/articles/
       
-      https://dev.1c-bitrix.ru/community/blogs/product_features/
+   *  https://www.acrit-studio.ru/pantry-programmer/
       
-      http://kreativsites.ru/articles/
+   *  http://devdocs.ru/category/cms/1s-bitriks/
       
-      https://www.acrit-studio.ru/pantry-programmer/
+   *  http://www.skillz.ru/dev/
       
-      http://devdocs.ru/category/cms/1s-bitriks/
+   *  http://bxit.ru/development/
       
-      http://www.skillz.ru/dev/
+   *  http://www.miraweb-studio.ru/blog/
       
-      http://bxit.ru/development/
+   *  http://samokhvalov.info/blog/
       
-      http://www.miraweb-studio.ru/blog/
+   *  https://habrahabr.ru/hub/bitrix/
       
-      http://samokhvalov.info/blog/
+   *  http://codeblog.pro/bitrix1c/
       
-      https://habrahabr.ru/hub/bitrix/
+   *  http://blog.budagov.ru
       
-      http://codeblog.pro/bitrix1c/
+   *  http://abraxabra.ru/blog/
       
-      http://blog.budagov.ru
-      
-      http://abraxabra.ru/blog/
-      
-      http://vvski.ru
+   *  http://vvski.ru
 {% include links.html %}

@@ -28,7 +28,7 @@ entries:
       output: web, pdf
       type: homepage
 
-  - title: Структура
+  - title: Проект
     output: web, pdf
     folderitems:
 
@@ -45,16 +45,32 @@ entries:
       url: /bx_struktura-shablona-saita.html
       output: web, pdf
 
+    - title: Старт и перенос
+      url: /bx_struktura-start-and-build.html
+      output: web, pdf
+
+  - title: Дизайн
+    output: web, pdf
+    folderitems:
+    
+    - title: Требования к дизайну
+      url: /bx_design-trebovaniya.html
+      output: web, pdf
+
+    - title: Правила передачи дизайн-макета
+      url: /bx_design-rules.html
+      output: web, pdf
+
   - title: Front-end
     output: web, pdf
     folderitems:
 
     - title: Правила передачи верстки
-      url: /mydoc_release_notes_60.html
+      url: /bx_front-rules.html
       output: web, pdf
 
     - title: HTML Code Style
-      url: /mydoc_release_notes_50.html
+      url: /bx_front-code-style.html
       output: web, pdf
 
     - title: SASS Code Style
@@ -66,27 +82,43 @@ entries:
       output: web, pdf
 
     - title: Рекомендуемые плагины
-      url: /mydoc_release_notes_50.html
+      url: /bx_front-recomend-plugins.html
       output: web, pdf
 
     - title: Шаблоны верстки
-      url: /mydoc_install_jekyll_on_mac.html
+      url: /bx_front-tmpls.html
+      output: web, pdf
+
+    - title: Сервисы и инструменты
+      url: /bx_front-tools.html
       output: web, pdf
 
   - title: Back-end
     output: web, pdf
     folderitems:
 
-    - title: PHP Code Style
-      url: /mydoc_about_ruby_gems_etc.html
+    - title: Code Style
+      url: /bx_back-code-style.html
       output: web, pdf
 
     - title: Рекомендации
-      url: /mydoc_install_jekyll_on_mac.html
+      url: /bx_back-recomends.html
       output: web, pdf
 
     - title: Шаблонные решения для Битрикс
-      url: /mydoc_install_jekyll_on_mac.html
+      url: /bx_back-tmpls.html
+      output: web, pdf
+
+    - title: Сервисы и инструменты
+      url: /bx_back-tools.html
+      output: web, pdf
+  
+  - title: Git
+    output: web, pdf
+    folderitems:
+
+    - title: Шпаргалка
+      url: /mydoc_pages.html
       output: web, pdf
 
   - title: Group 1
