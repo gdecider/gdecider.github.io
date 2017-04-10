@@ -32,6 +32,8 @@ toc: true
 │   │   ├── /php_interface
 │   │   │   ├── /include
 │   │   │   │   ├── constants.php
+│   │   │   │   ├── env_vars.php
+│   │   │   │   ├── env_vars.example.php
 │   │   │   │   ├── handlers.php
 │   │   │   │   └── site_closed.php
 │   │   │   ├── init.php
@@ -158,62 +160,125 @@ templates — шаблоны сайтов, шаблоны компонентов
 ## /local/activities
 
 
-/local/modules
-/local/modules/local.common
-/local/components
-/local/php_interface
-/local/php_interface/include
-/local/php_interface/include/constants.php
-/local/php_interface/include/handlers.php
-/local/php_interface/include/site_closed.php
-/local/php_interface/init.php
-/local/php_interface/this_site_support.php
-/local/gadgets
-/local/logs
-/local/verstka
-/local/verstka/.git
-/local/verstka/.gitignore
-/local/templates
-/local/templates/mainTpl
-/local/templates/mainTpl/ajax
-/local/templates/mainTpl/components
-/local/templates/mainTpl/css
-/local/templates/mainTpl/fonts
-/local/templates/mainTpl/fonts/font-family-name
-/local/templates/mainTpl/favicon
-/local/templates/mainTpl/img
-/local/templates/mainTpl/include
-/local/templates/mainTpl/page_templates
-/local/templates/mainTpl/page_templates/.content.php
-/local/templates/mainTpl/sass
-/local/templates/mainTpl/sass/parts
-/local/templates/mainTpl/sass/parts_mixins.scss
-/local/templates/mainTpl/sass/parts_fonts.scss
-/local/templates/mainTpl/sass/parts_common.scss
-/local/templates/mainTpl/sass/parts_page-main.scss
-/local/templates/mainTpl/sass/parts_page-404.scss
-/local/templates/mainTpl/sass/style.scss
-/local/templates/mainTpl/.sass-cache
-/local/templates/mainTpl/js
-/local/templates/mainTpl/js/vendors
-/local/templates/mainTpl/js/partCommon.js
-/local/templates/mainTpl/js/partMain.js
-/local/templates/mainTpl/header.php
-/local/templates/mainTpl/footer.php
-/local/templates/mainTpl/template_styles.php
-/local/templates/mainTpl/styles.css
-/local/templates/mainTpl/.styles.php
-/local/templates/mainTpl/description.php
+## /local/modules
 
-index.php
-urlrewrite.php
-.access.php
-.htaccess
-.menu-name.menu.php
-.menu-name.menu_ext.php
-robots.txt
-robots.example.txt
-404.php
+## /local/modules/local.common
+
+## /local/components
+
+## /local/php_interface
+
+## /local/php_interface/include
+
+## /local/php_interface/include/constants.php
+
+## /local/php_interface/include/handlers.php
+
+## /local/php_interface/include/env_vars.php
+
+Константы специфичные для окружения. Файл добавлен в исключения git.
+
+Пример: константа, отвечающая за определения типа окружения IS_PRODUCTION
+
+## /local/php_interface/include/env_vars.example.php
+
+Пример файла констант окружения.
+
+## /local/php_interface/include/site_closed.php
+
+## /local/php_interface/init.php
+
+## /local/php_interface/this_site_support.php
+
+## /local/gadgets
+
+## /local/logs
+
+## /local/verstka
+
+## /local/verstka/.git
+
+## /local/verstka/.gitignore
+
+## /local/templates
+
+## /local/templates/mainTpl
+
+## /local/templates/mainTpl/ajax
+
+## /local/templates/mainTpl/components
+
+## /local/templates/mainTpl/css
+
+## /local/templates/mainTpl/fonts
+
+## /local/templates/mainTpl/fonts/font-family-name
+
+## /local/templates/mainTpl/favicon
+
+## /local/templates/mainTpl/img
+
+## /local/templates/mainTpl/include
+
+## /local/templates/mainTpl/page_templates
+
+## /local/templates/mainTpl/page_templates/.content.php
+
+## /local/templates/mainTpl/sass
+
+## /local/templates/mainTpl/sass/parts
+
+## /local/templates/mainTpl/sass/parts_mixins.scss
+
+## /local/templates/mainTpl/sass/parts_fonts.scss
+
+## /local/templates/mainTpl/sass/parts_common.scss
+
+## /local/templates/mainTpl/sass/parts_page-main.scss
+
+## /local/templates/mainTpl/sass/parts_page-404.scss
+
+## /local/templates/mainTpl/sass/style.scss
+
+## /local/templates/mainTpl/.sass-cache
+
+## /local/templates/mainTpl/js
+
+## /local/templates/mainTpl/js/vendors
+
+## /local/templates/mainTpl/js/partCommon.js
+
+## /local/templates/mainTpl/js/partMain.js
+
+## /local/templates/mainTpl/header.php
+
+## /local/templates/mainTpl/footer.php
+
+## /local/templates/mainTpl/template_styles.php
+
+## /local/templates/mainTpl/styles.css
+
+## /local/templates/mainTpl/.styles.php
+
+## /local/templates/mainTpl/description.php
+
+## index.php
+
+## urlrewrite.php
+
+## .access.php
+
+## .htaccess
+
+## .menu-name.menu.php
+
+## .menu-name.menu_ext.php
+
+## robots.txt
+
+## robots.example.txt
+
+## 404.php
 
 ## .gitignore
 
