@@ -301,6 +301,7 @@ templates — шаблоны сайтов, шаблоны компонентов
 /public/robots.txt
 /public/sitemap*.xml
 /public/local/vendor/
+/public/local/php_interface/include/env_vars.php
 
 ## если гит в корне сайта
 /upload/
@@ -309,6 +310,7 @@ templates — шаблоны сайтов, шаблоны компонентов
 /robots.txt
 /sitemap*.xml
 /local/vendor/
+/local/php_interface/include/env_vars.php
 
 
 ### Битрикс
@@ -316,6 +318,7 @@ templates — шаблоны сайтов, шаблоны компонентов
 
 # configs
 /bitrix/php_interface/dbconn.php
+/bitrix/.settings.php
 /bitrix/.settings.php
 
 # backups

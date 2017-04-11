@@ -93,6 +93,10 @@ entries:
       url: /bx_front-tools.html
       output: web, pdf
 
+    - title: Настройка среды
+      url: /bx_front-setup.html
+      output: web, pdf
+
   - title: Back-end
     output: web, pdf
     folderitems:
