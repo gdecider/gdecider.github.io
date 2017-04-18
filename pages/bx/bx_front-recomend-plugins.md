@@ -51,6 +51,20 @@ toc: false
 
   * [http://markdalgleish.com/projects/stellar.js/docs/](http://markdalgleish.com/projects/stellar.js/docs/)
 
+### Всплывающие окна
+
+* FancyBox 3
+  
+  * [http://fancyapps.com/fancybox/3/](http://fancyapps.com/fancybox/3/)
+
+  * [https://github.com/fancyapps/fancybox](https://github.com/fancyapps/fancybox)
+
+* Magnific Popup
+
+  * [http://dimsemenov.com/plugins/magnific-popup/](http://dimsemenov.com/plugins/magnific-popup/)
+
+  * [https://github.com/dimsemenov/Magnific-Popup](https://github.com/dimsemenov/Magnific-Popup)
+
 ### Изменение страницы при прокрутке
 
 * Wow
