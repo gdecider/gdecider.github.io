@@ -125,6 +125,18 @@ entries:
       url: /mydoc_pages.html
       output: web, pdf
 
+  - title: Сервер
+    output: web, pdf
+    folderitems:
+
+    - title: Настройка
+      url: /bx_server-setup.html
+      output: web, pdf
+
+    - title: Настройка редиректов
+      url: /bx_server-redirects.html
+      output: web, pdf
+
   - title: Group 1
     output: web, pdf
     folderitems:

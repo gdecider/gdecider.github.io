@@ -24,6 +24,7 @@ toc: true
 │   │   ├── .settings.example.php
 │   │   └── ... папки и страницы ядра ...
 │   ├── /upload
+│   │   └── .htaccess
 │   ├── /local
 │   │   ├── /activities
 │   │   ├── /modules
@@ -152,6 +153,17 @@ templates — шаблоны сайтов, шаблоны компонентов
 ## /upload
 
 Папка с файлами, загруженными пользователями или обменом с 1С. Добавлена в исключения git.
+
+## /upload/.htaccess
+
+Стандартный код от битрикса не отключает обработку PHP, когда оно в режиме FastCGI (специфика режима). Для отключения обработки PHP в режиме FastCGI нужно сперва аннулировать типы, т.е. правильно файл должен содержать следующий код:
+
+```
+<IfModule mod_mime.c>
+   RemoveHandler .php .php3 .php4 .php5 .php6 .phtml .pl .asp .aspx .cgi .exe .ico
+   AddType text/plain .php .php3 .php4 .php5 .php6 .phtml .pl .asp .aspx .cgi .exe .ico
+</IfModule> 
+```
 
 ## /local
 
