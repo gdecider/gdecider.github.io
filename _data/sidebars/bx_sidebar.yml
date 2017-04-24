@@ -97,6 +97,10 @@ entries:
       url: /bx_front-setup.html
       output: web, pdf
 
+    - title: Обучение
+      url: /bx_front-learning.html
+      output: web, pdf
+
   - title: Back-end
     output: web, pdf
     folderitems:
