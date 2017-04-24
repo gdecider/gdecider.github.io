@@ -47,6 +47,12 @@ toc: false
 
 ### Parallax
 
+* Simple Parallax Scrolling
+
+  * [http://pixelcog.github.io/parallax.js/](http://pixelcog.github.io/parallax.js/)
+
+  * [https://github.com/pixelcog/parallax.js/](https://github.com/pixelcog/parallax.js/)
+
 * Stellar.js
 
   * [http://markdalgleish.com/projects/stellar.js/docs/](http://markdalgleish.com/projects/stellar.js/docs/)
@@ -70,3 +76,29 @@ toc: false
 * Wow
 
   * [http://mynameismatthieu.com/WOW/](http://mynameismatthieu.com/WOW/)
+
+### Валидаторы
+
+* jQuery Validation Plugin
+
+  * [https://jqueryvalidation.org/](https://jqueryvalidation.org/)
+
+### Кастомизация элементов
+
+#### Выпадающие списки
+
+* jQuery Selectric
+
+  * [http://selectric.js.org/](http://selectric.js.org/)
+
+  * [https://github.com/lcdsantos/jQuery-Selectric](https://github.com/lcdsantos/jQuery-Selectric)
+
+### Фиксация элементов
+
+* HC-Sticky – jQuery Floating Sticky Plugin
+
+  * [http://someweblog.com/hcsticky-jquery-floating-sticky-plugin/](http://someweblog.com/hcsticky-jquery-floating-sticky-plugin/)
+
+  * [https://github.com/somewebmedia/hc-sticky](https://github.com/somewebmedia/hc-sticky)
+
+  
