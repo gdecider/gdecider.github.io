@@ -147,3 +147,49 @@ gulp.task('watch', ['sync', 'sass'], function(){
 	"directory": "app/libs/"
 }
 ```
+
+## Bower комманды
+
+* Создание манифеста
+
+```
+bower init
+```
+
+* Просмотр списка установленных пакетов
+
+```
+bower list
+bower list --path
+```
+
+* Поиск пакета
+
+```
+bower s <name>
+```
+
+* Просмотр информации о пакете
+
+```
+bower info <name>
+```
+
+* Установка пакета
+
+```
+bower i <name> --save
+bower i <name>#<version> --save-dev
+```
+
+* Обновление пакета
+
+```
+bower update <name>
+```
+
+* Удаление пакета
+
+```
+bower uninstall <name> --save
+```
