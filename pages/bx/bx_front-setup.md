@@ -51,3 +51,99 @@ npm uninstall -g gulp
 npm uninstall -g bower 
 sudo apt-get remove --purge node
 ```
+
+## Получение и настройка шаблона для верстки
+
+{% include note.html content="Список deprecated плагинов для gulp и их альтернатива 
+https://github.com/gulpjs/plugins/blob/master/src/blackList.json" %}
+
+```
+# получаем репозиторий
+cd <youre project path>
+git clone git@github.com:gdecider/fe-startTmpl.git .
+
+# устанавливаем зависимости
+npm i
+bower i
+
+# стартуем вотчер и верстаем
+gulp watch
+```
+
+## Настройка шаблона для верстки в ручную
+
+* Перейти в папку проекта
+
+```bash
+cd <youre project path>
+```
+
+* инициализируем
+
+```
+npm init
+```
+
+* ставим все нужные зависимости
+
+```
+npm i browser-sync
+      del
+      gulp
+      gulp-sass
+      gulp-concat 
+      gulp-uglify
+      gulp-clean-css
+      gulp-sourcemaps 
+      gulp-rename      
+      gulp-imagemin 
+      imagemin-pngquant
+      gulp-cache
+      gulp-autoprefixer --save-dev
+```
+* Создадим файл для инструкций галп
+
+```
+touch gulpfile.js
+```
+
+```js
+'use strict';
+
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+var browserSync = require('browser-sync');
+
+// обработка sass
+gulp.task('sass', function(){
+	return gulp.src('./app/sass/**/*.+(sass|scss)')
+			.pipe(sass())
+			.pipe(gulp.dest('app/css'))
+			.pipe(browserSync.reload({stream: true}));
+});
+
+// browser-sync
+gulp.task('sync', function(){
+	browserSync({
+		server: {
+			baseDir: 'app',
+		},
+		notify: false
+	});
+});
+
+// watcher
+gulp.task('watch', ['sync', 'sass'], function(){
+	gulp.watch('./app/sass/**/*.+(sass|scss)', ['sass']);
+	gulp.watch('app/*.html', browserSync.reload);
+	gulp.watch('app/js/**/*.js', browserSync.reload);
+});
+```
+
+* bower создаем файл .bowerrc в корне проекта
+
+```
+{
+	"directory": "app/libs/"
+}
+```
