@@ -45,6 +45,18 @@ a.js_buy_btn;data-id
 .doOpenFormOneClickBuy;data-id
 ```
 
+Велика вероятность, что это решение не заработает и нужно воспользоваться альтернативным вариантом - прописать событие на кнопках в разметке:
+
+* Для категорий в файл `<SITE_TEMPLATE_PATH>/components/bitrix/catalog.section/.default/template.php`
+
+* Для товаров в файл `<SITE_TEMPLATE_PATH>/components/bitrix/catalog.element/.default/template.php`
+
+Пример:
+
+```
+<a onmousedown="try { rrApi.addToBasket(<?=$arResult["ID"]?>) } catch(e) {}">В корзину</a>
+```
+
 ### 4. Указать ссылку на YML файл выгрузки товаров
 
 Для работы сервиса Retail Rocket необходима выгрузка информации о ваших товарах в формате YML. Сгенерировать файл можно средствами 1с-Битрикс, для этого воспользуйтесь профилем Yandex в разделе Магазин → Экспорт данных и сохраните ссылку на полученный файл.
