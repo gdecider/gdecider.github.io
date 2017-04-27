@@ -25,17 +25,9 @@ toc: false
 
 В процессе установки модуля в поле "Данные кнопок" указать селекторы кнопок добавления товара в корзину, каждый новый селектор пишется в новой строке.
 
-Так же это можно сделать после установки в настройках модуля:
+Так же это можно сделать после установки в настройках модуля: `Сервисы -> Retail Rocket -> Настройки модуля`
 
-```
-Сервисы -> Retail Rocket -> Настройки модуля
-```
-
-Формат:
-
-```
-<селектор>:<атрибут с идентификатором товара>
-```
+Формат: `<селектор>:<атрибут с идентификатором товара>`
 
 Пример:
 
@@ -53,7 +45,7 @@ a.js_buy_btn;data-id
 
 Пример:
 
-```
+```html
 <a onmousedown="try { rrApi.addToBasket(<?=$arResult["ID"]?>) } catch(e) {}">В корзину</a>
 ```
 
@@ -100,4 +92,32 @@ a.js_buy_btn;data-id
         "ORDER_PARAM_TRANSACTION" => $arResult["ORDER_ID"]
     ), $component
 );?>
+```
+
+### 8. Добавить перехват email адресов
+
+На события отправки форм, в которых есть поля для заполнения email, добавить перехват:
+
+```js
+(window["rrApiOnReady"] = window["rrApiOnReady"] || []).push(function() { rrApi.setEmail(<email>);	});
+```
+
+Например при оформлении заказа `<SITE_TEMPLATE_PATH/components/bitrix/sale.order.ajax/make_order/order_ajax.js>`
+
+```js
+if (action == 'saveOrderAjax')
+{
+	form = BX('bx-soa-order-form');
+	if (form) {
+		form.querySelector('input[type=hidden][name=sessid]').value = BX.bitrix_sessid();
+		// начало кода перехвата email
+		var $form = $('#bx-soa-order-form');
+		var email = $form.find('[name="ORDER_PROP_2"]').val();
+		
+		(window["rrApiOnReady"] = window["rrApiOnReady"] || []).push(function() { rrApi.setEmail(email);	});
+		// окончание кода перехвата email
+	}
+
+	BX.ajax.submit(BX('bx-soa-order-form'), BX.proxy(this.saveOrder, this));
+}
 ```
