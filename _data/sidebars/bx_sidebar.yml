@@ -49,6 +49,27 @@ entries:
       url: /bx_struktura-start-and-build.html
       output: web, pdf
 
+      subfolders:
+      - title: Установка скриптов
+        output: web
+        subfolderitems:
+
+        - title: Google Tag Manager
+          url: /bx_scripts-gtm.html
+          output: web
+
+        - title: Яндекс.Метрика
+          url: /bx_scripts-ym.html
+          output: web
+
+        - title: Google Analytics
+          url: /bx_scripts-ga.html
+          output: web
+
+        - title: Retail Rocket
+          url: /bx_scripts-retailrocket.html
+          output: web
+
   - title: Дизайн
     output: web, pdf
     folderitems:
