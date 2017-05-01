@@ -68,3 +68,5 @@ toc: true
 * [Установлен код Google Tag Manager](https://www.google.com/analytics/tag-manager/) [Как установить](/bx_scripts-gtm.html)
 
 * [Retail Rocket](https://studioratio.ru/retailrocket/) [Как установить](/bx_scripts-retailrocket.html)
+
+* [Roistat](http://roistat.com/ru/) [Как установить](/bx_scripts-roistat.html)
