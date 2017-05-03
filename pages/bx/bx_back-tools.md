@@ -15,3 +15,6 @@ toc: false
 
   * [https://github.com/matiaspub/bxApiDocs](https://github.com/matiaspub/bxApiDocs)
 
+### Проверка сайта на наличие вредоносного кода
+
+* [AI-Bolit](https://www.revisium.com/aibo/)
