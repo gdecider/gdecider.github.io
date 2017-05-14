@@ -52,6 +52,15 @@ entries:
       output: web, pdf
       type: homepage
 
+  - title: 1С Битрикс
+    output: web, pdf
+    folderitems:
+
+    - title: Решение проблем
+      url: /articles_bx_problems.html
+      output: web, pdf
+      type: homepage
+
   - title: Group 1
     output: web, pdf
     folderitems:

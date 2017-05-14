@@ -101,4 +101,20 @@ toc: false
 
   * [https://github.com/somewebmedia/hc-sticky](https://github.com/somewebmedia/hc-sticky)
 
-  
+### Элементы интерфейса
+
+#### Меню
+
+* mmenu (выезд с боку со сдвигом контента)
+	
+  * [http://mmenu.frebsite.nl/](http://mmenu.frebsite.nl/)
+
+  * [https://github.com/FrDH/jQuery.mmenu](https://github.com/FrDH/jQuery.mmenu)
+
+#### Кнопка "гамбургер"
+
+* hamburgers (разные эффекты анимации)
+
+  * [https://jonsuh.com/hamburgers/](https://jonsuh.com/hamburgers/)
+
+  * [https://github.com/jonsuh/hamburgers](https://github.com/jonsuh/hamburgers)
