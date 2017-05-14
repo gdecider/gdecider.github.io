@@ -57,6 +57,66 @@ toc: false
 
   * [http://markdalgleish.com/projects/stellar.js/docs/](http://markdalgleish.com/projects/stellar.js/docs/)
 
+* jQuery Parallax
+
+  * [http://ianlunn.co.uk/plugins/jquery-parallax/](http://ianlunn.co.uk/plugins/jquery-parallax/)
+  
+  * [https://github.com/IanLunn/jQuery-Parallax](https://github.com/IanLunn/jQuery-Parallax)
+
+### Полноэкранная прокрутка
+
+* One Page Scroll
+
+  * [https://github.com/peachananr/onepage-scroll](https://github.com/peachananr/onepage-scroll)
+
+* fullPage.js
+
+  * [http://alvarotrigo.com/fullPage/](http://alvarotrigo.com/fullPage/)
+
+  * [https://github.com/alvarotrigo/fullPage.js](https://github.com/alvarotrigo/fullPage.js)
+
+* pagePiling.js
+
+  * [http://alvarotrigo.com/pagePiling/](http://alvarotrigo.com/pagePiling/)
+
+  * [https://github.com/alvarotrigo/pagePiling.js](https://github.com/alvarotrigo/pagePiling.js)
+
+* multiScroll.js
+
+  * [http://alvarotrigo.com/multiScroll/](http://alvarotrigo.com/multiScroll/)
+
+  * [https://github.com/alvarotrigo/multiscroll.js](https://github.com/alvarotrigo/multiscroll.js)
+
+* SCROLLIFY
+
+  * [https://projects.lukehaas.me/scrollify/](https://projects.lukehaas.me/scrollify/)
+
+  * [https://github.com/lukehaas/Scrollify](https://github.com/lukehaas/Scrollify)
+
+### Горизонтальная прокрутка (вместо вертикальной)
+
+* jInvertScroll
+
+  * [http://www.pixxelfactory.net/jInvertScroll/](http://www.pixxelfactory.net/jInvertScroll/)
+
+  * [https://github.com/pixxelfactory/jInvertScroll](https://github.com/pixxelfactory/jInvertScroll)
+
+### Вариативное поведение элементов при прокрутке
+
+* jQuery Scroll Path
+
+  * [http://joelb.me/scrollpath/](http://joelb.me/scrollpath/)
+
+  * [https://github.com/JoelBesada/scrollpath](https://github.com/JoelBesada/scrollpath)
+
+### Трансформация текста
+
+* funnyText.js
+
+  * [http://alvarotrigo.com/funnyText/](http://alvarotrigo.com/funnyText/)
+
+  * [https://github.com/alvarotrigo/funnyText.js](https://github.com/alvarotrigo/funnyText.js)
+
 ### Всплывающие окна
 
 * FancyBox 3
@@ -77,11 +137,37 @@ toc: false
 
   * [http://mynameismatthieu.com/WOW/](http://mynameismatthieu.com/WOW/)
 
+* ScrollMagic
+
+  * [http://scrollmagic.io/](http://scrollmagic.io/)
+
+  * [https://github.com/janpaepke/ScrollMagic](https://github.com/janpaepke/ScrollMagic)
+
+### Анимированная прокрутка страницы
+
+* AnimateScroll
+
+  * [http://plugins.compzets.com/animatescroll/](http://plugins.compzets.com/animatescroll/)
+
+  * [https://github.com/ramswaroop/animatescroll.js](https://github.com/ramswaroop/animatescroll.js)
+
+### Анимированная отрисовка линий
+
+* Lazy Line Painter
+
+  * [http://lazylinepainter.info/](http://lazylinepainter.info/)
+
+  * [https://github.com/camoconnell/lazy-line-painter](https://github.com/camoconnell/lazy-line-painter)
+
 ### Валидаторы
 
 * jQuery Validation Plugin
 
   * [https://jqueryvalidation.org/](https://jqueryvalidation.org/)
+
+* validPic.js
+
+  * [https://github.com/alvarotrigo/validPic.js](https://github.com/alvarotrigo/validPic.js)
 
 ### Кастомизация элементов
 
@@ -92,6 +178,12 @@ toc: false
   * [http://selectric.js.org/](http://selectric.js.org/)
 
   * [https://github.com/lcdsantos/jQuery-Selectric](https://github.com/lcdsantos/jQuery-Selectric)
+
+* Minimalect
+
+  * [http://groenroos.github.io/minimalect/](http://groenroos.github.io/minimalect/)
+
+  * [https://github.com/groenroos/minimalect](https://github.com/groenroos/minimalect)
 
 ### Фиксация элементов
 
@@ -118,3 +210,11 @@ toc: false
   * [https://jonsuh.com/hamburgers/](https://jonsuh.com/hamburgers/)
 
   * [https://github.com/jonsuh/hamburgers](https://github.com/jonsuh/hamburgers)
+
+#### Табы (адаптивные)
+
+* jQuery Responsive Tabs
+
+  * [http://jellekralt.github.io/Responsive-Tabs/](http://jellekralt.github.io/Responsive-Tabs/)
+
+  * [https://github.com/jellekralt/Responsive-Tabs](https://github.com/jellekralt/Responsive-Tabs)
