@@ -12,13 +12,29 @@ toc: true
 
 * 1) Скачиваем архив с сайта [Битрикс](https://www.1c-bitrix.ru/download/cms.php#tab-php-link)
 
-* 2) Распаковываем в папку проекта ```<site_folder>/public```
+* 2) Проводим стандартную установку Битрикс (**Помним** о "Установить в кодировке UTF-8", Тип таблиц базы данных: Innodb)
 
-* 3) Создаем файл .gitignore в папке ```<site_folder>```, пример файла [тут](https://gist.github.com/gdecider/a8a7d7071f14dfd220bc32ac96f699ab)
+* 3) Распаковываем в папку проекта ```<site_folder>/public```
 
-* 4) Создаем файл .gitignore в папке ```<site_folder>/public/bitrix```, пример файла [тут](https://gist.github.com/gdecider/dc55c4a5bd6b515c3097cf1846fd95eb)
+* 4) Создаем файл .gitignore в папке ```<site_folder>```, пример файла [тут](https://gist.github.com/gdecider/a8a7d7071f14dfd220bc32ac96f699ab)
 
-* 5) инициализируем основной репозиторий в папке ```<site_folder>```
+* 5) Создаем файл .gitignore в папке ```<site_folder>/public/bitrix```, пример файла [тут](https://gist.github.com/gdecider/dc55c4a5bd6b515c3097cf1846fd95eb)
+
+* 6) Копируем примеры файлов конфигов, что бы не заморачиваться при переносе проекта между репозиториями разработчиков.
+
+  ```
+  # файл примера настройки нового ядра
+  /bitrix/.settings.example.php
+
+  # файл примера настройки старого ядра
+  /bitrix/php_interface/dbconn.example.php
+  ```
+
+  [код файлов](https://gist.github.com/gdecider/90e61867887e2671675878f0f96a5bb9)
+
+  при переносе проекта эти файлы копируются, уберается ```.example``` в имени файла и в них вносятся нужные настройки.
+
+* 7) инициализируем основной репозиторий в папке ```<site_folder>```
 
 ```bash
 git init .
@@ -26,7 +42,7 @@ git add .
 git rm -r --cached public/bitrix
 ```
 
-* 6) инициализируем репозиторий ядра битрикс в папке ```<site_folder>/public/bitrix```
+* 8) инициализируем репозиторий ядра битрикс в папке ```<site_folder>/public/bitrix```
 
 ```bash
 git init .
@@ -34,21 +50,40 @@ git add .
 git commit -m"init"
 ```
 
-* 7) Создаем репозитории на [bitbucket.org](https://bitbucket.org/)
+* 9) Создаем репозитории на [bitbucket.org](https://bitbucket.org/)
 
-* 8) Привязываем удаленные репозитории к локальным
+  **Имя репозитория составляем по маске:**
+
+  ```
+  <projectType>-<projectName>[-<coreName>]
+
+  где
+    <projectType> - тип проекта:
+      im - интернет-магазин
+      lp - лендинг пейдж
+      st - прочие сайты, такие как каталоги товаров, сайты визитки и иные...
+
+    <projectName> - имя проекта
+
+    <coreName> - имя ядра системы, присваивается репозиториям, 
+                 которые выступают как подмодули основного репозитория
+                 пример: bitrix, modx, wp
+
+  ```
+
+* 10) Привязываем удаленные репозитории к локальным
 
 ```bash
 git remote add origin <repo_path>
 ```
 
-* 9) Проталкиваем изменения ядра в репозиторий
+* 11) Проталкиваем изменения ядра в репозиторий
 
 ```bash
 git push origin --all
 ```
 
-* 10) Привязываем репозиторий ядра как подмодуль к основному
+* 12) Привязываем репозиторий ядра как подмодуль к основному
 
 ```bash
 git submodule add <core_repo_path> public/bitrix/
@@ -60,7 +95,7 @@ git submodule add <core_repo_path> public/bitrix/
 git submodule init
 ```
 
-* 11) Проверяем 
+* 13) Проверяем 
 
 ```bash
 git submodule status
@@ -74,7 +109,7 @@ git status
 
 **папка bitrix теперь должна отображаться в логе как файл,** все файлы должны находиться в состоянии "Изменения, которые будут включены в коммит:" и быть "зелеными"
 
-* 12) Делаем коммит основного репозитория и проталкиваем его в bitbucket
+* 14) Делаем коммит основного репозитория и проталкиваем его в bitbucket
 
 ```bash
 git commit -m"init"
