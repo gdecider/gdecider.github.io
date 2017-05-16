@@ -12,13 +12,13 @@ toc: true
 
 * 1) Скачиваем архив с сайта [Битрикс](https://www.1c-bitrix.ru/download/cms.php#tab-php-link)
 
-* 2) Распаковываем в папку проекта <site_folder>/public
+* 2) Распаковываем в папку проекта ```<site_folder>/public```
 
-* 3) Создаем файл .gitignore в папке <site_folder>, пример файла [тут](https://gist.github.com/gdecider/a8a7d7071f14dfd220bc32ac96f699ab)
+* 3) Создаем файл .gitignore в папке ```<site_folder>```, пример файла [тут](https://gist.github.com/gdecider/a8a7d7071f14dfd220bc32ac96f699ab)
 
-* 4) Создаем файл .gitignore в папке <site_folder>/public/bitrix, пример файла [тут](https://gist.github.com/gdecider/dc55c4a5bd6b515c3097cf1846fd95eb)
+* 4) Создаем файл .gitignore в папке ```<site_folder>/public/bitrix```, пример файла [тут](https://gist.github.com/gdecider/dc55c4a5bd6b515c3097cf1846fd95eb)
 
-* 5) инициализируем основной репозиторий в папке <site_folder>
+* 5) инициализируем основной репозиторий в папке ```<site_folder>```
 
 ```bash
 git init .
@@ -26,7 +26,7 @@ git add .
 git rm -r --cached public/bitrix
 ```
 
-* 6) инициализируем репозиторий ядра битрикс в папке <site_folder>/public/bitrix
+* 6) инициализируем репозиторий ядра битрикс в папке ```<site_folder>/public/bitrix```
 
 ```bash
 git init .
@@ -34,7 +34,7 @@ git add .
 git commit -m"init"
 ```
 
-* 7) Создаем репозитории на bitbucket.org
+* 7) Создаем репозитории на [bitbucket.org](https://bitbucket.org/)
 
 * 8) Привязываем удаленные репозитории к локальным
 
