@@ -141,6 +141,10 @@ entries:
     - title: Сервисы и инструменты
       url: /bx_back-tools.html
       output: web, pdf
+
+    - title: Шпаргалка
+      url: /bx_back-shpora.html
+      output: web, pdf
   
   - title: Git
     output: web, pdf
