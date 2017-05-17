@@ -33,3 +33,76 @@ $this->addExternalCss("/local/styles.css");
 // JS
 $this->addExternalJS("/local/libs.js"); 
 ```
+
+* Подключение файлов
+
+```php
+// С возможностью правки из пользовательской части
+<?$APPLICATION->IncludeFile(SITE_TEMPLATE_PATH.'/inc/popupForms.php');?>
+
+// Без возможности правки из пользовательской части
+<?$APPLICATION->IncludeFile(SITE_TEMPLATE_PATH.'/inc/popupForms.php', [], ['SHOW_BORDER' => false]);?>
+```
+
+* Стандартная проверка в подключаемых файлах
+
+```php
+<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+```
+
+* Данные текущей страницы
+
+```php
+$curPage = $APPLICATION->GetCurPage(true);
+```
+
+* Примеры применения констант
+
+```php
+<html lang="<?=LANGUAGE_ID?>">
+
+<link rel="shortcut icon" href="<?=SITE_TEMPLATE_PATH?>/favicon/favicon.png">
+```
+
+* Вывод заголовка окна браузера
+
+```php
+<title><?$APPLICATION->ShowTitle()?></title>
+```
+
+* Вывод подключенных скриптов и стилей в head
+
+```php
+/**
+* BITRIX ->ShowHead()
+*/
+$APPLICATION->ShowMeta("robots", false);
+$APPLICATION->ShowMeta("keywords", false);
+$APPLICATION->ShowMeta("description", false);
+$APPLICATION->ShowLink("canonical", null);
+$APPLICATION->ShowCSS(true);
+$APPLICATION->ShowHeadStrings();
+$APPLICATION->ShowHeadScripts();
+```
+
+* Вывод панели администрирования в пользовательской части
+
+```php
+<div id="panel"><?$APPLICATION->ShowPanel();?></div>
+```
+
+* Определение принадлежности к странице или разделу
+
+```php
+if (!CSite::InDir('/index.php')) :
+    // все страницы кроме главной
+endif;
+
+if (CSite::InDir('/catalog/')) :
+    // все страницы и подразделы раздела каталог
+endif;
+
+if (CSite::InDir('/catalog/index.php')) :
+    // только основная страница раздела каталог
+endif;
+```
