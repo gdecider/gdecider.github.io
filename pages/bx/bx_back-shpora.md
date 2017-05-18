@@ -131,3 +131,15 @@ endif;
 
 <?endif;?>
 ```
+
+```php
+<?
+// Подключение модуля 
+use Bitrix\Main\Loader;
+
+Loader::includeModule("sale");
+
+// или
+\Bitrix\Main\Loader::includeModule('sale');
+?>
+```
