@@ -106,3 +106,28 @@ if (CSite::InDir('/catalog/index.php')) :
     // только основная страница раздела каталог
 endif;
 ```
+
+* Формирование ссылки для логина 
+
+```php
+// пример формирование ссылок "Logout" и "Регистрация"
+
+<?if ($USER->IsAuthorized()):?>
+
+ <a href="<?echo $APPLICATION->GetCurPageParam("logout=yes", array(
+     "login",
+     "logout",
+     "register",
+     "forgot_password",
+     "change_password"));?>">Закончить сеанс (logout)</a>
+
+<?else:?>
+ 
+ <a href="<?echo $APPLICATION->GetCurPageParam("register=yes", array(
+     "login",
+     "logout",
+     "forgot_password",
+     "change_password"));?>">Регистрация</a>
+
+<?endif;?>
+```
