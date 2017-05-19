@@ -42,6 +42,18 @@ $this->addExternalJS("/local/libs.js");
 
 // Без возможности правки из пользовательской части
 <?$APPLICATION->IncludeFile(SITE_TEMPLATE_PATH.'/inc/popupForms.php', [], ['SHOW_BORDER' => false]);?>
+
+// Через включаемую область
+<?$APPLICATION->IncludeComponent(
+    "bitrix:main.include",
+    "",
+    Array(
+        "AREA_FILE_SHOW" => "file",
+        "AREA_FILE_SUFFIX" => "",
+        "EDIT_TEMPLATE" => "",
+        "PATH" => SITE_TEMPLATE_PATH."/inc/partName.php"
+    )
+);?>
 ```
 
 * Стандартная проверка в подключаемых файлах
@@ -53,6 +65,7 @@ $this->addExternalJS("/local/libs.js");
 * Данные текущей страницы
 
 ```php
+<?php
 $curPage = $APPLICATION->GetCurPage(true);
 ```
 
@@ -73,6 +86,7 @@ $curPage = $APPLICATION->GetCurPage(true);
 * Вывод подключенных скриптов и стилей в head
 
 ```php
+<?php
 /**
 * BITRIX ->ShowHead()
 */
@@ -94,6 +108,7 @@ $APPLICATION->ShowHeadScripts();
 * Определение принадлежности к странице или разделу
 
 ```php
+<?php
 if (!CSite::InDir('/index.php')) :
     // все страницы кроме главной
 endif;
@@ -105,4 +120,65 @@ endif;
 if (CSite::InDir('/catalog/index.php')) :
     // только основная страница раздела каталог
 endif;
+```
+
+* Получение объектов приложения, контекста и запроса
+
+```php
+<?php
+// полный вариант
+$application = \Bitrix\Main\Application::getInstance();
+$context = $application->getContext();
+$request = $context->getRequest();
+
+// короткий вариант получения данных запроса
+$request = \Bitrix\Main\Context::getCurrent()->getRequest();
+
+// истпользование объекта запроса
+
+// получение GET параметра
+$varName = $request['varName'];
+
+// или тоже самое
+$varName = $request->getQuery('varName');
+
+// получение POST параметра
+$varName = $request->getPost('varName');
+
+// проверка типа запроса
+if ($request->isPost()) {
+	echo 'is post request';
+}
+```
+
+* Подключение модулей
+
+```php
+<?php
+// Статический метод подключает модуль по его имени.
+\Bitrix\Main\Loader::includeModule($moduleName);
+
+// Статический метод подключает партнёрский модуль по его имени.
+\Bitrix\Main\Loader::includeSharewareModule($partnerModuleName);
+```
+
+* Работа с фреймом
+
+```php
+<?
+$frame = new \Bitrix\Main\Page\FrameBuffered("city_dynamic");
+$frame->begin();
+
+    if(isset($_GET['city'])) {
+        $_SESSION['USER_CITY'] = $_GET['city'];
+    }
+    elseif(!isset($_SESSION['USER_CITY']) || !trim($_SESSION['USER_CITY'])) {
+        $_SESSION['USER_CITY'] = CCommon::getCityByIP();
+    }?>
+    
+    <?=$_SESSION['USER_CITY']?>
+
+<?$frame->beginStub();?>
+    Определяется....
+<?$frame->end();?>
 ```

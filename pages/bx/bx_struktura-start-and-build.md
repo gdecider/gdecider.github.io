@@ -109,11 +109,33 @@ git status
 
 **папка bitrix теперь должна отображаться в логе как файл,** все файлы должны находиться в состоянии "Изменения, которые будут включены в коммит:" и быть "зелеными"
 
-* 14) Делаем коммит основного репозитория и проталкиваем его в bitbucket
+* 14) Получаем шаблон локального модуля для инкапсуляции кода проекта
+
+```bash
+cd public/local
+mkdir -p modules/local.common
+cd modules/local.common
+
+git clone https://ariets@bitbucket.org/ariets/bxmodule-local.common.git .
+```
+После получения файлов идем в админку битрикса и устанавливаем модуль в разделе сторонних модулей маркетплейс
+
+* 15) Делаем коммит основного репозитория и проталкиваем его в bitbucket
 
 ```bash
 git commit -m"init"
 git push origin --all
+```
+
+* 16) Привязываем отслеживание веток
+
+```bash
+# основной репозиторий
+git branch --set-upstream-to=origin/master master
+
+# подмодуль ядра
+cd public/bitrix
+git branch --set-upstream-to=origin/master master
 ```
 
 ### Получение существующего проекта
