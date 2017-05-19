@@ -182,3 +182,40 @@ $frame->begin();
     Определяется....
 <?$frame->end();?>
 ```
+
+* Формирование ссылки для логина 
+
+```php
+// пример формирование ссылок "Logout" и "Регистрация"
+
+<?if ($USER->IsAuthorized()):?>
+
+ <a href="<?echo $APPLICATION->GetCurPageParam("logout=yes", array(
+     "login",
+     "logout",
+     "register",
+     "forgot_password",
+     "change_password"));?>">Закончить сеанс (logout)</a>
+
+<?else:?>
+ 
+ <a href="<?echo $APPLICATION->GetCurPageParam("register=yes", array(
+     "login",
+     "logout",
+     "forgot_password",
+     "change_password"));?>">Регистрация</a>
+
+<?endif;?>
+```
+
+```php
+<?
+// Подключение модуля 
+use Bitrix\Main\Loader;
+
+Loader::includeModule("sale");
+
+// или
+\Bitrix\Main\Loader::includeModule('sale');
+?>
+```
