@@ -219,3 +219,35 @@ Loader::includeModule("sale");
 \Bitrix\Main\Loader::includeModule('sale');
 ?>
 ```
+
+* Редирект
+
+```php
+<?php
+/* LocalRedirect(
+ string url,
+ bool skip_security_check=false,
+ string status="302 Found"
+); */
+
+// Простой 302 редирект
+LocalRedirect('/some_page/');
+
+// 301 редирект с проверкой модуля безопасности на фишинг
+LocalRedirect('/some_page/', false, "301 Moved permanently");
+
+// 301 редирект БЕЗ проверкой модуля безопасности на фишинг
+LocalRedirect('/some_page/', true, "301 Moved permanently");
+```
+
+* Проверка наличия группы у пользователя
+
+```php
+<?php
+
+// Проверка идет на соответствие группам с оператором ИЛИ, т.е. согласно приведенному примеру, под выборку попадут пользователи с группой "4" или "5", в том числе пользователи, состоящие в обеих группах.
+
+if ( CSite::InGroup( array(4,5) ) ) {
+    // если указанные группы есть, то выполняем код
+}
+```

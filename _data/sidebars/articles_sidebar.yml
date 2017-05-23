@@ -55,6 +55,11 @@ entries:
   - title: 1С Битрикс
     output: web, pdf
     folderitems:
+    
+    - title: Настройка ЛК
+      url: /articles_bx_lk.html
+      output: web, pdf
+      type: homepage
 
     - title: Решение проблем
       url: /articles_bx_problems.html
