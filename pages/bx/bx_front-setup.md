@@ -99,7 +99,9 @@ npm i browser-sync
       gulp-imagemin 
       imagemin-pngquant
       gulp-cache
-      gulp-autoprefixer --save-dev
+      gulp-autoprefixer
+	  gulp-plumber 
+	  gulp-notify --save-dev
 ```
 * Создадим файл для инструкций галп
 
@@ -123,43 +125,67 @@ var pngquant    = require('imagemin-pngquant');
 var cache       = require('gulp-cache');
 var autoprefixer= require('gulp-autoprefixer');
 var sourcemaps  = require('gulp-sourcemaps');
+var plumber     = require('gulp-plumber');
+var notify      = require("gulp-notify");
+
+var srcPath = './src';
+var distPath = './dist';
+
+// ф-я для перехвата ошибок
+var onError = function (err) {
+    notify({
+         title: 'Gulp Task Error',
+         message: 'Check the console.'
+     }).write(err);
+
+     console.log(err.toString());
+     
+     this.emit('end');
+}
 
 // обработка sass
 gulp.task('sass', function(){
-	return gulp.src('./app/sass/**/*.+(sass|scss)')
+	return gulp.src(srcPath + '/sass/**/*.+(sass|scss)')
+			.pipe(plumber({ errorHandle: onError }))
 			.pipe(sass())
+			.on('error', onError)
 			.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {cascade: true}))
-			.pipe(gulp.dest('app/css'))
+			.pipe(gulp.dest(srcPath + '/css'))
+			.pipe(notify({
+		        title   : 'Gulp Task Complete',
+		        message : 'Styles have been compiled'
+		    }))
 			.pipe(browserSync.reload({stream: true}));
 });
 
 // uglify
 gulp.task('scripts', function(){
 	return gulp.src([
-		'app/libs/jquery/dist/jquery.min.js',		
+		srcPath + '/vendors/jquery/dist/jquery.min.js',		
 	])
-	.pipe(concat('libs.min.js'))
+	.pipe(concat('vendors.min.js'))
 	.pipe(uglify())
-	.pipe(gulp.dest('app/js'));
+	.pipe(gulp.dest(srcPath + '/js'));
 });
 
 // uglify css libs
 gulp.task('minify-css', ['sass'], function(){
 	return gulp.src([
-		'app/css/**/*.css',		
+		srcPath + '/css/**/*.css',
+		'!'+srcPath + '/css/**/*.min.css',		
 	])
 	.pipe(sourcemaps.init())
 	.pipe(cleanCss())
 	.pipe(sourcemaps.write())
 	.pipe(rename({suffix: '.min'}))
-	.pipe(gulp.dest('app/css'));
+	.pipe(gulp.dest(srcPath + '/css'));
 });
 
 // browser-sync
 gulp.task('sync', function(){
 	browserSync({
 		server: {
-			baseDir: 'app',
+			baseDir: './src',
 		},
 		notify: false
 	});
@@ -167,19 +193,19 @@ gulp.task('sync', function(){
 
 // minify img
 gulp.task('img', function(){
-	return gulp.src('app/img/**/*')
+	return gulp.src(srcPath + '/img/**/*')
 	.pipe(cache(imagemin({
 		interlaced: true,
 		progressive: true,
 		svgoPluggins: [{removeViewBox: false}],
 		use: [pngquant()]
 	})))
-	.pipe(gulp.dest('dist/img'));
+	.pipe(gulp.dest(distPath + '/img'));
 });
 
 // clean build dir
 gulp.task('clean', function(){
-	return del.sync('dist');
+	return del.sync(distPath);
 });
 
 // clear cache
@@ -189,34 +215,36 @@ gulp.task('clear', function(){
 
 // watcher
 gulp.task('watch', ['sync', 'minify-css', 'scripts'], function(){
-	gulp.watch('./app/sass/**/*.+(sass|scss)', ['sass']);
-	gulp.watch('app/*.html', browserSync.reload);
-	gulp.watch('app/js/**/*.js', browserSync.reload);
+	gulp.watch(srcPath + '/sass/**/*.+(sass|scss)', ['sass']);
+	gulp.watch(srcPath + '/**/*.html', browserSync.reload);
+	gulp.watch(srcPath + '/js/**/*.js', browserSync.reload);
 });
 
 // build
 gulp.task('build', ['clean', 'minify-css', 'scripts', 'img'], function(){
 	var buildCss = gulp.src([
-		'app/css/main.css',
-		'app/css/libs.min.css',
+		srcPath + '/css/**/*.css',
 	])
-	.pipe(gulp.dest('dist/css'));
+	.pipe(gulp.dest(distPath + '/css'));
 
 	var buildFonts = gulp.src([
-		'app/fonts/**/*',
+		srcPath + '/fonts/**/*',
 	])
-	.pipe(gulp.dest('dist/fonts'));
+	.pipe(gulp.dest(distPath + '/fonts'));
 
 	var buildJs = gulp.src([
-		'app/js/**/*',
+		srcPath + '/js/**/*',
 	])
-	.pipe(gulp.dest('dist/js'));
+	.pipe(gulp.dest(distPath + '/js'));
 
 	var buildHtml = gulp.src([
-		'app/*.html',
+		srcPath + '/**/*.html',
 	])
-	.pipe(gulp.dest('dist'));
+	.pipe(gulp.dest(distPath));
 });
+
+// The default task (called when you run `gulp` from cli)
+gulp.task('default', ['watch']);
 ```
 
 * bower создаем файл .bowerrc в корне проекта
