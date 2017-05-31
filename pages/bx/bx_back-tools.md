@@ -11,10 +11,17 @@ toc: false
 
 * bxApiDocs
 
-Документированное ядро битрикса для подключения к IDE. PhpStorm В настройках PHP IDE PhpStorm (File -> Settings -> Project Settings -> PHP или File -> Settings -> Languages & Frameworks -> PHP) области Include Path нажав на "+" добавляем путь к папке modules.
+  Документированное ядро битрикса для подключения к IDE. PhpStorm В настройках PHP IDE PhpStorm (File -> Settings -> Project Settings -> PHP или File -> Settings -> Languages & Frameworks -> PHP) области Include Path нажав на "+" добавляем путь к папке modules.
 
   * [https://github.com/matiaspub/bxApiDocs](https://github.com/matiaspub/bxApiDocs)
+
+* Imagery
+
+  Работа с изображениями
+
+  * [https://github.com/wapmorgan/Imagery](https://github.com/wapmorgan/Imagery)
 
 ### Проверка сайта на наличие вредоносного кода
 
 * [AI-Bolit](https://www.revisium.com/aibo/)
+
