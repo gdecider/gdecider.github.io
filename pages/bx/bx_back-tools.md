@@ -21,6 +21,12 @@ toc: false
 
   * [https://github.com/wapmorgan/Imagery](https://github.com/wapmorgan/Imagery)
 
+* Autocomplete Composer script names on the command line
+
+  Статья и пример скрипта
+
+  * [https://akrabat.com/autocomplete-composer-script-names-on-the-command-line/](https://akrabat.com/autocomplete-composer-script-names-on-the-command-line/)
+
 ### Проверка сайта на наличие вредоносного кода
 
 * [AI-Bolit](https://www.revisium.com/aibo/)
