@@ -88,13 +88,13 @@ cd <youre project path>
 * инициализируем
 
 ```
-npm init
+yarn init
 ```
 
 * ставим все нужные зависимости
 
 ```
-npm i browser-sync
+yarn  browser-sync
       del
       gulp
       gulp-sass
@@ -108,8 +108,10 @@ npm i browser-sync
       gulp-cache
       gulp-autoprefixer
 	  gulp-plumber 
-	  gulp-notify --save-dev
+	  gulp-notify 
+	  gulp-connect-php --dev
 ```
+
 * Создадим файл для инструкций галп
 
 ```
@@ -121,7 +123,7 @@ touch gulpfile.js
 
 var gulp        = require('gulp');
 var sass        = require('gulp-sass');
-var browserSync = require('browser-sync');
+var browserSync = require('browser-sync').create();
 var concat      = require('gulp-concat');
 var uglify      = require('gulp-uglify');
 var cleanCss    = require('gulp-clean-css');
@@ -133,133 +135,214 @@ var cache       = require('gulp-cache');
 var autoprefixer= require('gulp-autoprefixer');
 var sourcemaps  = require('gulp-sourcemaps');
 var plumber     = require('gulp-plumber');
-var notify      = require("gulp-notify");
+var notify      = require('gulp-notify');
+var connectPHP  = require('gulp-connect-php');
+var bsreload    = browserSync.reload;
 
 var srcPath = './src';
 var distPath = './dist';
+var vendorsPath = './node_modules';
+
+// === NEW
+var path = {
+	html: {
+		src: [srcPath + '/**/*.html', srcPath + '/**/*.php'],
+		dest: srcPath,
+		dist: distPath
+	},
+	sass: {
+		src: [srcPath + '/sass/**/*.+(sass|scss)'],
+		dest: srcPath + '/css',
+		dist: distPath + '/css'
+	},
+	css: {
+		src: [srcPath + '/css/**/*.css'],
+		dest: srcPath + '/css',
+		dist: distPath + '/css'
+	},
+	js: {
+		src: [srcPath + '/js/**/*'],
+		dest: srcPath + '/js',
+		dist: distPath + '/js'
+	},
+	img: {
+		src: [srcPath + '/img/**/*'],
+		dest: srcPath + '/img',
+		dist: distPath + '/img'
+	},
+	font: {
+		src: [srcPath + '/fonts/**/*'],
+		dest: srcPath + '/fonts',
+		dist: distPath + '/fonts'
+	},
+	vendor: {
+		js: [
+			vendorsPath + '/jquery/dist/jquery.min.js',
+		],
+		css: [
+			//vendorsPath + '/vendor-name/path-to/some.css',
+		],
+		jsFileName: 'vendors.min.js',
+		cssFileName: 'vendors.min.css',
+	}
+};
 
 // ф-я для перехвата ошибок
 var onError = function (err) {
     notify({
-         title: 'Gulp Task Error',
-         message: 'Check the console.'
-     }).write(err);
+		title: 'Gulp Task Error',
+		message: '!!!ERROR!!! Check the console.'
+	}).write(err);
 
-     console.log(err.toString());
-     
-     this.emit('end');
+	console.log(err.toString());
+
+	this.emit('end');
 }
 
-// обработка sass
-gulp.task('sass', function(){
-	return gulp.src(srcPath + '/sass/**/*.+(sass|scss)')
-			.pipe(plumber({ errorHandle: onError }))
-			.pipe(sass())
-			.on('error', onError)
-			.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {cascade: true}))
-			.pipe(gulp.dest(srcPath + '/css'))
-			.pipe(notify({
-		        title   : 'Gulp Task Complete',
-		        message : 'Styles have been compiled'
-		    }))
-			.pipe(browserSync.reload({stream: true}));
+// WATCHER
+gulp.task('watch', ['pre-build'], function(){
+	gulp.watch(path.sass.src, ['assets:sass']);
+	gulp.watch(path.html.src, ['assets:html']);
+	gulp.watch(path.js.src, ['assets:js']);
 });
 
-// uglify
-gulp.task('scripts', function(){
-	return gulp.src([
-		srcPath + '/vendors/jquery/dist/jquery.min.js',		
-	])
-	.pipe(concat('vendors.min.js'))
-	.pipe(uglify())
-	.pipe(gulp.dest(srcPath + '/js'));
+// SYNC HTML (no php)
+gulp.task('sync:html', ['watch'], function () {
+    browserSync.init({
+        server: {
+            baseDir: srcPath
+        },
+        notify: false,
+        open: true
+    });
 });
 
-// uglify css libs
-gulp.task('minify-css', ['sass'], function(){
-	return gulp.src([
-		srcPath + '/css/**/*.css',
-		'!'+srcPath + '/css/**/*.min.css',		
-	])
+// SYNC ALL HTML + PHP
+gulp.task('sync', ['watch'], function () {
+    connectPHP.server({base: srcPath, keepalive: true, hostname: 'localhost', port: 8888, open: false});
+    browserSync.init({
+        proxy: '127.0.0.1:8888',
+        notify: false,
+        open: true
+    });
+});
+
+// The default task (called when you run `gulp` from cli)
+gulp.task('default', ['build']);
+
+// TASK pre-build
+gulp.task('pre-build', [
+	'vendor:clean', 'vendor:js', 'vendor:css',
+	'assets:sass', 'assets:js',
+]);
+
+// TASK build
+gulp.task('build', ['dist:clean', 'pre-build', 'assets:img'], function(){
+	var buildCss = gulp.src(path.css.src)
+	.pipe(gulp.dest(path.css.dist));
+
+	var buildFonts = gulp.src(path.font.src)
+	.pipe(gulp.dest(path.font.dist));
+
+	var buildJs = gulp.src(path.js.src)
+	.pipe(gulp.dest(path.js.dist));
+
+	var buildHtml = gulp.src(path.html.src)
+	.pipe(gulp.dest(path.html.dist));
+});
+
+// TASK clean build dir
+gulp.task('dist:clean', function(){
+	return del.sync([
+		distPath
+	]);
+});
+
+// TASK clear cache
+gulp.task('clear', function(){
+	return cache.clearAll();
+});
+
+// TASK vendor:clean
+gulp.task('vendor:clean', function(){
+	return del.sync([
+		path.css.dest + '/' + path.vendor.cssFileName,
+		path.js.dest + '/' + path.vendor.jsFileName,
+	]);
+});
+
+// TASK vendor:js
+gulp.task('vendor:js', function(){
+	return gulp.src(path.vendor.js)
+		.pipe(concat(path.vendor.jsFileName))
+		.pipe(uglify())
+		.pipe(gulp.dest(path.js.dest));
+		//.pipe(bsreload({stream: true}));
+});
+
+// TASK vendor:css
+gulp.task('vendor:css', function(){
+	return gulp.src(path.vendor.css)
 	.pipe(sourcemaps.init())
+	.pipe(concat(path.vendor.cssFileName))
 	.pipe(cleanCss())
 	.pipe(sourcemaps.write())
-	.pipe(rename({suffix: '.min'}))
-	.pipe(gulp.dest(srcPath + '/css'));
+	.pipe(gulp.dest(path.css.dest));
 });
 
-// browser-sync
-gulp.task('sync', function(){
-	browserSync({
-		server: {
-			baseDir: './src',
-		},
-		notify: false
-	});
+// TASK assets:sass
+gulp.task('assets:sass', function(){
+	return gulp.src(path.sass.src)
+		.pipe(plumber({ errorHandle: onError }))
+		.pipe(sass())
+		.on('error', onError)
+		.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {cascade: true}))
+		.pipe(gulp.dest(path.sass.dest))
+		.pipe(notify({
+	        title   : 'Gulp Task Complete',
+	        message : 'Styles have been compiled'
+	    }))
+		.pipe(bsreload({stream: true}));
 });
 
-// minify img
-gulp.task('img', function(){
-	return gulp.src(srcPath + '/img/**/*')
+// TASK assets:html
+gulp.task('assets:html', function(){
+	return gulp.src(path.html.src)
+		.pipe(bsreload({stream: true}));
+});
+
+// TASK assets:js
+gulp.task('assets:js', function(){
+	return gulp.src(path.js.src)
+		.pipe(bsreload({stream: true}));
+});
+
+// TASK assets:img minify
+gulp.task('assets:img', function(){
+	return gulp.src(path.img.src)
 	.pipe(cache(imagemin({
 		interlaced: true,
 		progressive: true,
 		svgoPluggins: [{removeViewBox: false}],
 		use: [pngquant()]
 	})))
-	.pipe(gulp.dest(distPath + '/img'));
+	.pipe(gulp.dest(path.img.dist));
 });
 
-// clean build dir
-gulp.task('clean', function(){
-	return del.sync(distPath);
-});
+// === OLD
 
-// clear cache
-gulp.task('clear', function(){
-	return cache.clearAll();
-});
-
-// watcher
-gulp.task('watch', ['sync', 'minify-css', 'scripts'], function(){
-	gulp.watch(srcPath + '/sass/**/*.+(sass|scss)', ['sass']);
-	gulp.watch(srcPath + '/**/*.html', browserSync.reload);
-	gulp.watch(srcPath + '/js/**/*.js', browserSync.reload);
-});
-
-// build
-gulp.task('build', ['clean', 'minify-css', 'scripts', 'img'], function(){
-	var buildCss = gulp.src([
-		srcPath + '/css/**/*.css',
-	])
-	.pipe(gulp.dest(distPath + '/css'));
-
-	var buildFonts = gulp.src([
-		srcPath + '/fonts/**/*',
-	])
-	.pipe(gulp.dest(distPath + '/fonts'));
-
-	var buildJs = gulp.src([
-		srcPath + '/js/**/*',
-	])
-	.pipe(gulp.dest(distPath + '/js'));
-
-	var buildHtml = gulp.src([
-		srcPath + '/**/*.html',
-	])
-	.pipe(gulp.dest(distPath));
-});
-
-// The default task (called when you run `gulp` from cli)
-gulp.task('default', ['watch']);
-```
-
-* bower создаем файл .bowerrc в корне проекта
-
-```
-{
-	"directory": "app/libs/"
-}
+// uglify css libs
+// gulp.task('minify-css', ['sass'], function(){
+// 	return gulp.src([
+// 		srcPath + '/css/**/*.css',
+// 		'!'+srcPath + '/css/**/*.min.css',
+// 	])
+// 	.pipe(sourcemaps.init())
+// 	.pipe(cleanCss())
+// 	.pipe(sourcemaps.write())
+// 	.pipe(rename({suffix: '.min'}))
+// 	.pipe(gulp.dest(srcPath + '/css'));
+// });
 ```
 
 ## Yarn комманды
@@ -267,9 +350,9 @@ gulp.task('default', ['watch']);
 * Добавление зависимости
   
   ```bash
-  yarn add [package]
-  yarn add [package]@[version]
-  yarn add [package]@[tag]
+  yarn add [package] [--dev/-D]
+  yarn add [package]@[version] [--dev/-D]
+  yarn add [package]@[tag] [--dev/-D]
   ```
 
 * Обновление зависимости
