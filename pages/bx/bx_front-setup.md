@@ -23,10 +23,13 @@ sudo apt-get install nodejs
 sudo apt-get install build-essential
 ```
 
-### Установка bower
+### [Установка yarn](https://yarnpkg.com/lang/en/docs/install/)
 
-```
-sudo npm i -g bower
+```bash
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
+sudo apt-get update && sudo apt-get install yarn
 ```
 
 ### Установка gulp
@@ -41,7 +44,7 @@ sudo npm i -g gulp
 node -v
 npm -v
 gulp -v
-bower -v
+yarn --version
 ```
 
 ## Если нужно удалить
@@ -49,6 +52,7 @@ bower -v
 ```
 npm uninstall -g gulp 
 npm uninstall -g bower 
+sudo apt-get remove --purge yarn
 sudo apt-get remove --purge node
 ```
 
@@ -60,7 +64,10 @@ https://github.com/gulpjs/plugins/blob/master/src/blackList.json" %}
 ```
 # получаем репозиторий
 cd <youre project path>
-git clone git@github.com:gdecider/fe-startTmpl.git .
+git clone https://github.com/gdecider/fe-startTmpl.git .
+
+# ИЛИ
+# git clone git@github.com:gdecider/fe-startTmpl.git .
 
 # устанавливаем зависимости
 npm i
@@ -254,6 +261,30 @@ gulp.task('default', ['watch']);
 	"directory": "app/libs/"
 }
 ```
+
+## Yarn комманды
+
+* Добавление зависимости
+  
+  ```bash
+  yarn add [package]
+  yarn add [package]@[version]
+  yarn add [package]@[tag]
+  ```
+
+* Обновление зависимости
+  
+  ```bash
+  yarn upgrade [package]
+  yarn upgrade [package]@[version]
+  yarn upgrade [package]@[tag]
+  ```
+
+* Удаление зависимости
+  
+  ```bash
+  yarn remove [package]
+  ```
 
 ## Bower комманды
 
