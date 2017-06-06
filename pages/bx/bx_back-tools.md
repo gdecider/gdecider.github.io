@@ -21,6 +21,12 @@ toc: false
 
   * [https://github.com/wapmorgan/Imagery](https://github.com/wapmorgan/Imagery)
 
+### Компоненты и модули Битрикс
+
+* Базовый компонент Битрикс для простой реализации MVC
+
+  * [https://github.com/digitalwand/mvc.base](https://github.com/digitalwand/mvc.base)
+
 ### Проверка сайта на наличие вредоносного кода
 
 * [AI-Bolit](https://www.revisium.com/aibo/)

@@ -251,3 +251,33 @@ if ( CSite::InGroup( array(4,5) ) ) {
     // если указанные группы есть, то выполняем код
 }
 ```
+
+* AJAX в отдельном файле
+
+```php
+<?require_once($_SERVER['DOCUMENT_ROOT']. "/bitrix/modules/main/include/prolog_before.php");?>
+
+// ... some code ...
+
+\CMain::finalActions();
+```
+
+* AJAX в странице или компоненте
+
+```php
+// Для аякса нужно получать данные без лишнего, 
+// это можно сделать, если сбросить буфер в нужном месте 
+// и сделать finalActions() в конце данных
+$isAjax = ($_GET["ajax_list"]=="Y");
+if($isAjax) {
+    $APPLICATION->restartBuffer();
+    $tm=".default_ajax_new"; // можем подменить шаблон именно для аякс
+    $arParams["CACHE_TYPE"]="N";
+}?>
+
+... подключаем компонент получаем данные и делаем все что нужно ...
+
+<? if($isAjax) {
+    $APPLICATION->FinalActions();
+}?>
+```
