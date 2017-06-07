@@ -185,6 +185,14 @@ toc: false
 
   * [https://github.com/groenroos/minimalect](https://github.com/groenroos/minimalect)
 
+#### Рейтинг звезды
+
+* jQuery Bar Rating
+
+  * [http://antenna.io/demo/jquery-bar-rating/examples/](http://antenna.io/demo/jquery-bar-rating/examples/)
+
+  * [https://github.com/antennaio/jquery-bar-rating](https://github.com/antennaio/jquery-bar-rating)
+
 ### Фиксация элементов
 
 * HC-Sticky – jQuery Floating Sticky Plugin
@@ -218,3 +226,21 @@ toc: false
   * [http://jellekralt.github.io/Responsive-Tabs/](http://jellekralt.github.io/Responsive-Tabs/)
 
   * [https://github.com/jellekralt/Responsive-Tabs](https://github.com/jellekralt/Responsive-Tabs)
+
+### Графики
+
+* Chart.js
+
+  * [http://www.chartjs.org/](http://www.chartjs.org/)
+
+  * [https://github.com/chartjs/Chart.js](https://github.com/chartjs/Chart.js)
+
+* D3.js
+
+  * [https://github.com/d3/d3/wiki/Gallery](https://github.com/d3/d3/wiki/Gallery)
+
+* highcharts
+
+  * [https://www.highcharts.com/](https://www.highcharts.com/)
+
+  * [https://github.com/highcharts/highcharts](https://github.com/highcharts/highcharts)
