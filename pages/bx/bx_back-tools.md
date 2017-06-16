@@ -21,6 +21,20 @@ toc: false
 
   * [https://github.com/wapmorgan/Imagery](https://github.com/wapmorgan/Imagery)
 
+* PHPMailer
+
+  Отправка почты
+
+  * [https://github.com/PHPMailer/PHPMailer](https://github.com/PHPMailer/PHPMailer)
+
+* reCAPTCHA PHP client library
+
+  * [https://github.com/google/recaptcha](https://github.com/google/recaptcha)
+
+* PHP dotenv
+
+  * [https://github.com/vlucas/phpdotenv](https://github.com/vlucas/phpdotenv)
+
 ### Компоненты и модули Битрикс
 
 * Базовый компонент Битрикс для простой реализации MVC
