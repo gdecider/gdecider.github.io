@@ -70,6 +70,10 @@ entries:
           url: /bx_scripts-retailrocket.html
           output: web
 
+    - title: Чек-лист проекта
+      url: /bx_struktura-checklist.html
+      output: web, pdf
+
   - title: Дизайн
     output: web, pdf
     folderitems:
