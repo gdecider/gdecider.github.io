@@ -77,7 +77,7 @@ entries:
       type: homepage
 
     - title: Вывод категорий каталога в меню
-      url: /articles_bx_catalog-in-menu.html
+      url: /articles_bx-catalog-in-menu.html
       output: web, pdf
       type: homepage
 
