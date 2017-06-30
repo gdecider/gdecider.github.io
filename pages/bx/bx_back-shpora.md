@@ -4,12 +4,12 @@ keywords: sample homepage
 sidebar: bx_sidebar
 permalink: bx_back-shpora.html
 summary: false
-toc: false
+toc: true
 ---
 
 ## Back-end Шпаргалка Битрикс
 
-* Подключение скриптов и стилей вне шаблона
+### Подключение скриптов и стилей вне шаблона
 
 ```php
 $assets = \Bitrix\Main\Page\Asset::getInstance();
@@ -24,7 +24,7 @@ $assets->addJs(SITE_TEMPLATE_PATH . '/js/vendor.min.js');
 $assets->addString("<link href='http://fonts.googleapis.com/css?family=PT+Sans:400&subset=cyrillic' rel='stylesheet' type='text/css'>"); 
 ```
 
-* Подключение скриптов и стилей в шаблоне
+### Подключение скриптов и стилей в шаблоне
 
 ```php
 // CSS
@@ -34,7 +34,7 @@ $this->addExternalCss("/local/styles.css");
 $this->addExternalJS("/local/libs.js"); 
 ```
 
-* Подключение файлов
+### Подключение файлов
 
 ```php
 // С возможностью правки из пользовательской части
@@ -56,20 +56,20 @@ $this->addExternalJS("/local/libs.js");
 );?>
 ```
 
-* Стандартная проверка в подключаемых файлах
+### Стандартная проверка в подключаемых файлах
 
 ```php
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 ```
 
-* Данные текущей страницы
+### Данные текущей страницы
 
 ```php
 <?php
 $curPage = $APPLICATION->GetCurPage(true);
 ```
 
-* Примеры применения констант
+### Примеры применения констант
 
 ```php
 <html lang="<?=LANGUAGE_ID?>">
@@ -77,13 +77,13 @@ $curPage = $APPLICATION->GetCurPage(true);
 <link rel="shortcut icon" href="<?=SITE_TEMPLATE_PATH?>/favicon/favicon.png">
 ```
 
-* Вывод заголовка окна браузера
+### Вывод заголовка окна браузера
 
 ```php
 <title><?$APPLICATION->ShowTitle()?></title>
 ```
 
-* Вывод подключенных скриптов и стилей в head
+### Вывод подключенных скриптов и стилей в head
 
 ```php
 <?php
@@ -99,13 +99,13 @@ $APPLICATION->ShowHeadStrings();
 $APPLICATION->ShowHeadScripts();
 ```
 
-* Вывод панели администрирования в пользовательской части
+### Вывод панели администрирования в пользовательской части
 
 ```php
 <div id="panel"><?$APPLICATION->ShowPanel();?></div>
 ```
 
-* Определение принадлежности к странице или разделу
+### Определение принадлежности к странице или разделу
 
 ```php
 <?php
@@ -122,7 +122,7 @@ if (CSite::InDir('/catalog/index.php')) :
 endif;
 ```
 
-* Получение объектов приложения, контекста и запроса
+### Получение объектов приложения, контекста и запроса
 
 ```php
 <?php
@@ -151,7 +151,7 @@ if ($request->isPost()) {
 }
 ```
 
-* Подключение модулей
+### Подключение модулей
 
 ```php
 <?php
@@ -162,7 +162,7 @@ if ($request->isPost()) {
 \Bitrix\Main\Loader::includeSharewareModule($partnerModuleName);
 ```
 
-* Работа с фреймом
+### Работа с фреймом
 
 ```php
 <?
@@ -183,7 +183,7 @@ $frame->begin();
 <?$frame->end();?>
 ```
 
-* Формирование ссылки для логина 
+### Формирование ссылки для логина 
 
 ```php
 // пример формирование ссылок "Logout" и "Регистрация"
@@ -220,7 +220,7 @@ Loader::includeModule("sale");
 ?>
 ```
 
-* Редирект
+### Редирект
 
 ```php
 <?php
@@ -240,7 +240,7 @@ LocalRedirect('/some_page/', false, "301 Moved permanently");
 LocalRedirect('/some_page/', true, "301 Moved permanently");
 ```
 
-* Проверка наличия группы у пользователя
+### Проверка наличия группы у пользователя
 
 ```php
 <?php
@@ -252,7 +252,7 @@ if ( CSite::InGroup( array(4,5) ) ) {
 }
 ```
 
-* AJAX в отдельном файле
+### AJAX в отдельном файле
 
 ```php
 <?require_once($_SERVER['DOCUMENT_ROOT']. "/bitrix/modules/main/include/prolog_before.php");?>
@@ -262,7 +262,7 @@ if ( CSite::InGroup( array(4,5) ) ) {
 \CMain::finalActions();
 ```
 
-* AJAX в странице или компоненте
+### AJAX в странице или компоненте
 
 ```php
 // Для аякса нужно получать данные без лишнего, 
