@@ -85,6 +85,11 @@ entries:
       url: /articles_bx-catalog-sort.html
       output: web, pdf
       type: homepage
+    
+    - title: Умный фильтр Настраиваем зависимость свойств товаров от категорий
+      url: /articles_bx-smart-filter-category-props-config.html
+      output: web, pdf
+      type: homepage
 
     - title: Решение проблем
       url: /articles_bx_problems.html
