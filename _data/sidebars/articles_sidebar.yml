@@ -81,6 +81,11 @@ entries:
       output: web, pdf
       type: homepage
 
+    - title: Сортировка элементов каталога
+      url: /articles_bx-catalog-sort.html
+      output: web, pdf
+      type: homepage
+
     - title: Решение проблем
       url: /articles_bx_problems.html
       output: web, pdf
