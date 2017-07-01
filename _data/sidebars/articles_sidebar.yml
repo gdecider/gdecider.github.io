@@ -100,15 +100,15 @@ entries:
     output: web, pdf
     folderitems:
 
-    subfolders:
-    - title: CSS
-      output: web
-      subfolderitems:
-    
-      - title: Диагональные элементы
-        url: /articles_frontend-css-diagonals.html
-        output: web, pdf
-        type: homepage
+      subfolders:
+      - title: CSS
+        output: web
+        subfolderitems:
+      
+        - title: Диагональные элементы
+          url: /articles_frontend-css-diagonals.html
+          output: web, pdf
+          type: homepage
 
   - title: Group 1
     output: web, pdf
