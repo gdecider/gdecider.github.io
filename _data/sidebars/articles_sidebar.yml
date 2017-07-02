@@ -100,6 +100,10 @@ entries:
     output: web, pdf
     folderitems:
 
+      - title: Link 1
+        url: /mydoc_pages.html
+        output: web, pdf
+
       subfolders:
       - title: CSS
         output: web
@@ -108,7 +112,6 @@ entries:
         - title: Диагональные элементы
           url: /articles_frontend-css-diagonals.html
           output: web, pdf
-          type: homepage
 
   - title: Group 1
     output: web, pdf
