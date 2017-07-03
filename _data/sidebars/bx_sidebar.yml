@@ -139,7 +139,7 @@ entries:
       output: web, pdf
 
     - title: Шаблонные решения для Битрикс
-      url: /bx_back-tmpls.html
+      url: /articles/
       output: web, pdf
 
     - title: Сервисы и инструменты

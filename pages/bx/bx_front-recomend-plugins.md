@@ -159,6 +159,16 @@ toc: false
 
   * [https://github.com/camoconnell/lazy-line-painter](https://github.com/camoconnell/lazy-line-painter)
 
+### Прокрутка к элементу страницы
+
+* jquery-smooth-scroll 
+
+  * [https://www.npmjs.com/package/jquery-smooth-scroll](https://www.npmjs.com/package/jquery-smooth-scroll)
+
+```
+yarn add jquery-smooth-scroll
+```
+
 ### Валидаторы
 
 * jQuery Validation Plugin
