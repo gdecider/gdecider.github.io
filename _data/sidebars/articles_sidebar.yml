@@ -100,12 +100,12 @@ entries:
     output: web, pdf
     folderitems:
 
-      - title: Link 1
-        url: /mydoc_pages.html
-        output: web, pdf
+    - title: О разделе
+      url: /articles_frontend-about.html
+      output: web, pdf
 
-      subfolders:
-      - title: CSS
+      subfolders:      
+      - title: CSS/SASS
         output: web
         subfolderitems:
       
@@ -113,19 +113,18 @@ entries:
           url: /articles_frontend-css-diagonals.html
           output: web, pdf
 
-  - title: Group 1
-    output: web, pdf
-    folderitems:
-
-    - title: Link 1
-      url: /mydoc_pages.html
-      output: web, pdf
-
-      subfolders:
-      - title: Group 2
+      - title: JS
         output: web
         subfolderitems:
+      
+        - title: Диагональные элементы
+          url: /articles_frontend-css-diagonals.html
+          output: web, pdf
 
-        - title: Link 2
-          url: /tag_formatting.html
-          output: web
+      - title: Прочее
+        output: web
+        subfolderitems:
+      
+        - title: Диагональные элементы
+          url: /articles_frontend-css-diagonals.html
+          output: web, pdf
