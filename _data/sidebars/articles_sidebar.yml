@@ -55,6 +55,11 @@ entries:
   - title: 1С Битрикс
     output: web, pdf
     folderitems:
+
+    - title: Умный фильтр. Редизайн
+      url: /articles_bx-smart-filter-redesign.html
+      output: web, pdf
+      type: homepage
     
     - title: Настройка ЛК
       url: /articles_bx_lk.html
@@ -128,3 +133,11 @@ entries:
         - title: Диагональные элементы
           url: /articles_frontend-css-diagonals.html
           output: web, pdf
+
+  - title: Прочее
+    output: web, pdf
+    folderitems:
+
+    - title: Список статей для прочтения и переработки
+      url: /articles_other-articles-list.html
+      output: web, pdf
