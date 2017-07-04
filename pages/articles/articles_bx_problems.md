@@ -1,13 +1,11 @@
 ---
-title: Статьи 1С Битрикс Проблемы и решение
+title: Статьи 1С Битрикс | Проблемы и решение
 keywords: sample homepage
 sidebar: articles_sidebar
 permalink: articles_bx_problems.html
 summary: false
 toc: false
 ---
-
-# Статьи 1С Битрикс Проблемы и решение
 
 ## Ошибка "Ошибка изменения свойства [код св-ва] Название св-ва"
 
