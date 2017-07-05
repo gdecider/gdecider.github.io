@@ -90,8 +90,8 @@ toc: true
 
 ```php
 <?// данные для обработки через JS?>
-<div id="productJSData" data-json='{id:"<?=$arResult['ID']?>", siteId:"<?=SITE_ID?>"}'></div>
-<?// / данные для обработки через JS>
+<div id="productJSData" data-json='{ "id": "<?=$arResult['ID']?>", "siteId": "<?=SITE_ID?>" }'></div>
+<?// / данные для обработки через JS?>
 ```
 
 В скрипте получим данные из разметки и сообщим Битриксу о просмотре товара
