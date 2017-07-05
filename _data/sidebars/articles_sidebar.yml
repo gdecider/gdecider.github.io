@@ -107,7 +107,11 @@ entries:
     - title: Вывод SEO блока на страницах каталога товаров
       url: /articles_bx-seo-for-catalog.html
       output: web, pdf
-
+    
+    - title: Вывод ранее просмотренных товаров
+      url: /articles_bx-catalog-viewed-products.html
+      output: web, pdf
+    
     - title: Решение проблем
       url: /articles_bx_problems.html
       output: web, pdf
