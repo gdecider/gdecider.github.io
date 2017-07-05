@@ -2,6 +2,7 @@
 title: Статьи 1С Битрикс Настройка ЛК
 keywords: sample homepage
 sidebar: articles_sidebar
+folder: articles
 permalink: articles_bx_lk.html
 summary: false
 toc: true

@@ -2,6 +2,7 @@
 title: Статьи 1С Битрикс | Смарт-фильтр редизайн
 keywords: sample homepage
 sidebar: articles_sidebar
+folder: articles
 permalink: articles_bx-smart-filter-redesign.html
 summary: false
 toc: true

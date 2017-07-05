@@ -2,6 +2,7 @@
 title: Статьи 1С Битрикс | Массовая установка свойства типа "Список" в нужное значение
 keywords: sample homepage
 sidebar: articles_sidebar
+folder: articles
 permalink: articles_bx_set_prop_type_list.html
 summary: false
 toc: false

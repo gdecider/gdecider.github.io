@@ -2,6 +2,7 @@
 title: Статьи 1С Битрикс | Отправка письма
 keywords: sample homepage
 sidebar: articles_sidebar
+folder: articles
 permalink: articles_bx_send_email.html
 summary: false
 toc: false

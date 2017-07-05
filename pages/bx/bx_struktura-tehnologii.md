@@ -2,6 +2,7 @@
 title: Используемые языки программирования и инструменты
 keywords: sample homepage
 sidebar: bx_sidebar
+folder: bx
 permalink: bx_struktura-tehnologii.html
 summary: false
 toc: false

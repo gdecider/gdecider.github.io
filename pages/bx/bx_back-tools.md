@@ -2,6 +2,7 @@
 title: Back-end Инструменты
 keywords: sample homepage
 sidebar: bx_sidebar
+folder: bx
 permalink: bx_back-tools.html
 summary: false
 toc: false

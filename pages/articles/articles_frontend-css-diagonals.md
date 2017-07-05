@@ -2,6 +2,7 @@
 title: Статьи CSS | Диагональные элементы
 keywords: sample homepage
 sidebar: articles_sidebar
+folder: articles
 permalink: articles_frontend-css-diagonals.html
 summary: false
 toc: false

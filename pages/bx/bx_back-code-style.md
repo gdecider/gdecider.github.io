@@ -2,6 +2,7 @@
 title: Back-end Code Style
 keywords: sample homepage
 sidebar: bx_sidebar
+folder: bx
 permalink: bx_back-code-style.html
 summary: false
 toc: false

@@ -2,6 +2,7 @@
 title: Статьи 1С Битрикс | AJAX Отправка формы с файлами
 keywords: sample homepage
 sidebar: articles_sidebar
+folder: articles
 permalink: articles_bx_ajax_send_form_files.html
 summary: false
 toc: false

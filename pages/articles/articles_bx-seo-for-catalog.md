@@ -2,6 +2,7 @@
 title: Статьи 1С | Вывод SEO блока на страницах каталога товаров
 keywords: sample homepage
 sidebar: articles_sidebar
+folder: articles
 permalink: articles_bx-seo-for-catalog.html
 summary: false
 toc: true

@@ -2,6 +2,7 @@
 title: Дизайн правила передачи
 keywords: sample homepage
 sidebar: bx_sidebar
+folder: bx
 permalink: bx_design-rules.html
 summary: false
 toc: false

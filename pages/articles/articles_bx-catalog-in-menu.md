@@ -2,6 +2,7 @@
 title: Статьи 1С Битрикс | Вывод категорий каталога в меню
 keywords: sample homepage
 sidebar: articles_sidebar
+folder: articles
 permalink: articles_bx-catalog-in-menu.html
 summary: false
 toc: false

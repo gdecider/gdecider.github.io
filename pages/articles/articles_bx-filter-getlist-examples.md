@@ -2,6 +2,7 @@
 title: Статьи 1С | Примеры фильтра для GetList и компонентов
 keywords: sample homepage
 sidebar: articles_sidebar
+folder: articles
 permalink: articles_bx-filter-getlist-examples.html
 summary: false
 toc: false

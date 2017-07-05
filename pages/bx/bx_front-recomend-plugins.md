@@ -2,6 +2,7 @@
 title: Front-end Рекомендуемые плагины
 keywords: sample homepage
 sidebar: bx_sidebar
+folder: bx
 permalink: bx_front-recomend-plugins.html
 summary: false
 toc: false

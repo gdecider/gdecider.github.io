@@ -2,6 +2,7 @@
 title: Проект. Список пунктов для проверки.
 keywords: sample homepage
 sidebar: bx_sidebar
+folder: bx
 permalink: bx_project-check-list.html
 summary: false
 toc: true

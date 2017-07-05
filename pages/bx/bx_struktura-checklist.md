@@ -2,6 +2,7 @@
 title: Чек-лист проверки проекта
 keywords: sample homepage
 sidebar: bx_sidebar
+folder: bx
 permalink: bx_struktura-checklist.html
 summary: false
 toc: false

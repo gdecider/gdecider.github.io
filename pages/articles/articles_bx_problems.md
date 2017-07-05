@@ -2,6 +2,7 @@
 title: Статьи 1С Битрикс | Проблемы и решение
 keywords: sample homepage
 sidebar: articles_sidebar
+folder: articles
 permalink: articles_bx_problems.html
 summary: false
 toc: false

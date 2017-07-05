@@ -2,6 +2,7 @@
 title: Статьи 1С Битрикс | Сортировка элементов каталога
 keywords: sample homepage
 sidebar: articles_sidebar
+folder: articles
 permalink: articles_bx-catalog-sort.html
 summary: false
 toc: false

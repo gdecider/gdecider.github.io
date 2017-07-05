@@ -2,6 +2,7 @@
 title: Материалы для обучения CMS 1С Битрикс
 keywords: sample homepage
 sidebar: bx_sidebar
+folder: bx
 permalink: bx_index.html
 summary: false
 toc: false

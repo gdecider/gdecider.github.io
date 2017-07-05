@@ -2,6 +2,7 @@
 title: Статьи 1С Битрикс | Умный фильтр Настраиваем зависимость свойств товаров от категорий
 keywords: sample homepage
 sidebar: articles_sidebar
+folder: articles
 permalink: articles_bx-smart-filter-category-props-config.html
 summary: false
 toc: false

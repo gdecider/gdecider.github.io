@@ -2,6 +2,7 @@
 title: Сервер Настройка редиректов
 keywords: sample homepage
 sidebar: bx_sidebar
+folder: bx
 permalink: bx_server-redirects.html
 summary: false
 toc: false

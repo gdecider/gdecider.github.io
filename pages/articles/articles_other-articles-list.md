@@ -2,6 +2,7 @@
 title: Статьи Прочее | Список статей для прочтения и переработки
 keywords: sample homepage
 sidebar: articles_sidebar
+folder: articles
 permalink: articles_frontend-about.html
 summary: false
 toc: false

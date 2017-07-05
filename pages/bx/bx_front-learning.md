@@ -2,6 +2,7 @@
 title: Front-end Материалы для обучения
 keywords: sample homepage
 sidebar: bx_sidebar
+folder: bx
 permalink: bx_front-learning.html
 summary: false
 toc: false

@@ -2,6 +2,7 @@
 title: Front-end Настройка среды
 keywords: sample homepage
 sidebar: bx_sidebar
+folder: bx
 permalink: bx_front-setup.html
 summary: false
 toc: false

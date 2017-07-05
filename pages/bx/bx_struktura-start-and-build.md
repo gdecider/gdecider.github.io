@@ -2,6 +2,7 @@
 title: Проект | Старт и перенос
 keywords: sample homepage
 sidebar: bx_sidebar
+folder: bx
 permalink: bx_struktura-start-and-build.html
 summary: false
 toc: true

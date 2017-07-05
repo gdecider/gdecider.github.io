@@ -2,6 +2,7 @@
 title: Структура проекта
 keywords: sample homepage
 sidebar: bx_sidebar
+folder: bx
 permalink: bx_struktura-proekta.html
 summary: false
 toc: true

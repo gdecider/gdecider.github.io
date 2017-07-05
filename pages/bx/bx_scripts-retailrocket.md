@@ -2,6 +2,7 @@
 title: Проект | Установка скриптов | Retail Rocket
 keywords: sample homepage
 sidebar: bx_sidebar
+folder: bx
 permalink: bx_scripts-retailrocket.html
 summary: false
 toc: false

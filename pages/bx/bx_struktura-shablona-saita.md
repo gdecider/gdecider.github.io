@@ -2,6 +2,7 @@
 title: Структура шаблона сайта
 keywords: sample homepage
 sidebar: bx_sidebar
+folder: bx
 permalink: bx_struktura-shablona-saita.html
 summary: false
 toc: false
