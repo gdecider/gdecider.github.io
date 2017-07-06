@@ -136,6 +136,36 @@ $APPLICATION->SetTitle("Регистрация");
 </div>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
 ```
+
+### Настройка ссылок на регистрацию и авторизацию
+
+Удобно подключать громоздкие куски кода из включаемых файлов
+
+```php
+<?// в нужном месте страницы (обычно шапка)?>
+<?$APPLICATION->IncludeFile(SITE_TEMPLATE_PATH.'/inc/authInfo.php', [], ['SHOW_BORDER' => false]);?>
+```
+
+Содержимое файла ```SITE_TEMPLATE_PATH.'/inc/authInfo.php'```
+
+```php
+<?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+
+<?if($USER->IsAuthorized()):?>
+    <div class="enter">
+        <a href="<?echo $APPLICATION->GetCurPageParam("logout=yes", array(
+            "login",
+            "logout",
+            "register",
+            "forgot_password",
+            "change_password"));?>">Выход</a></div>
+    <div class="login"><a href="/client/profile/"><?=$USER->GetFullName()?></a></div>
+<?else:?>
+    <div class="enter"><a href="/client/">Вход</a></div>
+    <div class="login"><a href="/client/registration/">Регистрация</a></div>
+<?endif;?>
+```
+
 ### Настройка корзины
 
 ```php
@@ -175,6 +205,39 @@ $APPLICATION->SetTitle("Корзина");
 		"USE_ENHANCED_ECOMMERCE" => "N",
 		"USE_GIFTS" => "N",
 		"USE_PREPAYMENT" => "N"
+	)
+);?>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+```
+
+### Малая корзина
+
+```php
+<?// обычно верхний правый угол экрана ?>
+<?$APPLICATION->IncludeComponent(
+	"bitrix:sale.basket.basket.line",
+	"",
+	Array(
+		"HIDE_ON_BASKET_PAGES" => "Y",
+		"PATH_TO_AUTHORIZE" => "/client/auth/",
+		"PATH_TO_BASKET" => "/client/cart/",
+		"PATH_TO_ORDER" => "/client/order/",
+		"PATH_TO_PERSONAL" => "/client/",
+		"PATH_TO_PROFILE" => "/client/profile/",
+		"PATH_TO_REGISTER" => "/client/registration/",
+		"POSITION_FIXED" => "N",
+		"SHOW_AUTHOR" => "N",
+		"SHOW_DELAY" => "Y",
+		"SHOW_EMPTY_VALUES" => "Y",
+		"SHOW_IMAGE" => "Y",
+		"SHOW_NOTAVAIL" => "Y",
+		"SHOW_NUM_PRODUCTS" => "Y",
+		"SHOW_PERSONAL_LINK" => "N",
+		"SHOW_PRICE" => "Y",
+		"SHOW_PRODUCTS" => "N",
+		"SHOW_SUBSCRIBE" => "Y",
+		"SHOW_SUMMARY" => "Y",
+		"SHOW_TOTAL_PRICE" => "Y"
 	)
 );?>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
