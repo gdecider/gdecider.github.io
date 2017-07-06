@@ -222,30 +222,28 @@ $APPLICATION->SetTitle("Корзина");
 
 ```php
 <?// обычно верхний правый угол экрана ?>
-<?$APPLICATION->IncludeComponent(
-	"bitrix:sale.basket.basket.line",
-	"",
-	Array(
-		"HIDE_ON_BASKET_PAGES" => "Y",
-		"PATH_TO_AUTHORIZE" => "/client/auth/",
-		"PATH_TO_BASKET" => "/client/cart/",
-		"PATH_TO_ORDER" => "/client/order/",
-		"PATH_TO_PERSONAL" => "/client/",
-		"PATH_TO_PROFILE" => "/client/profile/",
-		"PATH_TO_REGISTER" => "/client/registration/",
-		"POSITION_FIXED" => "N",
-		"SHOW_AUTHOR" => "N",
+<?$APPLICATION->IncludeComponent("bitrix:sale.basket.basket.line", "cartLink", Array(
+	"HIDE_ON_BASKET_PAGES" => "Y",	// Не показывать на страницах корзины и оформления заказа
+		"PATH_TO_AUTHORIZE" => "/client/auth/",	// Страница авторизации
+		"PATH_TO_BASKET" => "/client/cart/",	// Страница корзины
+		"PATH_TO_ORDER" => "/client/order/",	// Страница оформления заказа
+		"PATH_TO_PERSONAL" => "/client/",	// Страница персонального раздела
+		"PATH_TO_PROFILE" => "/client/profile/",	// Страница профиля
+		"PATH_TO_REGISTER" => "/client/registration/",	// Страница регистрации
+		"POSITION_FIXED" => "N",	// Отображать корзину поверх шаблона
+		"SHOW_AUTHOR" => "N",	// Добавить возможность авторизации
 		"SHOW_DELAY" => "Y",
-		"SHOW_EMPTY_VALUES" => "Y",
+		"SHOW_EMPTY_VALUES" => "Y",	// Выводить нулевые значения в пустой корзине
 		"SHOW_IMAGE" => "Y",
 		"SHOW_NOTAVAIL" => "Y",
-		"SHOW_NUM_PRODUCTS" => "Y",
-		"SHOW_PERSONAL_LINK" => "N",
+		"SHOW_NUM_PRODUCTS" => "Y",	// Показывать количество товаров
+		"SHOW_PERSONAL_LINK" => "N",	// Отображать персональный раздел
 		"SHOW_PRICE" => "Y",
-		"SHOW_PRODUCTS" => "N",
+		"SHOW_PRODUCTS" => "N",	// Показывать список товаров
 		"SHOW_SUBSCRIBE" => "Y",
 		"SHOW_SUMMARY" => "Y",
-		"SHOW_TOTAL_PRICE" => "Y"
-	)
+		"SHOW_TOTAL_PRICE" => "Y",	// Показывать общую сумму по товарам
+	),
+	false
 );?>
 ```
