@@ -248,5 +248,4 @@ $APPLICATION->SetTitle("Корзина");
 		"SHOW_TOTAL_PRICE" => "Y"
 	)
 );?>
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
 ```
