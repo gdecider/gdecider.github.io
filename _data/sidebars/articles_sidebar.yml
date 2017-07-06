@@ -111,6 +111,10 @@ entries:
     - title: Вывод ранее просмотренных товаров
       url: /articles_bx-catalog-viewed-products.html
       output: web, pdf
+      
+    - title: Получить предыдущий и следующий элементы
+      url: /articles_bx-getlist-prev-and-next.html
+      output: web, pdf
     
     - title: Решение проблем
       url: /articles_bx_problems.html
