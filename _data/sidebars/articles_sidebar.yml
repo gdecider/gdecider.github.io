@@ -115,6 +115,10 @@ entries:
     - title: Получить предыдущий и следующий элементы
       url: /articles_bx-getlist-prev-and-next.html
       output: web, pdf
+      
+    - title: component_epilog.php пример работы
+      url: /articles_bx-component-epilog-example.html
+      output: web, pdf
     
     - title: Решение проблем
       url: /articles_bx_problems.html
