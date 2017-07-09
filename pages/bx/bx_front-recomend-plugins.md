@@ -190,8 +190,21 @@ yarn add jquery-smooth-scroll
 
   * [https://github.com/lcdsantos/jQuery-Selectric](https://github.com/lcdsantos/jQuery-Selectric)
   
+  **Получение плагина**
+  
   ```bash
   yarn add selectric
+  ```
+  
+  **Пути для подключения**
+  
+  ```
+  js: [
+	vendorsPath + '/selectric/src/jquery.selectric.js',
+  ],
+  sass: [
+  	vendorsPath + '/selectric/src/selectric.scss',
+  ],
   ```
 
 * Minimalect
