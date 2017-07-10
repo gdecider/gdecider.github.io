@@ -27,6 +27,8 @@ toc: true
   * Корзина ```/client/cart/```
   
   * Оформление заказа ```/client/order/```
+  
+  * Сравнение товаров ```/catalog/compare/```
 
 ### Стартовая страница ЛК
 
@@ -251,3 +253,82 @@ $APPLICATION->SetTitle("Корзина");
 ### Настройка отображения факта наличия товара в корзине в шаблоне каталога
 
 [Пример работы с component_epilog.php](/articles_bx-component-epilog-example.html)
+
+### Информация о товарах в сравнении
+
+Сравниваемые товары просто добавляются битриксом в сессионную переменную и хранятся в виде массива. Получить количество товаров в списке сравнения можно так:
+
+```php
+<?
+$cntCompare = 0;
+if(isset($_SESSION[CCommon::COMPARE_VAR][CCommon::CATALOG_ID]["ITEMS"])) {
+    $cntCompare = count($_SESSION[CCommon::COMPARE_VAR][CCommon::CATALOG_ID]["ITEMS"]);
+}
+?>
+```
+
+Так же в Битриксе есть компонент для этих целей.
+Пример его подключения на странице:
+
+```php
+<?$APPLICATION->IncludeComponent(
+    "bitrix:catalog.compare.list",
+    "",
+    Array(
+	"ACTION_VARIABLE" => "action",
+	"AJAX_MODE" => "N",
+	"AJAX_OPTION_ADDITIONAL" => "",
+	"AJAX_OPTION_HISTORY" => "N",
+	"AJAX_OPTION_JUMP" => "N",
+	"AJAX_OPTION_STYLE" => "Y",
+	"COMPARE_URL" => "/catalog/compare/",
+	"DETAIL_URL" => "",
+	"IBLOCK_ID" => IBID_CATALOG,
+	"IBLOCK_TYPE" => "catalogs",
+	"NAME" => "CATALOG_COMPARE_LIST",
+	"POSITION" => "top left",
+	"POSITION_FIXED" => "Y",
+	"PRODUCT_ID_VARIABLE" => "id"
+    )
+);?>
+```
+
+### Страница результатов сравнения
+
+```php
+<?$APPLICATION->IncludeComponent(
+    "bitrix:catalog.compare.result",
+    "",
+    Array(
+	"ACTION_VARIABLE" => "action",
+	"AJAX_MODE" => "N",
+	"AJAX_OPTION_ADDITIONAL" => "",
+	"AJAX_OPTION_HISTORY" => "N",
+	"AJAX_OPTION_JUMP" => "N",
+	"AJAX_OPTION_STYLE" => "Y",
+	"BASKET_URL" => "/client/cart/",
+	"CONVERT_CURRENCY" => "N",
+	"DETAIL_URL" => "",
+	"DISPLAY_ELEMENT_SELECT_BOX" => "N",
+	"ELEMENT_SORT_FIELD" => "sort",
+	"ELEMENT_SORT_FIELD_BOX" => "name",
+	"ELEMENT_SORT_FIELD_BOX2" => "id",
+	"ELEMENT_SORT_ORDER" => "asc",
+	"ELEMENT_SORT_ORDER_BOX" => "asc",
+	"ELEMENT_SORT_ORDER_BOX2" => "desc",
+	"FIELD_CODE" => array("ID","NAME","PREVIEW_TEXT","PREVIEW_PICTURE","DETAIL_TEXT","DETAIL_PICTURE","DATE_ACTIVE_FROM","DATE_ACTIVE_TO"),
+	"HIDE_NOT_AVAILABLE" => "N",
+	"IBLOCK_ID" => IBID_CATALOG,
+	"IBLOCK_TYPE" => "catalogs",
+	"NAME" => "CATALOG_COMPARE_LIST",
+	"PRICE_CODE" => array("BASE"),
+	"PRICE_VAT_INCLUDE" => "Y",
+	"PRODUCT_ID_VARIABLE" => "id",
+	"PROPERTY_CODE" => array("KOLICHESTVO","KRATKOEOPISANIE","MASSAKG","OBEML","OBEMMKUB","POLNOEOPISANIE","FOTO","CENA","ARTIKUL",""),
+	"SECTION_ID_VARIABLE" => "SECTION_ID",
+	"SHOW_PRICE_COUNT" => "1",
+	"TEMPLATE_THEME" => "blue",
+	"USE_PRICE_COUNT" => "N"
+    )
+);?>
+```
