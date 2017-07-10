@@ -59,17 +59,18 @@ entries:
     - title: Умный фильтр. Редизайн
       url: /articles_bx-smart-filter-redesign.html
       output: web, pdf
-      type: homepage
     
     - title: Настройка ЛК
       url: /articles_bx_lk.html
       output: web, pdf
-      type: homepage
+      
+    - title: Добавление товара в корзину
+      url: /articles_bx-cart-product-add.html
+      output: web, pdf
 
     - title: Массовая установка свойства типа "Список" в нужное значение
       url: /articles_bx_set_prop_type_list.html
       output: web, pdf
-      type: homepage
 
     - title: AJAX отправка формы с файлами
       url: /articles_bx_ajax_send_form_files.html
