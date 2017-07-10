@@ -67,6 +67,10 @@ entries:
     - title: Добавление товара в корзину
       url: /articles_bx-cart-product-add.html
       output: web, pdf
+      
+    - title: Добавление товара в избранное
+      url: /articles_bx-compare-product-add.html
+      output: web, pdf
 
     - title: Массовая установка свойства типа "Список" в нужное значение
       url: /articles_bx_set_prop_type_list.html
