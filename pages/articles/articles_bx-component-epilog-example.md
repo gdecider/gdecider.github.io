@@ -21,6 +21,18 @@ toc: true
 Мы воспользуемся этой возможностью и вызовем в нем отложенные функции, которые установят дополнительный класс для кнопки корзины 
 и изменят ее текст, но только для нужных товаров.
 
+#### Подготовка шаблона
+
+Пример вывода кнопки "Купить". В местах вывода текста и дополнительного класса расставим метки для передачи в них значений через механизм отложенных функций.
+
+```php
+<button class="add-to-cart jsAddToCart <?$APPLICATION->ShowProperty('CART_BTN_CLASS_'.$arItem['ID']);?>"
+        data-prod-id="<?=$arItem['ID']?>"
+        data-url="<?=SITE_TEMPLATE_PATH?>/ajax/addToCart.php">
+            <?$APPLICATION->ShowProperty('CART_BTN_TEXT_'.$arItem['ID']);?>
+</button>
+```
+
 #### Пример передачи данных в component_epilog.php из result_modifier.php
 
 В component_epilog нужно передовать только данные с которыми Вы планируете работать, лишние данные увеличивают размер файлов кэша 
@@ -56,6 +68,8 @@ if (is_object($this->__component)) {
 
 #### Пример использования данных в component_epilog.php
 
+В примере использована ф-я модуля local.common, это модуль с набором оберток над стандартными методами АПИ Битрикса, для ускорения процесса разработки.
+
 ```php
 <? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
@@ -65,7 +79,26 @@ if (is_object($this->__component)) {
  * @var string $templateFolder
  * @var CatalogSectionComponent $component
  */
- 
-\Bitrix\Main\Diag\Debug::dump($arResult['ITEMS_IDS']);
+
+// получим данные корзины посетителя
+$arCartInfo = \Local\Common\Cart::getInstance()->getInfo();
+
+// соберем массив ID товаров в корзине
+$arCartItemsIds = [];
+foreach ($arCartInfo['items'] as $cartItem) {
+    $arCartItemsIds[] = $cartItem['PRODUCT_ID'];
+}
+
+// Выведем текст и класс кнопки "в корзину"
+foreach($arResult['ITEMS_IDS'] as $id) {
+    $cartBtnText = 'в корзину';
+    $cartBtnClass = '';
+    if (in_array($id, $arCartItemsIds)) {
+        $cartBtnText = 'в корзине';
+        $cartBtnClass = 'active';
+    }
+    $APPLICATION->SetPageProperty('CART_BTN_TEXT_'.$id, $cartBtnText);
+    $APPLICATION->SetPageProperty('CART_BTN_CLASS_'.$id, $cartBtnClass);
+}
 ?>
 ```
