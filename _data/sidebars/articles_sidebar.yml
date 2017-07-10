@@ -68,7 +68,7 @@ entries:
       url: /articles_bx-cart-product-add.html
       output: web, pdf
       
-    - title: Добавление товара в избранное
+    - title: Добавление товара в список сравнения
       url: /articles_bx-compare-product-add.html
       output: web, pdf
 
