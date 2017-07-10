@@ -261,8 +261,8 @@ $APPLICATION->SetTitle("Корзина");
 ```php
 <?
 $cntCompare = 0;
-if(isset($_SESSION[CCommon::COMPARE_VAR][CCommon::CATALOG_ID]["ITEMS"])) {
-    $cntCompare = count($_SESSION[CCommon::COMPARE_VAR][CCommon::CATALOG_ID]["ITEMS"]);
+if(isset($_SESSION["CATALOG_COMPARE_LIST"][IBID_CATALOG]["ITEMS"])) {
+    $cntCompare = count($_SESSION["CATALOG_COMPARE_LIST"][IBID_CATALOG]["ITEMS"]);
 }
 ?>
 ```
