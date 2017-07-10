@@ -22,7 +22,7 @@ toc: true
 <!-- кнопка добавления/удаления товара из сравнения -->
 <a href="<?=SITE_TEMPLATE_PATH?>/ajax/addToCompare.php"
    data-prod-id="<?=$arItem['ID']?>"
-   class="add-to-compare jsToggleCompare"><?$APPLICATION->ShowProperty('COMPARE_BTN_TEXT_'.$arItem['ID']);?></a>
+   class="add-to-compare jsToggleCompare <?$APPLICATION->ShowProperty('COMPARE_BTN_CLASS_'.$arItem['ID']);?>"><?$APPLICATION->ShowProperty('COMPARE_BTN_TEXT_'.$arItem['ID']);?></a>
 ```
 
 {% include note.html content="См. связанную статью [Пример работы с component_epilog.php](/articles_bx-component-epilog-example.html)" %}
@@ -84,10 +84,10 @@ $(document).ready(function() {
         console.log(compareUrl);
         
         if($this.hasClass('active')) {
-            $this.removeClass('active');
+            $this.removeClass('active').html('Добавить к сравнению');
             removeFromCompareList(id, $cntContainer);
         } else {
-            $this.addClass('active');
+            $this.addClass('active').html('Удалить из сравнения');
             addToCompareList(id, $cntContainer);
         }
 
