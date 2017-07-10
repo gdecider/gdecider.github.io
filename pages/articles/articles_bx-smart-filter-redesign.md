@@ -319,23 +319,10 @@ $(function() {
 ```php
 <?
 if (CModule::IncludeModule("iblock")) {
-    // тут можно добавить доболнительные ограничения для фильтра, 
-    // они будут применены при выборке параметров элементов для 
-    // отображения в свойствах фильтрации
     $arFilter = array (
         "ACTIVE" => "Y",
         "GLOBAL_ACTIVE" => "Y",
         "IBLOCK_ID" => $arParams["IBLOCK_ID"],
-        '>=CATALOG_PRICE_'.PRICE_BASE_ID=>'1',
-        [
-            "LOGIC" => "OR",
-            [
-                'PROPERTY_GLAVNAYA_VALUE' => 'Да',
-            ],
-            [
-                'PROPERTY_GLAVNAYA_VALUE' => false,
-            ]
-        ]
     );
 
     if(strlen($arResult["VARIABLES"]["SECTION_CODE"])>0) {
