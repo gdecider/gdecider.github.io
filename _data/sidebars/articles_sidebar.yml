@@ -2,9 +2,9 @@
 
 entries:
 - title: sidebar
-  product: Статьи
+  product: Статьи  
   folders:
-
+  
   - title:
     output: pdf
     type: frontmatter
@@ -17,40 +17,61 @@ entries:
       url: /tocpage
       output: pdf
       type: frontmatter
-
+      
   - title: Рабочее окружение
     output: web, pdf
     folderitems:
+    
+      - title: Решение проблем
+        url: /articles_env-reshenie-problem.html
+        output: web, pdf
+        type: homepage
+    
+      subfolders:      
+      - title: Vagrant
+        output: web
+        subfolderitems:
 
-    - title: Vagrant
-      url: /articles_env_vagrant.html
-      output: web, pdf
-      type: homepage
-
-    - title: Apache
-      url: /articles_env_apache.html
-      output: web, pdf
-      type: homepage
-
-    - title: Nginx
-      url: /articles_env_nginx.html
-      output: web, pdf
-      type: homepage
-
-    - title: Php
-      url: /articles_env_php.html
-      output: web, pdf
-      type: homepage
-
-    - title: MySql
-      url: /articles_env_mysql.html
-      output: web, pdf
-      type: homepage
-
-    - title: Решение проблем
-      url: /articles_env_reshenie-problem.html
-      output: web, pdf
-      type: homepage
+        - title: Vagrant
+          url: /articles_env-vagrant.html
+          output: web, pdf
+          type: homepage
+          
+      - title: Apache
+        output: web
+        subfolderitems:
+        
+        - title: Apache
+          url: /articles_env-apache.html
+          output: web, pdf
+          type: homepage
+        
+      - title: Nginx
+        output: web
+        subfolderitems:
+        
+        - title: Nginx
+          url: /articles_env-nginx.html
+          output: web, pdf
+          type: homepage
+        
+      - title: Php
+        output: web
+        subfolderitems:
+        
+        - title: Php
+          url: /articles_env-php.html
+          output: web, pdf
+          type: homepage
+        
+      - title: MySql
+        output: web
+        subfolderitems:
+        
+        - title: MySql
+          url: /articles_env-mysql.html
+          output: web, pdf
+          type: homepage
 
   - title: 1С Битрикс
     output: web, pdf
