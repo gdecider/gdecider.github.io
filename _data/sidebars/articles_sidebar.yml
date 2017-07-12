@@ -113,6 +113,10 @@ entries:
         - title: Умный фильтр. Редизайн
           url: /articles_bx-smart-filter-redesign.html
           output: web, pdf
+          
+        - title: Умный фильтр. Перестроение фасетного индекса
+          url: /articles_bx-smart-filter-faset.html
+          output: web, pdf
         
       - title: Личный кабинет, корзина, оформление заказа
         output: web
