@@ -3,7 +3,7 @@ title: Статьи Прочее | Список статей для прочте
 keywords: sample homepage
 sidebar: articles_sidebar
 folder: articles
-permalink: articles_frontend-about.html
+permalink: articles_other-articles-list.html
 summary: false
 toc: false
 ---
