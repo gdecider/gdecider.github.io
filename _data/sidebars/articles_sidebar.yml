@@ -22,10 +22,10 @@ entries:
     output: web, pdf
     folderitems:
     
-      - title: Решение проблем
-        url: /articles_env-reshenie-problem.html
-        output: web, pdf
-        type: homepage
+    - title: Решение проблем
+      url: /articles_env-reshenie-problem.html
+      output: web, pdf
+      type: homepage
     
       subfolders:      
       - title: Vagrant
