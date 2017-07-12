@@ -137,6 +137,14 @@ entries:
         - title: component_epilog.php пример работы
           url: /articles_bx-component-epilog-example.html
           output: web, pdf
+          
+      - title: Обмен с 1С
+        output: web
+        subfolderitems:
+        
+        - title: Описание процесса обмена с 1С
+          url: /articles_bx-1c-exch-base.html
+          output: web, pdf
 
   - title: Front-end
     output: web, pdf
