@@ -50,6 +50,10 @@ toc: true
  * @return int
  */
 function actualizeProducts($iblockId, $arFilter) {
+    if(!\Bitrix\Main\Loader::includeModule('iblock')) {
+        return false;
+    }
+        
     $arFilterFinal = [
         'IBLOCK_ID' => $iblockId,
         $arFilter,
@@ -86,7 +90,7 @@ function actualizeProducts($iblockId, $arFilter) {
  * @param $iblockId
  * @return int
  */
-public static function reindexCatalogFaset($iblockId) {
+function reindexCatalogFaset($iblockId) {
 
     $max_execution_time = 20;
 
@@ -114,3 +118,59 @@ public static function reindexCatalogFaset($iblockId) {
     return $NS;
 }
 ```
+
+#### Установка выполнения деактивации и переиндексации на событие завершения обмена с 1С
+
+После каждого обмена файлом с 1С Битрикс вызывает обработку события [OnSuccessCatalogImport1C](https://dev.1c-bitrix.ru/api_help/catalog/events/onsuccesscatalogimport1c.php). Обращаем внимание на фразу "после каждого обмена **файлом**", т.е. это означает, что если в процессе обмена 1С и Битрикс обменялись 124мя файлами, то и событие OnSuccessCatalogImport1C было вызвано 124 раза.
+
+Такой вариант нас не устраивает, нам нужно знать фактическое окончание обмена с 1С.
+
+Для этого на событие OnSuccessCatalogImport1C повесим установку агента, с интервалом в 5 минут, такой интервал гарантирует нам, что обмен уже завершился, т.к. шаг обмена всегда меньше 5ти минут, а если событие вызовется раньше, то оно перепишет имеющийся агент новым и с новым интервалом выполнения.
+
+Результатом выполнения агента будет создание файла в корне сайта. Этот файл послужит флагом для обработчика в кроне, который 
+и запустит процесс пересоздания фасетного индекса.
+
+В файле ```/local/php_interface/include/constants.php``` добавим:
+
+```php
+const EXCH_1C_FILE_FLAG_NAME = 'flagExch1CFinished';
+```
+
+В файле ```/local/php_interface/include/handlers.php``` добавим:
+
+```php
+<?php if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
+
+$eventManager = \Bitrix\Main\EventManager::getInstance();
+
+$eventManager->addEventHandler("iblock", "OnAfterIBlockElementUpdate", ["CDec1C", "handlerOnAfterIBlockElementUpdate"]);
+```
+
+Функции в классе обработчике
+
+```php
+<?php
+class CDec1C {
+    /**
+     * Событие завершения обмена файлом в процессе обмена с 1С
+     */
+    public function handlerOnSuccessCatalogImport1C($arParams, $fileName) {
+        CAgent::AddAgent('CDec1C::createExch1CFinishFile();', '', 'N', 300);
+    }
+    
+    /**
+     * Создание файла флага завершения обмена с 1С
+     */
+    public static function createExch1CFinishFile() {
+	      $siteRoot = realpath(__DIR__ . '/../../../');
+	      $filePath = $siteRoot .  '/' . EXCH_1C_FILE_FLAG_NAME;
+
+	      $fp = fopen($filePath, 'wb');
+	      fwrite($fp, date('Y.m.d H:i:s'));
+	      fclose($fp);
+    }
+}
+```
+
+#### Cron файл и добавление задания в crontab
+
