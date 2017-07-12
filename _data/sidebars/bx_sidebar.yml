@@ -155,7 +155,7 @@ entries:
     folderitems:
 
     - title: Шпаргалка
-      url: /mydoc_pages.html
+      url: /bx_git-shpora.html
       output: web, pdf
 
   - title: Сервер
