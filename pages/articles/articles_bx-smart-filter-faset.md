@@ -162,15 +162,50 @@ class CDec1C {
      * Создание файла флага завершения обмена с 1С
      */
     public static function createExch1CFinishFile() {
-	      $siteRoot = realpath(__DIR__ . '/../../../');
-	      $filePath = $siteRoot .  '/' . EXCH_1C_FILE_FLAG_NAME;
+        $siteRoot = realpath(__DIR__ . '/../../../');
+	$filePath = $siteRoot .  '/' . EXCH_1C_FILE_FLAG_NAME;
 
-	      $fp = fopen($filePath, 'wb');
-	      fwrite($fp, date('Y.m.d H:i:s'));
-	      fclose($fp);
+	$fp = fopen($filePath, 'wb');
+	fwrite($fp, date('Y.m.d H:i:s'));
+	fclose($fp);
     }
 }
 ```
 
 #### Cron файл и добавление задания в crontab
 
+Файлы для добавления в крон будем хранить в папке ```/local/crons/```
+
+создадим файл afterExch1C.php
+
+```php
+<?
+$_SERVER["DOCUMENT_ROOT"] = realpath(__DIR__ . '/../../');
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+
+$filePath = $_SERVER["DOCUMENT_ROOT"] . '/' . EXCH_1C_FILE_FLAG_NAME;
+
+if (!file_exists($filePath)) {
+    return;
+}
+
+$arFilter = CCommon::CATALOG_MAIN_FILTER_NOTVALID;
+echo "индекс пересоздан " . CCommon::actualizeProducts(IBID_CATALOG, $arFilter) . "\n";
+
+unlink($filePath);
+?>
+```
+
+Добавим задание в крон. Интервал выполнения проверки - каждые 5 минут.
+
+Открываем файл заданий крона на изменение
+
+```bash
+crontab -e
+```
+
+Добавляем наше задание
+
+```bash
+*/5 * * * * <path_to_site>/local/crons/afterExch1C.php # на событие окончания обмена с 1С, выполняется КАЖДЫЕ 5 минут
+```
