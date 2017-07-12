@@ -43,4 +43,74 @@ toc: true
 Поэтому мы деактивируем товары прямым запросом к базе данных, используя возможности "нового" ядра D7
 
 ```php
+/**
+ * Деактивация элементов инфоблок в соответствии с основным фильтром товаров
+ * @param int $iblockId
+ * @param array $arFilter
+ * @return int
+ */
+function actualizeProducts($iblockId, $arFilter) {
+    $arFilterFinal = [
+        'IBLOCK_ID' => $iblockId,
+        $arFilter,
+    ];
+    
+    // получим список элементов для деактивации
+    $dbRes = CIBlockElement::GetList([], $arFilterFinal, false, false, ['ID']);
+
+    $arNotValidIds = [];
+    while($arItem = $dbRes->getNext()) {
+        $arNotValidIds[] = $arItem['ID'];
+    }
+
+    $res = 0;
+    if(count($arNotValidIds) > 0) {
+        $strNotValidIds = implode(',', $arNotValidIds);
+        // формируем запрос на обновления флага активности товаров
+        $sql = "UPDATE " . \Bitrix\Iblock\ElementTable::getTableName() . " SET ACTIVE = 'N' WHERE ID IN (" . $strNotValidIds . ")";
+
+        $connection = \Bitrix\Main\Application::getConnection();
+        $connection->queryExecute($sql);
+        // запускаем переиндексацию фасета, это наша кастомная ф-я
+        $res = reindexCatalogFaset($iblockId);
+    }
+
+    return $res;
+}
+```
+
+#### Пересчет фасетного индекса
+
+```php
+/**
+ * @param $iblockId
+ * @return int
+ */
+public static function reindexCatalogFaset($iblockId) {
+
+    $max_execution_time = 20;
+
+    // Пересоздание фасетного индекса
+    // Удалим имеющийся индекс
+    Bitrix\Iblock\PropertyIndex\Manager::dropIfExists($iblockId);
+    Bitrix\Iblock\PropertyIndex\Manager::markAsInvalid($iblockId);
+    
+    // Создадим новый индекс
+    $index = Bitrix\Iblock\PropertyIndex\Manager::createIndexer($iblockId);
+    $index->startIndex();
+    $NS = 0;
+
+    do {
+        $res = $index->continueIndex($max_execution_time);
+        $NS += $res;
+    } while($res > 0);
+
+    $index->endIndex();
+
+    // чистим кэши
+    \CBitrixComponent::clearComponentCache("bitrix:catalog.smart.filter");
+    \CIBlock::clearIblockTagCache($iblockId);
+
+    return $NS;
+}
 ```
