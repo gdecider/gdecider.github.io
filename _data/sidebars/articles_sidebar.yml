@@ -84,6 +84,10 @@ entries:
     - title: Массовое изменение сортировки на товарах в группе по флагу
       url: /articles_bx-set-sort-on-element-by-group.html
       output: web, pdf
+      
+    - title: Изменить значение свойства товара при сохранении
+      url: /articles_bx-edit-property-on-save.html
+      output: web, pdf
 
     - title: AJAX отправка формы с файлами
       url: /articles_bx_ajax_send_form_files.html
