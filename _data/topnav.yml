@@ -4,7 +4,7 @@ topnav:
 - title: Topnav
   items:
     - title: Статьи
-      url: /articles_other-articles-list.html
+      url: /articles-index.html
 
 #Topnav dropdowns
 topnav_dropdowns:
