@@ -43,8 +43,8 @@ toc: true
 $eventManager = \Bitrix\Main\EventManager::getInstance();
 
 // CDec1C
-$eventManager->addEventHandler("catalog", "OnBeforePriceAdd", ["CDec1C", "handlerOnBeforePriceAdd"]);
-$eventManager->addEventHandler("iblock", "OnAfterIBlockElementUpdate", ["CDec1C", "handlerOnAfterIBlockElementUpdate"]);
+$eventManager->addEventHandler("catalog", "OnPriceAdd", ["CDec1C", "handlerOnPriceAdd"]);
+$eventManager->addEventHandler("catalog", "OnPriceUpdate", ["CDec1C", "handlerOnPriceUpdate"]);
 ```
 
 #### Код функций обработчиков
@@ -52,40 +52,43 @@ $eventManager->addEventHandler("iblock", "OnAfterIBlockElementUpdate", ["CDec1C"
 ```php
 <?php
 class CDec1C {
+    /**
+     * Событие после добавления цены элемента инфоблока
+     * */
+    public function handlerOnPriceAdd($id, $arFields) {
+
+        $arProductFields = CCatalogProduct::GetByIDEx($arFields['PRODUCT_ID']);
+
+        $arDop['price'] = $arFields['PRICE'];
+
+        self::_updateAutoPriceSort($arProductFields, $arDop);
+
+    }
+
+    /**
+     * Событие после изменения цены элемента инфоблока
+     * */
+    public function handlerOnPriceUpdate($id, $arFields) {
+
+        $arProductFields = CCatalogProduct::GetByIDEx($arFields['PRODUCT_ID']);
+
+        $arDop['price'] = $arFields['PRICE'];
+
+        self::_updateAutoPriceSort($arProductFields, $arDop);
+
+    }
+    
     /** 
-     * Событие до добавления цены в товар
-	    **/
-	   public function handlerOnBeforePriceAdd($arFields) {
-		      $arProductFields = CCatalogProduct::GetByIDEx($arFields['PRODUCT_ID']);
-		
-		      $arDop['price'] = $arFields['PRICE'];
-		
-		      self::_updateAutoPriceSort($arProductFields, $arDop);
-	   }
+     * Функция вычисления цены для сортировки
+     * И дату окончания акции
+     **/
+    static private function _updateAutoPriceSort($arFields, $arDop = []) {
 
-	   /** 
-	    * Событие после изменения элемента инфоблока
-	    **/
-	   public function handlerOnAfterIBlockElementUpdate($arFields) {
-		      self::_updateAutoPriceSort($arFields);
-		 	}
-}
-```
-
-#### Код вспомогательной функции
-
-```php
-/** 
-	 * Функция вычисления цены для сортировки
-	 * И дату окончания акции
-	 * */
-	static private function _updateAutoPriceSort($arFields, $arDop = []) {
-
-	    // Свойство "Дата окончания акции"
+        // Свойство "Дата окончания акции"
         $propCode = 'ACTION_DATE_END';
 
-	    if (!self::_checkPropExists($propCode)) {
-            $arFields = Array(
+        if (!self::_checkPropExists($propCode)) {
+	    $arFields = Array(
                 "NAME" => "Дата окончания акции",
                 "ACTIVE" => "Y",
                 "SORT" => "6000",
@@ -116,77 +119,75 @@ class CDec1C {
             $PropID = $ibp->Add($arFields);
         }
 
-		if(!$arFields['ID']) {
-			return;
-		}
+        if(!$arFields['ID']) {
+            return;
+        }
 
-		// получим элемент инфоблока
-		$arSelect = [
-			'IBLOCK_ID',
-			'ID',
-			'IBLOCK_SECTION_ID',
-			'CATALOG_GROUP_'.PRICE_ROZNICA_ID,
-			'PROPERTY_V_ODNOY_UPAKOVKE_M',
-			'PROPERTY_AUTO_PRICE_SORT',
-			'PROPERTY_AKTSIYA_DEYSTVUET_DO',
-			'PROPERTY_ACTION_DATE_END',
-		];
+        // получим элемент инфоблока
+        $arSelect = [
+            'IBLOCK_ID',
+            'ID',
+	    'IBLOCK_SECTION_ID',
+	    'CATALOG_GROUP_'.PRICE_ROZNICA_ID,
+	    'PROPERTY_V_ODNOY_UPAKOVKE_M',
+	    'PROPERTY_AUTO_PRICE_SORT',
+	    'PROPERTY_AKTSIYA_DEYSTVUET_DO',
+	    'PROPERTY_ACTION_DATE_END',
+        ];
 
-		$arOrder = [];
+        $arOrder = [];
 
-		$arWhere = [
-			'IBLOCK_ID' => IBID_CATALOG,
-			'ID' => $arFields['ID'],
-		];
+        $arWhere = [
+            'IBLOCK_ID' => IBID_CATALOG,
+            'ID' => $arFields['ID'],
+        ];
 
-		$dbItem = CIBlockElement::getList($arOrder, $arWhere, false, false, $arSelect);
-		$arItem = $dbItem->getNext();
+        $dbItem = CIBlockElement::getList($arOrder, $arWhere, false, false, $arSelect);
+        $arItem = $dbItem->getNext();
 
-		if( CCommon::CATALOG_ID !== (int)$arItem['IBLOCK_ID'] ) {
-			return;
-		}
+        if( CCommon::CATALOG_ID !== (int)$arItem['IBLOCK_ID'] ) {
+            return;
+        }
 
-		// Работа со свойствами стоимости
+        // Работа со свойствами стоимости
 
-		$vUpakovke = $arItem['PROPERTY_V_ODNOY_UPAKOVKE_M_VALUE'];
-		$price = floatVal($arItem['CATALOG_PRICE_'.PRICE_ROZNICA_ID]);
+        $vUpakovke = $arItem['PROPERTY_V_ODNOY_UPAKOVKE_M_VALUE'];
+        $price = floatVal($arItem['CATALOG_PRICE_'.PRICE_ROZNICA_ID]);
 		
-		if(isset($arDop['price']) && $arDop['price'] > 0) {
-			$price = $arDop['price'];
-		}
+        if(isset($arDop['price']) && $arDop['price'] > 0) {
+            $price = $arDop['price'];
+        }
 
-		$sortPriceBefore = floatVal($arItem['PROPERTY_AUTO_PRICE_SORT_VALUE']);
-		$sortPriceAfter = $price;
-		
-		if(    $vUpakovke
-			&& !in_array($arItem['IBLOCK_SECTION_ID'], CCommon::M_PRICE_CATS_ESC)) 
-		{
-			$vUpak = floatVal(str_replace(',', '.', $vUpakovke));
-			$sortPriceAfter = round($price / $vUpak);
-		}
+        $sortPriceBefore = floatVal($arItem['PROPERTY_AUTO_PRICE_SORT_VALUE']);
+        $sortPriceAfter = $price;
 
-		if ($sortPriceAfter !== $sortPriceBefore) {
-			CIBlockElement::SetPropertyValues($arItem['ID'], IBID_CATALOG, $sortPriceAfter, 'AUTO_PRICE_SORT');
-		}
+        if ( $vUpakovke
+            && !in_array($arItem['IBLOCK_SECTION_ID'], CCommon::M_PRICE_CATS_ESC)
+        ) {
+            $vUpak = floatVal(str_replace(',', '.', $vUpakovke));
+            $sortPriceAfter = round($price / $vUpak);
+        }
 
-		// Работа со свойствами даты акции
-		if ($arItem['PROPERTY_AKTSIYA_DEYSTVUET_DO_VALUE']) {
+        if ($sortPriceAfter !== $sortPriceBefore) {
+            CIBlockElement::SetPropertyValues($arItem['ID'], IBID_CATALOG, $sortPriceAfter, 'AUTO_PRICE_SORT');
+        }
 
-		    $dt = DateTime::createFromFormat('d.m.Y G:i:s', $arItem['PROPERTY_AKTSIYA_DEYSTVUET_DO_VALUE']);
+        // Работа со свойствами даты акции
+        if ($arItem['PROPERTY_AKTSIYA_DEYSTVUET_DO_VALUE']) {
+
+            $dt = DateTime::createFromFormat('d.m.Y G:i:s', $arItem['PROPERTY_AKTSIYA_DEYSTVUET_DO_VALUE']);
 
             if(!$dt) {
                 $dt = DateTime::createFromFormat('Y-m-d\TH:i:s', $arItem['PROPERTY_AKTSIYA_DEYSTVUET_DO_VALUE']);
             }
-
-            //CCommon::dp($arItem['PROPERTY_AKTSIYA_DEYSTVUET_DO_VALUE']);
-            //CCommon::dp($dt);
-
-			$actionDateEnd = $dt->format('d.m.Y H:i:s');
-
-			if ($actionDateEnd) {
-				//CCommon::dp($actionDateEnd);
-				CIBlockElement::SetPropertyValues($arItem['ID'], IBID_CATALOG, $actionDateEnd, 'ACTION_DATE_END');
-			}
-		}
-	}
+	
+	    $actionDateEnd = $dt->format('d.m.Y H:i:s');
+        
+	    if ($actionDateEnd) {
+                CIBlockElement::SetPropertyValues($arItem['ID'], IBID_CATALOG, $actionDateEnd, 'ACTION_DATE_END');
+            }
+        }
+    }
+}
 ```
+
