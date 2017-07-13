@@ -80,6 +80,10 @@ entries:
     - title: Массовая установка свойства типа "Список" в нужное значение
       url: /articles_bx_set_prop_type_list.html
       output: web, pdf
+      
+    - title: Массовое изменение сортировки на товарах в группе по флагу
+      url: /articles_bx-set-sort-on-element-by-group.html
+      output: web, pdf
 
     - title: AJAX отправка формы с файлами
       url: /articles_bx_ajax_send_form_files.html
