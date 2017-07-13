@@ -166,7 +166,15 @@ entries:
         - title: Описание процесса обмена с 1С
           url: /articles_bx-1c-exch-base.html
           output: web, pdf
+  
+  - title: Битрикс24
+    output: web, pdf
+    folderitems:
 
+    - title: Пример разработки модуля
+      url: /articles_bx24-module-example.html
+      output: web, pdf
+      
   - title: Front-end
     output: web, pdf
     folderitems:
