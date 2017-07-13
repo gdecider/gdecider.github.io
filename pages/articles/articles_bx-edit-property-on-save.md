@@ -25,6 +25,8 @@ toc: true
 
   * Перед созданием элемента [OnBeforeIBlockElementAdd](https://dev.1c-bitrix.ru/api_help/iblock/events/onbeforeiblockelementadd.php)
   * Перед изменением элемента [OnBeforeIBlockElementUpdate](https://dev.1c-bitrix.ru/api_help/iblock/events/onbeforeiblockelementupdate.php)
+  * Перед созданием элемента [OnAfterIBlockElementAdd](https://dev.1c-bitrix.ru/api_help/iblock/events/onafteriblockelementadd.php)
+  * Перед изменением элемента [OnAfterIBlockElementUpdate](https://dev.1c-bitrix.ru/api_help/iblock/events/onafteriblockelementupdate.php)
 
 Но в условиях нашей задачи речь идет о товарах и о значении типа цены товара. 
 В момент создания и обновления элемента инфоблока данных о его цене еще нет и получить мы их в эти моменты не можем.
@@ -45,6 +47,7 @@ $eventManager = \Bitrix\Main\EventManager::getInstance();
 // CDec1C
 $eventManager->addEventHandler("catalog", "OnPriceAdd", ["CDec1C", "handlerOnPriceAdd"]);
 $eventManager->addEventHandler("catalog", "OnPriceUpdate", ["CDec1C", "handlerOnPriceUpdate"]);
+$eventManager->addEventHandler("iblock", "OnAfterIBlockElementUpdate", ["CDec1C", "handlerOnAfterIBlockElementUpdate"]);
 ```
 
 #### Код функций обработчиков
@@ -52,10 +55,21 @@ $eventManager->addEventHandler("catalog", "OnPriceUpdate", ["CDec1C", "handlerOn
 ```php
 <?php
 class CDec1C {
+    /** 
+	 * Событие после изменения элемента инфоблока
+	 * */
+	public function handlerOnAfterIBlockElementUpdate($arFields) {
+		self::_updateAutoPriceSort($arFields);
+	}
+
     /**
      * Событие после добавления цены элемента инфоблока
      * */
     public function handlerOnPriceAdd($id, $arFields) {
+        // обновляем только при изменении основной цены
+        if ($arFields["CATALOG_GROUP_ID"] !== PRICE_ROZNICA_ID) {
+            return;
+        }
 
         $arProductFields = CCatalogProduct::GetByIDEx($arFields['PRODUCT_ID']);
 
@@ -69,6 +83,11 @@ class CDec1C {
      * Событие после изменения цены элемента инфоблока
      * */
     public function handlerOnPriceUpdate($id, $arFields) {
+
+        // обновляем только при изменении основной цены
+        if ($arFields["CATALOG_GROUP_ID"] !== PRICE_ROZNICA_ID) {
+            return;
+        }
 
         $arProductFields = CCatalogProduct::GetByIDEx($arFields['PRODUCT_ID']);
 
