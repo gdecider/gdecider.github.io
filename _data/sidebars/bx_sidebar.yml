@@ -169,6 +169,10 @@ entries:
     - title: Настройка редиректов
       url: /bx_server-redirects.html
       output: web, pdf
+      
+    - title: Получение и настройка бесплатного SSL сертификата Let's Encrypt для сайта с помощью CertBot
+      url: /bx_server-ssl-lets-encrypt.html
+      output: web, pdf
 
   - title: Group 1
     output: web, pdf
