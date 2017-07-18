@@ -15,7 +15,7 @@ toc: true
 
 ### Установка и настройка CertBot
 Клиент CertBot можно найти в репозитории некоторых дистрибутивов систем, но скорее всего там он будет весьма неактуальной версии, поэтому устанавливать лучше вручную.
-    ```
+
 1. Скачиваем скрипт
     ```bash
     $ cd ~
@@ -34,8 +34,8 @@ toc: true
 
     Создается файл следующими командами, после чего можно его отредактировать.
      ```bash
-     $ mkdir -p /etc/letsencrypt
-     $ cat > /etc/letsencrypt/cli.ini <<EOF
+     $ sudo mkdir -p /etc/letsencrypt
+     $ sudo bash -c 'cat > /etc/letsencrypt/cli.ini' <<EOF
        rsa-key-size = 4096
        # Необходимо указать почту куда будут приходить уведомления о необходимости
        # продлить сертификат, если что-то пошло не так и автообновление не сработало.
@@ -55,14 +55,14 @@ toc: true
     ```bash
     $ sudo touch /etc/cron.daily/certbot-renew
     $ sudo chmod a+x /etc/cron.daily/certbot-renew
-    $ sudo cat > /etc/cron.daily/certbot-renew <<EOF
+    $ sudo bash -c 'cat > /etc/cron.daily/certbot-renew' <<EOF
     #!/bin/bash
     #
     # Обновление ранее полученных сертификатов Let's encrypt
     #
     export HOME="/root"
     export PATH="\${PATH}:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-    certbot-auto --no-self-upgrade renew
+    certbot --no-self-upgrade renew
     if service --status-all | grep -Fq 'apache2'; then
        service apache2 reload
     fi
@@ -85,7 +85,7 @@ toc: true
     Ниже будут приведены настройки для наиболее часто используемого веб-сервера Nginx:
     ```bash
     $ sudo mkdir -p /etc/nginx/conf/locations
-    $ sudo cat > /etc/nginx/conf/locations/letsencrypt.conf <<EOF
+    $ sudo bash -c 'cat > /etc/nginx/conf/locations/letsencrypt.conf' <<EOF
     # Разрешает домену пройти проверку на выдачу SSL сертификата и дальнейшее его продление
     location ^~ /.well-known/acme-challenge/ {
         default_type "text/plain";
@@ -94,7 +94,7 @@ toc: true
     # Скрывает /acme-challenge и возвращает 404 на все запросы.
     location = /.well-known/acme-challenge/ {
         return 404;
-    }      
+    }
     EOF
     ```
     Далее открываем конфиг домена, для которого настраиваются сертификаты и в блоке `server` на 80 порту находим первый `location` и перед ним добавляем следующее: `include conf/locations/letsencrypt.conf;`
@@ -102,28 +102,29 @@ toc: true
     - Затем перезапускаем nginx `sudo service nginx reload`
     - Открываем сайт по адресу http://домен-сайта/.well-known/acme-challenge/ok.html и видим сообщение ОК, если не видим, значит что-то сделано не так, вероятно код `include conf/locations/letsencrypt.conf;` размещен не в нужном месте.
     - После чего уже можно проверить работу получения сертификата, запустив команду в режиме для тестов:
-    
+
     ```bash
-    $ certbot certonly --dry-run -d мой-домен.com
+    $ sudo certbot certonly --dry-run -d мой-домен.com
     ```
     В конце программа должна отчитаться об успешной работе: `The dry run was successful.`
     
     После чего уже можно получать настоящий сертификат.
-    
+
 6. Получение сертификата
     - Сертификат можно получить для домена и всех его реальных рабочих поддоменов следующей командой:
     ```bash
-    $ certbot certonly -d мой-домен.com -d www.мой-домен.com -d shop.мой-домен.com
+    $ sudo certbot certonly -d мой-домен.com -d www.мой-домен.com -d shop.мой-домен.com
     ```
     - Для каждого домена второго уровня желательно запускать новую команду.
     - Проверить сгенерированные сертификаты можно сделующей командой: `sudo find /etc/letsencrypt/live/ -type l`
-    
+
 7. Добавление/Изменение поддоменов в уже сгенерированный сертификат.
     - Добавить можно с помощью указания специального параметра `--expand`
     - Комада работает в режиме "перезапись", поэтому указывать необходимо ВСЕ доменные имена, которые были добавлены в сертификат ранее.
     ```bash
-    $ certbot certonly --expand -d мой-домен.com -d www.мой-домен.com -d shop.мой-домен.com
+    $ sudo certbot certonly --expand -d мой-домен.com -d www.мой-домен.com -d shop.мой-домен.com
     ```
+
 8. Генерируем dhparam.pem <https://weakdh.org/sysadmin.html>
 ```bash
 sudo mkdir -p /etc/ssl/private
@@ -134,7 +135,7 @@ sudo openssl dhparam -out /etc/ssl/private/dhparams_2048.pem 2048
 #### Делаем общие настройки для всех сайтов, работающих с сертификатами
 ```bash
 $ sudo mkdir -p /etc/nginx/conf/enable
-$ sudo cat > /etc/nginx/conf/enable/ssl.conf <<EOF
+$ sudo bash -c 'cat > /etc/nginx/conf/enable/ssl.conf' <<EOF
 # SSL Общие настройки
 ssl_session_cache	shared:SSL:10m;
 ssl_session_timeout     10m;
@@ -151,6 +152,7 @@ ssl_dhparam     /etc/ssl/private/dhparams_2048.pem;
 add_header	Strict-Transport-Security 'max-age=604800';
 EOF
 ```
+
 #### Подключаем сгенерированный сертификат к домену
 Для этого в конфиге нужного нам домена в секции `server` находим строку `listen 80;` и ниже неё добавляем:
 ```text
