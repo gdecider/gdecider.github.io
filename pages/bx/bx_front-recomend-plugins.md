@@ -133,7 +133,10 @@ toc: false
   * [https://github.com/dimsemenov/Magnific-Popup](https://github.com/dimsemenov/Magnific-Popup)
 
 ### Изменение страницы при прокрутке
+* jQuery.Scroolly
 
+  * [https://github.com/chayka/jQuery.Scroolly](https://github.com/chayka/jQuery.Scroolly)
+  
 * Wow
 
   * [http://mynameismatthieu.com/WOW/](http://mynameismatthieu.com/WOW/)
