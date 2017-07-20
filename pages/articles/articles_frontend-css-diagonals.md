@@ -90,23 +90,23 @@ toc: false
   
 ### Решение 3. SVG
 
-    ```html
-    <svg version="1.1" 
-     xmlns="http://www.w3.org/2000/svg" 
-     xmlns:xlink="http://www.w3.org/1999/xlink" 
-     x="0px" 
-     y="0px" 
-     viewBox="0 0 100 100" 
-     style="width:100px; height:100px;" 
-     xml:space="preserve">
+  ```html
+  <svg version="1.1" 
+   xmlns="http://www.w3.org/2000/svg" 
+   xmlns:xlink="http://www.w3.org/1999/xlink" 
+   x="0px" 
+   y="0px" 
+   viewBox="0 0 100 100" 
+   style="width:100px; height:100px;" 
+   xml:space="preserve">
 
-      <style type="text/css">
-        .poligon-top{fill:rgba(0, 150, 0, 0.8);}
-        .poligon-bottom{fill:rgba(150, 0, 0, 0.8);}
-      </style>
-      <polygon class="poligon-top" points="100,0 0,0 100,100 100,100"></polygon>
-      <polygon class="poligon-bottom" points="0,0 100,100 0,100 0,0"></polygon>
-    </svg>
-    ```
+   <style type="text/css">
+      .poligon-top{fill:rgba(0, 150, 0, 0.8);}
+      .poligon-bottom{fill:rgba(150, 0, 0, 0.8);}
+   </style>
+   <polygon class="poligon-top" points="100,0 0,0 100,100 100,100"></polygon>
+   <polygon class="poligon-bottom" points="0,0 100,100 0,100 0,0"></polygon>
+  </svg>
+  ```
     
-    <script async src="//jsfiddle.net/Decider/baqLa4t1/embed/result,css,html/"></script>
+  <script async src="//jsfiddle.net/Decider/baqLa4t1/embed/result,css,html/"></script>
