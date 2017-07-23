@@ -224,6 +224,17 @@ const IBID_SKU = 14;
 /**
  * Other consts
  */
+
+const PRICE_MAIN_ID = 2;
+const PRICE_MAIN_CODE = 'Типовое соглашение с клиентами';
+
+const PRICE_CODES = [
+    PRICE_MAIN_CODE,
+];
+
+const PRICE_IDS = [
+    PRICE_MAIN_ID,
+];
 ```
 
 ## /local/php_interface/include/handlers.php
