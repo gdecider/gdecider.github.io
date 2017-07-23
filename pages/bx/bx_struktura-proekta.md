@@ -211,7 +211,7 @@ if (file_exists($_SERVER["DOCUMENT_ROOT"]."/local/php_interface/include/function
 ## /local/php_interface/include/constants.php
 
 ```php
-<? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
+<?php if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
 /**
  * IBlocks IDS
@@ -222,9 +222,15 @@ const IBID_CATALOG = 12;
 const IBID_SKU = 14;
 
 /**
- * Other consts
+ * IBlocks TYPES
+ * template: IBTYPE_<IBLOCK_TYPE_CODE> = string
  */
 
+const IBTYPE_CATALOG = '1c_catalog';
+
+/**
+ * PRICES
+ */
 const PRICE_MAIN_ID = 2;
 const PRICE_MAIN_CODE = 'Типовое соглашение с клиентами';
 
@@ -235,6 +241,10 @@ const PRICE_CODES = [
 const PRICE_IDS = [
     PRICE_MAIN_ID,
 ];
+
+/**
+ * Other consts
+ */
 ```
 
 ## /local/php_interface/include/handlers.php
