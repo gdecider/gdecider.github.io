@@ -259,8 +259,9 @@ if ( CSite::InGroup( array(4,5) ) ) {
 <?require_once($_SERVER['DOCUMENT_ROOT']. "/bitrix/modules/main/include/prolog_before.php");?>
 
 // ... some code ...
-
-\CMain::finalActions();
+// с этой ф-ей были проблемы
+//\CMain::finalActions();
+die();
 ```
 
 ### AJAX в странице или компоненте
@@ -279,6 +280,16 @@ if($isAjax) {
 ... подключаем компонент получаем данные и делаем все что нужно ...
 
 <? if($isAjax) {
-    $APPLICATION->FinalActions();
+    // с этой ф-ей были проблемы
+    // $APPLICATION->FinalActions();
+    die();
 }?>
+```
+
+### Генерация пароля
+
+```php
+<?
+$new_password = randString(7);
+?>
 ```
