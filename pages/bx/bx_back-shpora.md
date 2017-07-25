@@ -293,3 +293,64 @@ if($isAjax) {
 $new_password = randString(7);
 ?>
 ```
+
+### Создание своей отложенной функции
+
+[Документация](https://dev.1c-bitrix.ru/api_help/main/reference/cmain/addbuffercontent.php)
+
+```php
+<? // выводим разметку в зависимости от параметра страницы "show_side_menu"
+$APPLICATION->AddBufferContent(array('MyClass', 'showCondSide'));?>
+```
+```php
+<?
+class MyClass {
+    /**
+     * выводим разметку в зависимости от параметра страницы "show_side_menu"
+     * @return string
+     * */
+    public function showCondSide() {
+        global $APPLICATION;
+        $bShowSide = $APPLICATION->GetPageProperty("show_side_menu");
+
+        $props = $APPLICATION->GetPagePropertyList();
+
+        ob_start();
+	
+            if($bShowSide):?>
+                <div class="col-md-3">
+
+                    <?$APPLICATION->IncludeComponent(
+                        "bitrix:menu",
+                        "sub_menu",
+                        Array(
+                            "ALLOW_MULTI_SELECT" => "N",
+                            "CHILD_MENU_TYPE" => "left",
+                            "DELAY" => "N",
+                            "MAX_LEVEL" => "1",
+                            "MENU_CACHE_GET_VARS" => array(0=>"",),
+                            "MENU_CACHE_TIME" => "3600",
+                            "MENU_CACHE_TYPE" => "N",
+                            "MENU_CACHE_USE_GROUPS" => "Y",
+                            "ROOT_MENU_TYPE" => "main_popup_sub",
+                            "USE_EXT" => "N"
+                        )
+                    );?>
+
+                </div>
+
+                <div class="col-md-9 page-content">                        
+
+            <?else : ?>
+            
+                <div class="col-md-12 page-content">
+            
+            <?endif;?>
+            <?
+            $buferResult = ob_get_contents();
+        ob_end_clean();
+
+        return $buferResult;
+    }
+}
+```
