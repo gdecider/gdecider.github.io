@@ -19,7 +19,11 @@ toc: true
 
 * 4) Создаем файл .gitignore в папке ```<site_folder>```, пример файла [тут](https://gist.github.com/gdecider/a8a7d7071f14dfd220bc32ac96f699ab)
 
+<script src="https://gist.github.com/gdecider/a8a7d7071f14dfd220bc32ac96f699ab.js"></script>
+
 * 5) Создаем файл .gitignore в папке ```<site_folder>/public/bitrix```, пример файла [тут](https://gist.github.com/gdecider/dc55c4a5bd6b515c3097cf1846fd95eb)
+
+<script src="https://gist.github.com/gdecider/dc55c4a5bd6b515c3097cf1846fd95eb.js"></script>
 
 * 6) Копируем примеры файлов конфигов, что бы не заморачиваться при переносе проекта между репозиториями разработчиков.
 
@@ -34,6 +38,8 @@ toc: true
   [код файлов](https://gist.github.com/gdecider/90e61867887e2671675878f0f96a5bb9)
 
   при переносе проекта эти файлы копируются, уберается ```.example``` в имени файла и в них вносятся нужные настройки.
+  
+  <script src="https://gist.github.com/gdecider/90e61867887e2671675878f0f96a5bb9.js"></script>
 
 * 7) инициализируем основной репозиторий в папке ```<site_folder>```
 
