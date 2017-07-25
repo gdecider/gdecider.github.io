@@ -354,3 +354,21 @@ class MyClass {
     }
 }
 ```
+
+### Буферизация и вывод разметки в нужном месте
+
+[Документация](https://dev.1c-bitrix.ru/api_help/main/reference/cmain/showviewcontent.php)
+
+Добавляем ссылку в h1 в шаблоне компонента header.php:
+
+```php
+<h1><?=$APPLICATION->ShowTitle();?><?$APPLICATION->ShowViewContent('news_detail');?></h1>
+```
+
+Добавляем в шаблон компонента:
+
+```php
+<?$this->SetViewTarget('news_detail');?>
+   <noindex><a rel="nofollow" class="h1-head fancy" href="/develop/change_cover_type.php"><?=$arDataFilter["NAME"]?></a></noindex>
+<?$this->EndViewTarget();?> 
+```
