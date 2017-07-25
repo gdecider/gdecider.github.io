@@ -19,5 +19,6 @@ git clone https://github.com/zheludkovm/LinuxJavaFixes.git fix
 // Путь зависить от Вашей версии приложения, главное найти phpstorm64.vmoptions
 nano ~/PhpStorm-163.10504.2/bin/phpstorm64.vmoptions
 
+// Так же указываем верный путь именно для вашей системы
 -javaagent:/home/user/fix/build/LinuxJavaFixes-1.0.0-SNAPSHOT.jar
 ```
