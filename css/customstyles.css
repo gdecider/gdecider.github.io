@@ -1177,3 +1177,13 @@ h4.panel-title {
     padding-top: 0px;
     margin-top: 0px;
 }
+
+.gist {
+   max-width:350px;
+   overflow:auto;
+}
+
+.gist .blob-wrapper.data {
+   max-height:200px;
+   overflow:auto;
+}
