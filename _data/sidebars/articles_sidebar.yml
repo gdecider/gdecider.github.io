@@ -109,6 +109,10 @@ entries:
     - title: Получить предыдущий и следующий элементы
       url: /articles_bx-getlist-prev-and-next.html
       output: web, pdf
+
+    - title: Кастомизация функции отправки почты custom_mail
+      url: /articles_bx-send-email-custom-mail.html
+      output: web, pdf
       
     - title: Решение проблем
       url: /articles_bx_problems.html
