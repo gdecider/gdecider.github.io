@@ -372,3 +372,24 @@ class MyClass {
    <noindex><a rel="nofollow" class="h1-head fancy" href="/develop/change_cover_type.php"><?=$arDataFilter["NAME"]?></a></noindex>
 <?$this->EndViewTarget();?> 
 ```
+
+### Передача данных формы
+
+Стандартная проверка соответствия сессии
+
+В разметке формы
+
+```php
+<form action="" name="form-order" method="post">
+	<?=bitrix_sessid_post();?>
+	<!-- ... разметка ... -->
+</form>
+```
+
+В коде валидации формы проверяем
+
+```php
+if(!check_bitrix_sessid()) {
+    $valid = false;
+}
+```
