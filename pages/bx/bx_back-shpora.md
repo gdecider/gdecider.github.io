@@ -394,3 +394,27 @@ if(!check_bitrix_sessid()) {
     $valid = false;
 }
 ```
+
+### Добавление данных в кэш при кастомизации стандартных компонентов
+
+В файлах result_modifier.php можно получить объект компонента и добавить нужные данные в кэш для последующего использования. 
+[подробнее тут](/articles_bx-component-epilog-example.html)
+
+```php
+// $this->__component
+// или
+// $this->getComponent()
+
+$arItemsIds = ['some', 'data', 'for', 'cache'];
+
+$keyName = 'ITEMS_IDS';
+if (is_object($this->__component)) {
+    $cp = $this->__component;
+    $cp->arResult[$keyName] = $arItemsIds;
+    $cp->SetResultCacheKeys(array($keyName));
+
+    if (!isset($arResult[$keyName])) {
+        $arResult[$keyName] = $cp->arResult[$keyName];
+    }
+}
+```
