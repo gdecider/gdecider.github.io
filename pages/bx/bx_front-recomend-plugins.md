@@ -48,6 +48,10 @@ toc: false
 
 ### Parallax
 
+* Parallax.js
+ 
+  * [https://github.com/wagerfield/parallax](https://github.com/wagerfield/parallax)
+
 * Simple Parallax Scrolling
 
   * [http://pixelcog.github.io/parallax.js/](http://pixelcog.github.io/parallax.js/)
@@ -63,7 +67,7 @@ toc: false
   * [http://ianlunn.co.uk/plugins/jquery-parallax/](http://ianlunn.co.uk/plugins/jquery-parallax/)
   
   * [https://github.com/IanLunn/jQuery-Parallax](https://github.com/IanLunn/jQuery-Parallax)
-
+  
 ### Полноэкранная прокрутка
 
 * One Page Scroll
