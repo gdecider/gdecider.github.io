@@ -389,6 +389,7 @@ class MyClass {
 В коде валидации формы проверяем
 
 ```php
+<?php
 if(!check_bitrix_sessid()) {
     $valid = false;
 }
