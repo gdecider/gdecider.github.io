@@ -146,8 +146,12 @@ entries:
       url: /bx_back-tools.html
       output: web, pdf
 
-    - title: Шпаргалка
+    - title: Шпаргалка (по коду)
       url: /bx_back-shpora.html
+      output: web, pdf
+    
+    - title: Советы (по интерфейсу)
+      url: /bx_back-bitrix-admin-panel-hints.html
       output: web, pdf
   
   - title: Git
