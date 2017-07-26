@@ -31,3 +31,10 @@ toc: false
 * [PSR-6: # Introduction](http://www.php-fig.org/psr/psr-6/)
 
 * [PSR-7: HTTP message interfaces](http://www.php-fig.org/psr/psr-7/)
+
+### Договеренности
+
+#### Битрикс
+
+Все данные, добавляемые в массив ```$arResult``` при кастомизации стандартных компонентов писать в ```$arResult['CSTM']``` CSTM сокращение от custom.
+
