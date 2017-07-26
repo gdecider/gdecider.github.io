@@ -38,3 +38,4 @@ toc: false
 
 Все данные, добавляемые в массив ```$arResult``` при кастомизации стандартных компонентов писать в ```$arResult['CSTM']``` CSTM сокращение от custom.
 
+Именовать константы в соответствии с [правилами](https://gdecider.github.io/bx_struktura-proekta.html#localphp_interfaceincludeconstantsphp)
