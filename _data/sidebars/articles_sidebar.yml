@@ -114,6 +114,10 @@ entries:
       url: /articles_bx-send-email-custom-mail.html
       output: web, pdf
       
+    - title: Пример создания компонента
+      url: /articles_bx-component-creation.html
+      output: web, pdf
+      
     - title: Решение проблем
       url: /articles_bx_problems.html
       output: web, pdf
