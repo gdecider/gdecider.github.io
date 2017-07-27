@@ -36,6 +36,11 @@ toc: false
 
 #### Битрикс
 
-Все данные, добавляемые в массив ```$arResult``` при кастомизации стандартных компонентов писать в ```$arResult['CSTM']``` CSTM сокращение от custom.
+* Все данные, добавляемые в массив ```$arResult``` при кастомизации стандартных компонентов писать в ```$arResult['CSTM']``` CSTM сокращение от custom.
 
-Именовать константы в соответствии с [правилами](https://gdecider.github.io/bx_struktura-proekta.html#localphp_interfaceincludeconstantsphp)
+* Именовать константы в соответствии с [правилами](https://gdecider.github.io/bx_struktura-proekta.html#localphp_interfaceincludeconstantsphp)
+
+* Имена глобальных переменных, используемых в проектах:
+
+  * Фильтр в комплексном компоненте каталога: ```arrFilterCatalog```
+  
