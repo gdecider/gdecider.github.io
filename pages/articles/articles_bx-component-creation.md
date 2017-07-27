@@ -1,11 +1,10 @@
 ---
 title: Статьи 1С Битрикс | Пример создания компонента
 keywords: битрикс, свой компонент, создать компонент, пример создания компонента
-description: Пример создания своеко компонента для CMS 1С Битрикс
 sidebar: articles_sidebar
 folder: articles
 permalink: articles_bx-component-creation.html
-summary: false
+summary: Пример создания своего компонента для CMS 1С Битрикс
 toc: true
 ---
 
