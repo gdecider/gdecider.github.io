@@ -134,10 +134,6 @@ entries:
       url: /bx_back-code-style.html
       output: web, pdf
 
-    - title: Рекомендации
-      url: /bx_back-recomends.html
-      output: web, pdf
-
     - title: Шаблонные решения для Битрикс
       url: /articles/
       output: web, pdf
