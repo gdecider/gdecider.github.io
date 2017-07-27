@@ -67,3 +67,131 @@ toc: true
 Принцыпы именования класса компонента нигде не регламинтированы, но рекомендуется давать имя классу максимально похожее на путь к компоненту. Наш класс будет называться ```ExampleCompSimple```.
 
 [пример из официальной документации](https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=43&LESSON_ID=2028&LESSON_PATH=3913.4565.2028)
+
+Пример содержимого нашего файла:
+
+```php
+<?php
+use \Bitrix\Main\Loader;
+use \Bitrix\Main\Application;
+
+class ExampleCompSimple extends CBitrixComponent {
+    private $_request;
+
+    /**
+     * Проверка наличия модулей требуемых для работы компонента
+     * @return bool
+     * @throws Exception
+     */
+    private function _checkModules() {
+        if (   !Loader::includeModule('iblock')
+            || !Loader::includeModule('sale')
+        ) {
+            throw new \Exception('Не загружены модули необходимые для работы модуля');
+        }
+
+        return true;
+    }
+
+    /**
+     * Обертка над глобальной переменной
+     * @return CAllMain|CMain
+     */
+    private function _app() {
+        global $APPLICATION;
+        return $APPLICATION;
+    }
+
+    /**
+     * Обертка над глобальной переменной
+     * @return CAllUser|CUser
+     */
+    private function _user() {
+        global $USER;
+        return $USER;
+    }
+
+    /**
+     * Подготовка параметров компонента
+     * @param $arParams
+     * @return mixed
+     */
+    public function onPrepareComponentParams($arParams) {
+        // тут пишем логику обработки параметров, дополнение параметрами по умолчанию
+        // и прочие нужные вещи
+        return $arParams;
+    }
+
+    /**
+     * Точка входа в компонент
+     * Должна содержать только последовательность вызовов вспомогательых ф-ий и минимум логики
+     * всю логику стараемся разносить по классам и методам 
+     */
+    public function executeComponent() {
+        $this->_checkModules();
+
+        $this->_request = Application::getInstance()->getContext()->getRequest();
+        
+        // что-то делаем и результаты работы помещаем в arResult, для передачи в шаблон
+        $this->arResult['SOME_VAR'] = 'some result data for template';
+
+        $this->includeComponentTemplate();
+    }
+}
+```
+
+### .description.php
+
+В принципах описания компонента ничего не меняется почи с времен появления БУС. [Тут](https://dev.1c-bitrix.ru/community/blogs/components2/133.php) относительно подробное описание структуры файла.
+
+Рассмотрим пару примеров размещения компонента в визуальном редакторе:
+
+* Разместить компонент в ветке на ровне с остальными основными ветками
+
+```php
+<?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
+
+use Bitrix\Main\Localization\Loc;
+
+$arComponentDescription = [
+    "NAME" => Loc::getMessage("EXAMPLE_COMPSIMPLE_COMPONENT"),
+    "DESCRIPTION" => Loc::getMessage("EXAMPLE_COMPSIMPLE_COMPONENT_DESCRIPTION"),
+    "COMPLEX" => "N",
+    "PATH" => [
+        "ID" => Loc::getMessage("EXAMPLE_COMPSIMPLE_COMPONENT_PATH_ID"),
+        "NAME" => Loc::getMessage("EXAMPLE_COMPSIMPLE_COMPONENT_PATH_NAME"),
+    ],
+];
+?>
+```
+
+**Результат:**
+
+![Разместить компонент в ветке на ровне с остальными основными ветками](/images/articles_bx-component-creation_1.jpg)
+
+* Разместить компонент в дочернюю ветку
+
+```php
+<?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
+
+use Bitrix\Main\Localization\Loc;
+
+$arComponentDescription = [
+    "NAME" => Loc::getMessage("EXAMPLE_COMPSIMPLE_COMPONENT"),
+    "DESCRIPTION" => Loc::getMessage("EXAMPLE_COMPSIMPLE_COMPONENT_DESCRIPTION"),
+    "COMPLEX" => "N",
+    "PATH" => [
+        "ID" => Loc::getMessage("EXAMPLE_COMPSIMPLE_COMPONENT_PATH_ID"),
+        "NAME" => Loc::getMessage("EXAMPLE_COMPSIMPLE_COMPONENT_PATH_NAME"),
+        "CHILD" => [
+            "ID" => Loc::getMessage("EXAMPLE_COMPSIMPLE_COMPONENT_CHILD_PATH_ID"),
+            "NAME" => GetMessage("EXAMPLE_COMPSIMPLE")
+        ]
+    ],
+];
+?>
+```
+
+**Результат:**
+
+![Разместить компонент в дочернюю ветку](/images/articles_bx-component-creation_2.jpg)
