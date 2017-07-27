@@ -41,6 +41,10 @@ toc: false
 * Базовый компонент Битрикс для простой реализации MVC
 
   * [https://github.com/digitalwand/mvc.base](https://github.com/digitalwand/mvc.base)
+  
+* Валюты, запрос курса
+
+  * [http://marketplace.1c-bitrix.ru/solutions/asd.currencyrate/](http://marketplace.1c-bitrix.ru/solutions/asd.currencyrate/)
 
 ### Проверка сайта на наличие вредоносного кода
 
