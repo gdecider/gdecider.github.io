@@ -222,3 +222,18 @@ $MESS["EXAMPLE_COMPSIMPLE_COMPONENT_DESCRIPTION"] = "Описание тесто
 
 $arComponentParameters = [];
 ```
+
+### Шаблон компонента
+
+Компонент может содержать множество шаблонов. Шаблон по умолчанию находится в папке .default и именно он отрабатывает, если приподключении компонента оставить имя шаблона пустым.
+
+В нашем примере просто выведем дамп массива входных параметров и массива результатов работы компонента.
+
+```php
+<?php if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+
+<?
+    \Bitrix\Main\Diag\Debug::dump($arParams);
+    \Bitrix\Main\Diag\Debug::dump($arResult);
+?>
+```
