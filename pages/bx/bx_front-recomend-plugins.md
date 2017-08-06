@@ -228,6 +228,31 @@ yarn add jquery-smooth-scroll
 
   * [https://github.com/antennaio/jquery-bar-rating](https://github.com/antennaio/jquery-bar-rating)
 
+#### Scrollbar
+
+* jQuery custom content scroller
+
+  * [http://manos.malihu.gr/jquery-custom-content-scroller/](http://manos.malihu.gr/jquery-custom-content-scroller/)
+  
+  * [https://github.com/malihu/malihu-custom-scrollbar-plugin](https://github.com/malihu/malihu-custom-scrollbar-plugin)
+  
+  **Получение плагина**
+  
+  ```bash
+  yarn add malihu-custom-scrollbar-plugin
+  ```
+  
+  **Пути для подключения**
+  
+  ```
+  js: [
+	vendorsPath + '/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js',
+  ],
+  css: [
+  	vendorsPath + '/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css',
+  ],
+  ```
+
 ### Фиксация элементов
 
 * HC-Sticky – jQuery Floating Sticky Plugin
