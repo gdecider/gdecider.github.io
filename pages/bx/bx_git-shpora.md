@@ -169,6 +169,12 @@ http://eax.me/git-commands/
 
 https://githowto.com/ru/
 
+### Рекомендуемые утилиты
+
+
+
+### Справочник по командам
+
 #### Общие команды
 
 * инициализация
@@ -293,6 +299,12 @@ git checkout new-branch
 git checkout -b new-branch
 ```
 
+* удаление ветки
+
+```bash
+git branch -d branch-name
+```
+
 * просмотр веток
 
 ```bash
@@ -309,6 +321,19 @@ git branch -a
 
 ```bash
 git branch -r
+```
+
+* Слияние веток
+
+```bash
+# все вливается в текущую ветку на которой вы находитесь, поэтому перед слиянием переключитесь на нужную ветку
+git checkout branch1-name
+
+# льем другую ветку в текущую
+git merge branch2-name
+
+# если после слияния ветка не нужна, то можно ее удалить 
+git branch -d branch2-name
 ```
 
 #### Просмотр логов
@@ -334,4 +359,27 @@ git log --since=2.weeks
 
 #### Работа с подмодулями
 
+* привязка подмодуля
+
+```bash
+git submodule add <submodule_repo_path> path/to/submodule/folder
+```
+
+* первичная инициализация подмодулей
+
+```bash
+git submodule init
+```
+
+* получение/обновление содержимого подмодулей
+
+```bash
+git submodule update
+```
+
+* просмотр списка подмодулей
+
+```bash
+git submodule status
+```
 
