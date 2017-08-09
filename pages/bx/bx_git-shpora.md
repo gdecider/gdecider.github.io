@@ -225,7 +225,7 @@ git remote -v
 
 * изменение адреса удаленного репозитория
 
-```bash
+```sh
 git remote set-url origin https://github.com/USERNAME/OTHERREPOSITORY.git
 ```
 
@@ -383,3 +383,17 @@ git submodule update
 git submodule status
 ```
 
+The all removal process would then be:
+
+```shell
+mv a/submodule a/submodule_tmp
+git submodule deinit -f -- a/submodule    
+rm -rf .git/modules/a/submodule
+
+git rm -f a/submodule
+# Note: a/submodule (no trailing slash)
+
+# or, if you want to leave it in your working tree
+git rm --cached a/submodule
+mv a/submodule_tmp a/submodule
+```
