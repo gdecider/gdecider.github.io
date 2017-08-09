@@ -171,7 +171,7 @@ https://githowto.com/ru/
 
 ### Рекомендуемые утилиты
 
-
+* [https://www.gitkraken.com/](https://www.gitkraken.com/)
 
 ### Справочник по командам
 
