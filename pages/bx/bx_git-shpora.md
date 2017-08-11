@@ -10,11 +10,245 @@ toc: true
 
 ## Git Список часто используемых команд
 
-=== Пошаговый учебник ===
-https://githowto.com/ru/
+### Рекомендуемые утилиты
 
-=== Видеокурс ===
-"Git для профессионалов" от http://pr-of-it.ru найдете при желании )
+* [https://www.gitkraken.com/](https://www.gitkraken.com/)
+
+### Справочник по командам
+
+#### Общие команды
+
+* инициализация
+
+```bash
+git init
+```
+
+* добавление к будущему комиту
+
+```bash
+git add .
+git add --all
+```
+
+* коммит
+
+```bash
+git commit -m"комментарий к комиту"
+```
+
+#### Работа с удаленными репозиториями
+
+* добавление привязки удаленного репозитория к проекту
+
+```bash
+git remote add somename <path-to-repo>
+```
+
+* удаление привязки к удаленному репозиторию
+
+```bash
+git remote rm somename
+```
+
+* изменение ссылки на удаленный репозиторий
+
+```bash
+git remote set-url origin git://new.url.here
+```
+
+* просмотр списка удаленных репозиториев
+
+```bash
+git remote -v
+```
+
+* изменение адреса удаленного репозитория
+
+```sh
+git remote set-url origin https://github.com/USERNAME/OTHERREPOSITORY.git
+```
+
+* привязать локальную ветку к удаленной для отслеживания
+
+```bash
+git branch --set-upstream-to=origin/<branch> <local_branch_name>
+```
+
+* пуш коммита в удаленный репозиторий
+
+```bash
+git push origin master
+```
+
+* получение данных из удаленного репозитория
+
+```bash
+git pull
+# или
+git pull origin
+# или
+git pull origin master
+```
+
+* удаление удаленной ветки
+
+```bash
+git push origin --delete <branchName>
+```
+
+#### Откаты и восстановления
+
+* откатить не проиндексированный файл (до добавления в список перед коммита)
+
+```bash
+git checkout <filename>
+```
+
+* откатить проиндексированный файл (до коммита)
+
+```bash
+git reset HEAD <filename> // это сбросит проиндексированные файлы, но изменения в файле не откатятся
+git checkout <filename> // это откатит сами изменения
+```
+
+* Удаление неотслеживаемых файлов ПРОСМОТР списка удалений
+
+```bash
+git clean -d -n
+```
+
+* Удаление неотслеживаемых файлов + те которые добавлены в игнор ПРОСМОТР списка удалений
+**!!! осторожно . удалит и файлы настроек, т.к. они всегда в игноре**
+
+```bash
+git clean -d -n -x
+```
+
+#### Работа с ветками
+
+* создание ветки
+
+```bash
+git branch new-branch
+```
+
+* переключение на ветку
+
+```bash
+git checkout new-branch
+```
+
+* создание ветки и переключение на нее в одну команду
+
+```bash
+git checkout -b new-branch
+```
+
+* удаление ветки
+
+```bash
+git branch -d branch-name
+```
+
+* просмотр веток
+
+```bash
+git branch -v
+```
+
+* просмотр всех веток вместе с удаленными
+
+```bash
+git branch -a
+```
+
+* просмотр только удаленных веток
+
+```bash
+git branch -r
+```
+
+* Слияние веток
+
+```bash
+# все вливается в текущую ветку на которой вы находитесь, поэтому перед слиянием переключитесь на нужную ветку
+git checkout branch1-name
+
+# льем другую ветку в текущую
+git merge branch2-name
+
+# если после слияния ветка не нужна, то можно ее удалить 
+git branch -d branch2-name
+```
+
+#### Просмотр логов
+
+* просмотр лога
+
+```bash
+https://git-scm.com/book/ru/v1/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B-Git-%D0%9F%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D0%B8-%D0%BA%D0%BE%D0%BC%D0%BC%D0%B8%D1%82%D0%BE%D0%B2
+git log
+git log -p
+git log --pretty=oneline --graph
+git log --pretty=format:"%h - %an, %ar : %s"
+gitk //это GUI утилита, в линукс потребуется установка через sudo apt-get install gitk
+```
+
+* список коммитов, сделанных за последние две недели
+
+```bash
+git log --since=2.weeks 
+// так же можно указать дату например "2008-01-15", 
+// Опция --author позволяет фильтровать по автору, опция --grep позволяет искать по ключевым словам в сообщении
+```
+
+#### Работа с подмодулями
+
+* привязка подмодуля
+
+```bash
+git submodule add <submodule_repo_path> path/to/submodule/folder
+```
+
+* первичная инициализация подмодулей
+
+```bash
+git submodule init
+```
+
+* получение/обновление содержимого подмодулей
+
+```bash
+git submodule update
+```
+
+* просмотр списка подмодулей
+
+```bash
+git submodule status
+```
+
+The all removal process would then be:
+
+```shell
+mv a/submodule a/submodule_tmp
+git submodule deinit -f -- a/submodule    
+rm -rf .git/modules/a/submodule
+
+git rm -f a/submodule
+# Note: a/submodule (no trailing slash)
+
+# or, if you want to leave it in your working tree
+git rm --cached a/submodule
+mv a/submodule_tmp a/submodule
+```
+
+### материалы для обучения
+
+* Пошаговый учебник https://githowto.com/ru/
+
+* Видеокурс "Git для профессионалов" от http://pr-of-it.ru найдете при желании )
 
 https://www.digitalocean.com/community/tutorials/git-ubuntu-14-04-ru
 
@@ -168,232 +402,3 @@ https://habrahabr.ru/company/mailru/blog/318508/?utm_campaign=email_digest&utm_s
 http://eax.me/git-commands/
 
 https://githowto.com/ru/
-
-### Рекомендуемые утилиты
-
-* [https://www.gitkraken.com/](https://www.gitkraken.com/)
-
-### Справочник по командам
-
-#### Общие команды
-
-* инициализация
-
-```bash
-git init
-```
-
-* добавление к будущему комиту
-
-```bash
-git add .
-git add --all
-```
-
-* коммит
-
-```bash
-git commit -m"комментарий к комиту"
-```
-
-#### Работа с удаленными репозиториями
-
-* добавление привязки удаленного репозитория к проекту
-
-```bash
-git remote add somename <path-to-repo>
-```
-
-* удаление привязки к удаленному репозиторию
-
-```bash
-git remote rm somename
-```
-
-
-* изменение ссылки на удаленный репозиторий
-
-```bash
-git remote set-url origin git://new.url.here
-```
-
-* просмотр списка удаленных репозиториев
-
-```bash
-git remote -v
-```
-
-* изменение адреса удаленного репозитория
-
-```sh
-git remote set-url origin https://github.com/USERNAME/OTHERREPOSITORY.git
-```
-
-* привязать локальную ветку к удаленной для отслеживания
-
-```bash
-git branch --set-upstream-to=origin/<branch> <local_branch_name>
-```
-
-* пуш коммита в удаленный репозиторий
-
-```bash
-git push origin master
-```
-
-* получение данных из удаленного репозитория
-
-```bash
-git pull
-# или
-git pull origin
-# или
-git pull origin master
-```
-
-#### Откаты и восстановления
-
-* откатить не проиндексированный файл (до добавления в список перед коммита)
-
-```bash
-git checkout <filename>
-```
-
-* откатить проиндексированный файл (до коммита)
-
-```bash
-git reset HEAD <filename> // это сбросит проиндексированные файлы, но изменения в файле не откатятся
-git checkout <filename> // это откатит сами изменения
-```
-
-* Удаление неотслеживаемых файлов ПРОСМОТР списка удалений
-
-```bash
-git clean -d -n
-```
-
-* Удаление неотслеживаемых файлов + те которые добавлены в игнор ПРОСМОТР списка удалений
-**!!! осторожно . удалит и файлы настроек, т.к. они всегда в игноре**
-
-```bash
-git clean -d -n -x
-```
-
-#### Работа с ветками
-
-* создание ветки
-
-```bash
-git branch new-branch
-```
-
-* переключение на ветку
-
-```bash
-git checkout new-branch
-```
-
-* создание ветки и переключение на нее в одну команду
-
-```bash
-git checkout -b new-branch
-```
-
-* удаление ветки
-
-```bash
-git branch -d branch-name
-```
-
-* просмотр веток
-
-```bash
-git branch -v
-```
-
-* просмотр всех веток вместе с удаленными
-
-```bash
-git branch -a
-```
-
-* просмотр только удаленных веток
-
-```bash
-git branch -r
-```
-
-* Слияние веток
-
-```bash
-# все вливается в текущую ветку на которой вы находитесь, поэтому перед слиянием переключитесь на нужную ветку
-git checkout branch1-name
-
-# льем другую ветку в текущую
-git merge branch2-name
-
-# если после слияния ветка не нужна, то можно ее удалить 
-git branch -d branch2-name
-```
-
-#### Просмотр логов
-
-* просмотр лога
-
-```bash
-https://git-scm.com/book/ru/v1/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B-Git-%D0%9F%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D0%B8-%D0%BA%D0%BE%D0%BC%D0%BC%D0%B8%D1%82%D0%BE%D0%B2
-git log
-git log -p
-git log --pretty=oneline --graph
-git log --pretty=format:"%h - %an, %ar : %s"
-gitk //это GUI утилита, в линукс потребуется установка через sudo apt-get install gitk
-```
-
-* список коммитов, сделанных за последние две недели
-
-```bash
-git log --since=2.weeks 
-// так же можно указать дату например "2008-01-15", 
-// Опция --author позволяет фильтровать по автору, опция --grep позволяет искать по ключевым словам в сообщении
-```
-
-#### Работа с подмодулями
-
-* привязка подмодуля
-
-```bash
-git submodule add <submodule_repo_path> path/to/submodule/folder
-```
-
-* первичная инициализация подмодулей
-
-```bash
-git submodule init
-```
-
-* получение/обновление содержимого подмодулей
-
-```bash
-git submodule update
-```
-
-* просмотр списка подмодулей
-
-```bash
-git submodule status
-```
-
-The all removal process would then be:
-
-```shell
-mv a/submodule a/submodule_tmp
-git submodule deinit -f -- a/submodule    
-rm -rf .git/modules/a/submodule
-
-git rm -f a/submodule
-# Note: a/submodule (no trailing slash)
-
-# or, if you want to leave it in your working tree
-git rm --cached a/submodule
-mv a/submodule_tmp a/submodule
-```
