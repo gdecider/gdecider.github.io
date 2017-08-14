@@ -75,6 +75,13 @@ git remote set-url origin https://github.com/USERNAME/OTHERREPOSITORY.git
 git branch --set-upstream-to=origin/<branch> <local_branch_name>
 ```
 
+* получение удаленной ветки в локальный репозиторий
+
+```bash
+git branch -f remote_branch_name origin/remote_branch_name
+git checkout remote_branch_name
+```
+
 * пуш коммита в удаленный репозиторий
 
 ```bash
