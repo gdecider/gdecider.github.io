@@ -129,6 +129,23 @@ toc: false
   * [http://fancyapps.com/fancybox/3/](http://fancyapps.com/fancybox/3/)
 
   * [https://github.com/fancyapps/fancybox](https://github.com/fancyapps/fancybox)
+  
+  **Получение плагина**
+  
+  ```bash
+  yarn add @fancyapps/fancybox
+  ```
+  
+  **Пути для подключения**
+  
+  ```
+  js: [
+	vendorsPath + '/@fancyapps/fancybox/dist/jquery.fancybox.js',
+  ],
+  css: [
+  	vendorsPath + '/@fancyapps/fancybox/dist/jquery.fancybox.css',
+  ],
+  ```
 
 * Magnific Popup
 
