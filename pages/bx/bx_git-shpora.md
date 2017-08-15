@@ -16,6 +16,23 @@ toc: true
 
 ### Справочник по командам
 
+#### Первоначальная настройка
+
+```bash
+# установка имени и почты
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+
+# установка редактора
+git config --global core.editor subl
+
+# проверка настроек общая
+git config --list
+
+# проверка настроек конкретного параметра
+git config user.name
+```
+
 #### Общие команды
 
 * инициализация
