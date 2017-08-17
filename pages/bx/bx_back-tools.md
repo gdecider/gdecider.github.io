@@ -46,6 +46,14 @@ toc: false
 
   * [http://marketplace.1c-bitrix.ru/solutions/asd.currencyrate/](http://marketplace.1c-bitrix.ru/solutions/asd.currencyrate/)
 
+* Форма обратной связи - простой конструктор веб-форм
+
+  * [http://marketplace.1c-bitrix.ru/solutions/altasib.feedback/](http://marketplace.1c-bitrix.ru/solutions/altasib.feedback/)
+  
+* reCaptchaFree
+
+  * [http://marketplace.1c-bitrix.ru/solutions/twim.recaptchafree/](http://marketplace.1c-bitrix.ru/solutions/twim.recaptchafree/)
+
 ### Проверка сайта на наличие вредоносного кода
 
 * [AI-Bolit](https://www.revisium.com/aibo/)
