@@ -48,7 +48,11 @@ entries:
     - title: Старт и перенос
       url: /bx_struktura-start-and-build.html
       output: web, pdf
-
+    
+    - title: Ведение разработки с использованием GIT
+      url: /bx_struktura-development-with-git.html
+      output: web, pdf
+      
       subfolders:
       - title: Установка скриптов
         output: web
