@@ -175,6 +175,10 @@ entries:
           url: /articles_bx-component-epilog-example.html
           output: web, pdf
           
+        - title: Статьи
+          url: /articles_bx-articles-order-and-basket.html
+          output: web, pdf
+          
       - title: Обмен с 1С
         output: web
         subfolderitems:
