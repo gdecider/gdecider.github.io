@@ -174,19 +174,16 @@ entries:
       url: /bx_server-ssl-lets-encrypt.html
       output: web, pdf
 
-  - title: Group 1
+  - title: Верстка рассылок
     output: web, pdf
     folderitems:
 
-    - title: Link 1
-      url: /mydoc_pages.html
+    - title: Общие принципы
+      url: /bx_email-code-style.html
+      output: web, pdf
+      
+    - title: Статьи
+      url: /bx_email-articles.html
       output: web, pdf
 
-      subfolders:
-      - title: Group 2
-        output: web
-        subfolderitems:
-
-        - title: Link 2
-          url: /tag_formatting.html
-          output: web
+      
