@@ -121,6 +121,12 @@ git pull origin master
 git push origin --delete <branchName>
 ```
 
+* обновление данных об удаленных ветках
+
+```bash
+git fetch -p
+```
+
 #### Откаты и восстановления
 
 * откатить не проиндексированный файл (до добавления в список перед коммита)
@@ -148,6 +154,7 @@ git clean -d -n
 ```bash
 git clean -d -n -x
 ```
+
 #### Прятанье [источник](https://git-scm.com/book/ru/v1/%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B-Git-%D0%9F%D1%80%D1%8F%D1%82%D0%B0%D0%BD%D1%8C%D0%B5)
 
 * спрятать изменения без коммита
@@ -298,6 +305,20 @@ git rm -f a/submodule
 # or, if you want to leave it in your working tree
 git rm --cached a/submodule
 mv a/submodule_tmp a/submodule
+```
+
+#### Оптимизация репозитория
+
+* Очистка логов
+
+```bash
+git reflog expire --all --expire=now
+```
+
+* Запуск сборщика мусора
+
+```bash
+git gc --prune=now --aggressive
 ```
 
 ### материалы для обучения
