@@ -36,20 +36,19 @@ toc: false
 * Выполнить переиндексацию ```Настройки -> Поиск -> Переиндексация```
 * Перед выводом компонента ```search.page``` добавить код
 
-```php
-<?php
-\Bitrix\Main\Loader::includeModule('search');
-$q = $_REQUEST['q'];
-$obSearch = new CSearch();
-$obSearch->Search([
-   "QUERY" => $q,
-   "SITE_ID" => LANG,
-]);
-if ( $obSearch->errorno == 0 
-  && !($arResult = $obSearch->GetNext())
-  && empty($arResult)
-) {
-     $_REQUEST['q'] = '"' . $_GET['q'] . '"';
-}
-?>
-```
+  ```php
+  <?php
+  \Bitrix\Main\Loader::includeModule('search');
+  $q = $_REQUEST['q'];
+  $obSearch = new CSearch();
+  $obSearch->Search([
+     "QUERY" => $q,
+     "SITE_ID" => LANG,
+  ]);
+  if ( $obSearch->errorno == 0 
+    && !($arResult = $obSearch->GetNext())
+    && empty($arResult)
+  ) {
+       $_REQUEST['q'] = '"' . $_GET['q'] . '"';
+  }?>
+  ```
