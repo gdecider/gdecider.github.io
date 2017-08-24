@@ -227,6 +227,14 @@ entries:
         - title: Диагональные элементы
           url: /articles_frontend-css-diagonals.html
           output: web, pdf
+          
+      - title: Адаптивная верстка
+        output: web
+        subfolderitems:
+      
+        - title: Статьи и советы
+          url: /articles_frontend-adaptiv-articles.html
+          output: web, pdf
 
   - title: Прочее
     output: web, pdf
