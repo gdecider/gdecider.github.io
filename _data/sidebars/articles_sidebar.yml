@@ -74,8 +74,12 @@ entries:
           type: homepage
 
   - title: 1С Битрикс
-    url: /articles-g-cms-bitrix.html
     output: web, pdf    
+    folderitems:
+
+    - title: Список статей
+      url: /articles-g-cms-bitrix.html
+      output: web, pdf
   
   - title: Битрикс24
     output: web, pdf
