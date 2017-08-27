@@ -3,7 +3,7 @@ title: Статьи CMS "1С Битрикс"
 keywords: cms 1с битрикс, статьи и примеры кода, обучающие материалы
 sidebar: articles_sidebar
 folder: articles
-permalink: articles_bx-g-common.html
+permalink: articles-g-cms-bitrix.html
 summary: Статьи и примеры кода для создания проектов на CMS 1С Битрикс
 toc: false
 ---
