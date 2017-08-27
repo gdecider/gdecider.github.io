@@ -28,9 +28,10 @@ toc: false
 * [Сортировка элементов каталога](/articles_bx-catalog-sort.html)
 * [Вывод ранее просмотренных товаров](/articles_bx-catalog-viewed-products.html)
 * [Вывод SEO блока на страницах каталога товаров](/articles_bx-seo-for-catalog.html)
-* [Умный фильтр Настраиваем зависимость свойств товаров от категорий](/articles_bx-smart-filter-category-props-config.html)
+* [Умный фильтр. Настраиваем зависимость свойств товаров от категорий](/articles_bx-smart-filter-category-props-config.html)
 * [Умный фильтр. Редизайн](/articles_bx-smart-filter-redesign.html)
 * [Умный фильтр. Перестроение фасетного индекса](/articles_bx-smart-filter-faset.html)
+* [Вывод стоимости товаров в одной валюте](/articles_bx-catalog-vivod-stoimosti-tovarov-v-odnoi-valute.html)
 
 ## Личный кабинет, корзина, оформление заказа
 
