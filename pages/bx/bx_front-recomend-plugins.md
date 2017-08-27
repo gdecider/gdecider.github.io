@@ -206,6 +206,28 @@ yarn add jquery-smooth-scroll
 
 ### Кастомизация элементов
 
+#### Маски ввода
+
+* Masked Input Plugin for jQuery
+  
+  * [http://digitalbush.com/projects/masked-input-plugin/](http://digitalbush.com/projects/masked-input-plugin/)
+
+  * [https://github.com/digitalBush/jquery.maskedinput](https://github.com/digitalBush/jquery.maskedinput)
+  
+  **Получение плагина**
+  
+  ```bash
+  yarn add jquery.maskedinput
+  ```
+  
+  **Пути для подключения**
+  
+  ```
+  js: [
+	vendorsPath + '/jquery.maskedinput/src/jquery.maskedinput.js',
+  ],
+  ```
+
 #### Выпадающие списки
 
 * jQuery Selectric
