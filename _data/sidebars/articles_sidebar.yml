@@ -96,6 +96,10 @@ entries:
     - title: О разделе
       url: /articles_frontend-about.html
       output: web, pdf
+          
+    - title: Оптимизация
+      url: /articles_fe-optimization.html
+      output: web, pdf      
 
       subfolders:      
       - title: CSS/SASS
