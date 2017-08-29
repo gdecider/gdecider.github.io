@@ -44,3 +44,7 @@ toc: false
 ## Обмен с 1С
 
 * [Описание процесса обмена с 1С](/articles_bx-1c-exch-base.html)
+
+## Миграции БД
+
+* [Вариант миграций БД от InterVolga](/articles_bx-migration-variant-ot-intervolga.html)
