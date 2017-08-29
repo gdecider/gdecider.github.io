@@ -21,3 +21,7 @@ toc: false
 * [ФЗ-152 — бесплатный модуль для сайтов на 1С-Битрикс](https://www.intervolga.ru/blog/support/vse-govoryat-o-trebovaniyakh-fz-152-k-saytam-a-my-sdelali/?bx_sender_conversion_id=137632&utm_source=intervolgaru&utm_medium=email&utm_campaign=month_digest)
 
 * [Гисты по работе с D7](https://github.com/SidiGi/bitrix-info/wiki/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0-(d7))
+
+* [Аудит — ИНТЕРВОЛГА наносит ответный удар](https://www.intervolga.ru/blog/support/audit-intervolga-nanosit-otvetnyy-udar/)
+
+* [Как обеспечить качество кода при командной веб-разработке](https://www.intervolga.ru/blog/projects/bad-code-go-away/)
