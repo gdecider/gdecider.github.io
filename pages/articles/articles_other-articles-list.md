@@ -25,3 +25,5 @@ toc: false
 * [Аудит — ИНТЕРВОЛГА наносит ответный удар](https://www.intervolga.ru/blog/support/audit-intervolga-nanosit-otvetnyy-udar/)
 
 * [Как обеспечить качество кода при командной веб-разработке](https://www.intervolga.ru/blog/projects/bad-code-go-away/)
+
+* [Умный фильтр с ЧПУ для SEO — Делаем как надо](https://www.intervolga.ru/blog/marketing/smartfilter-chpu-dlya-seo/)
