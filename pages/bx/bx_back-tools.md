@@ -58,6 +58,24 @@ toc: false
 
 * [AI-Bolit](https://www.revisium.com/aibo/)
 
+### Полезные команды
+
+* Синхронизация файлов и папок локального ПК с сервером. Команда сравнит файлы - скачает новые и удалит на локальной машине то чего нет на сервере, с этим моментом быть внимательным, для отключения удаления уберите флаг ```--delete```
+
+  ```
+  rsync -ah --progress --size-only --delete --numeric-ids -e "ssh -T -c arcfour -o Compression=no -x" someuser@somesite.ru:/var/www/some/folder/path/on/serevr/ /some/folder/path/on/your/pc
+  ```
+
+* Минимизация изображений
+
+```
+# Для JPG
+find . -type f -iname '*.jp*g' -print0 | xargs -0 jpegoptim --strip-all --all-progressive --max=85 -t
+
+# Для PNG
+find . -type f -iname '*.png' -print0 | xargs -0 optipng -strip all -o 1 -v
+```
+
 ### Подборка статей
 
 * Чек-лист проверки сайта на устойчивость
