@@ -136,84 +136,68 @@ toc: false
 
   ```
   # рекурсивно разархивировать все gz в те же папки где они лежат с удалением самого архива
-find . -name "*.gz" | xargs gunzip
+  find . -name "*.gz" | xargs gunzip
 
-http://askubuntu.com/questions/25347/what-command-do-i-need-to-unzip-extract-a-tar-gz-file
+  # Простое разархивирование одиночного файла
+  tar -xvzf community_images.tar.gz
+  tar -xvJf community_images.tar.xz
+  
+  # Разархивирование архива, поделенного на части
+  cat часть_1 часть_2 | tar -xvz
+  
+  # ИЛИ
+  # Если все части архива находятся в одной папке, то команда для склеивания выглядит так:
+  cat backup.tar.* | tar -xvz
 
-1) Простое разархивирование одиночного файла
-
-tar -xvzf community_images.tar.gz
-tar -xvJf community_images.tar.xz
-
-2) Разархивирование архива, поделенного на части
-cat часть_1 часть_2 | tar -xvz
-
-ИЛИ
-Если все части архива находятся в одной папке, то команда для склеивания выглядит так: (http://coder.v-tanke.ru/viewtopic.php?t=684)
-cat backup.tar.* | tar -xvz
-
-To explain a little further, tar collected all the files into one package, community_images.tar. The gzip program applied compression, hence the gz extension. So the command does a couple things.
-
-    f: this must be the last flag of the command, and the tar file must be immediately after. It tells tar the name and path of the compressed file.
-    z: tells tar to decompress the archive using gzip
-    x: tar can collect files or extract them. x does the latter.
-    v: makes tar talk a lot. Verbose output shows you all the files being extracted.
+    # f: this must be the last flag of the command, and the tar file must be immediately after. It tells tar the name and path of the compressed file.
+    # z: tells tar to decompress the archive using gzip
+    # x: tar can collect files or extract them. x does the latter.
+    # v: makes tar talk a lot. Verbose output shows you all the files being extracted.
     
-  To zip up an entire directory (including all subdirectories), type the following command:
+  # To zip up an entire directory (including all subdirectories), type the following command:
+  zip -r data *
 
-$  zip -r data *
+  # To use unzip to extract all files of the archive pics.zip into the current directory & subdirectories:
+  unzip  pics.zip
 
+  # Создание tar.gz архива
+  tar [-ключи] [название архива] [путь, что запаковать]
+  
+  # создать .tar  
+  tar -cvf file.tar /full/path
+  
+  # создать .tar.gz (архив)
+  tar -czvf file.tar.gz /full/path
+  
+  # создать .tar.bz2 (архив)
+  tar -cjvf file.tar.bz2 /full/path
 
-To use unzip to extract all files of the archive pics.zip into the current directory & subdirectories:
+  # создать zip
+  zip -r file.zip /full/path
 
-$ unzip  pics.zip
+  # Распаковать:
+  tar -xvf file.tar.gz
+  unzip file.zip
+  
+  Ключи:
+  с - (Create) создать архив.
+  z – создает архив .tar.gz
+  j - создает архив .tar.bz2
+  x - (eXtract) позволяет вам извлекать файлы из архива.
+  v - делает вывод tar подробным. Это означает, что на экран будут выведены все найденные в архиве файлы. Если эта опция опущена, информация, выводимая в процессе обработки, будет ограничена.
+  f - является обязательной опцией. Без неё tar пытается использовать магнитную ленту вместо файла архива.
+  z - позволяет вам обрабатывать архив, сжатый gzip'ом (с расширением .gz). Если вы забудете указать эту опцию, tar выдаст ошибку. И наоборот, эта опция не должна использоваться для несжатых архивов.
+  t - (Test) просмотреть содержимое архива.
 
-Создание tar.gz архива
+  # Архивировать по кускам
+  tar cvzf - dir/ | split --bytes=200MB - sda1.backup.tar.gz.
 
-Синтаксис:
-tar [-ключи] [название архива] [путь, что запаковать]
-
-tar -cvf file.tar /full/path - создать .tar
-tar -czvf file.tar.gz /full/path - создать .tar.gz (архив)
-tar -cjvf file.tar.bz2 /full/path - создать .tar.bz2 (архив)
-
-и на всякий случай zip:
-zip -r file.zip /full/path - создать .zip (архив)
-
-Распаковать:
-tar -xvf file.tar.gz
-unzip file.zip
-
-Ключи:
-с - (Create) создать архив.
-z – создает архив .tar.gz
-j - создает архив .tar.bz2
-x - (eXtract) позволяет вам извлекать файлы из архива.
-v - делает вывод tar подробным. Это означает, что на экран будут выведены все найденные в архиве файлы. Если эта опция опущена, информация, выводимая в процессе обработки, будет ограничена.
-f - является обязательной опцией. Без неё tar пытается использовать магнитную ленту вместо файла архива.
-z - позволяет вам обрабатывать архив, сжатый gzip'ом (с расширением .gz). Если вы забудете указать эту опцию, tar выдаст ошибку. И наоборот, эта опция не должна использоваться для несжатых архивов.
-t - (Test) просмотреть содержимое архива.
-
-
-
-=== Архивировать по кускам ===
-
-You can pipe tar to the split command:
-
-tar cvzf - dir/ | split --bytes=200MB - sda1.backup.tar.gz.
-
-On some *nix systems (like OS X) you may get the following error:
-
-split: illegal option -- -
-
-In that case try:
-
-tar cvzf - dir/ | split -b 1024MB - sda1.backup.tar.gz.
-
-If you happen to be trying to split file to fit on a FAT32 formatted drive use a byte limit of 4294967295. For example:
-
-tar cvzf - /Applications/Install\ macOS\ Sierra.app/ | \
-split -b 4294967295 - /Volumes/UNTITLED/install_macos_sierra.tgz.
+  # В случае ошибки "split: illegal option -- -"
+  tar cvzf - dir/ | split -b 1024MB - sda1.backup.tar.gz.
+  
+  #If you happen to be trying to split file to fit on a FAT32 formatted drive use a byte limit of 4294967295. For example:
+  tar cvzf - /Applications/Install\ macOS\ Sierra.app/ | \
+  split -b 4294967295 - /Volumes/UNTITLED/install_macos_sierra.tgz.
   ```
 * Передача файлов на Яндекс.Диск
   
