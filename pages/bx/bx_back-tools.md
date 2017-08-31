@@ -90,6 +90,14 @@ toc: false
   
   # ищем только в файлах с расширением "php"
   grep --include="*.php" -nRHIi "some text in file" .
+  
+  # описание ключей  
+  --include=PATTERN - Recurse in directories only searching file matching PATTERN.
+  -n, --line-number - Prefix each line of output with the line number within its input file.
+  -R, -r, --recursive - Read all files under each directory, recursively; this is equivalent to the -d recurse option.
+  -H, --with-filename - Print the filename for each match.
+  -I - Process a binary file as if it did not contain matching data; this is equivalent to the --binary-files=without-match option.
+  -i - case-insensitive results.
   ```
 
 * Определение свободного места на сервере
@@ -100,14 +108,6 @@ toc: false
   
   # просмотр размеров по папкам
   du -h --max-depth=1 /path/to/folder/ | sort -n -r
-  
-  # описание ключей  
-  --include=PATTERN - Recurse in directories only searching file matching PATTERN.
-  -n, --line-number - Prefix each line of output with the line number within its input file.
-  -R, -r, --recursive - Read all files under each directory, recursively; this is equivalent to the -d recurse option.
-  -H, --with-filename - Print the filename for each match.
-  -I - Process a binary file as if it did not contain matching data; this is equivalent to the --binary-files=without-match option.
-  -i - case-insensitive results.
   ```
 
 * Установка прав на файлы и папки
