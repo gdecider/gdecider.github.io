@@ -232,6 +232,24 @@ git branch -a
 git branch -r
 ```
 
+* совместный просмотр и локальных и удаленных веток с подробной информацией
+
+```bash
+git branch -avv
+```
+
+* просмотр веток, влитых в текущую
+
+```bash
+git branch --merged
+```
+
+* просмотр веток, не влитых в текущую
+
+```bash
+git branch --no-merged
+```
+
 * Слияние веток
 
 ```bash
@@ -239,7 +257,7 @@ git branch -r
 git checkout branch1-name
 
 # льем другую ветку в текущую
-git merge branch2-name
+git merge --no-ff branch2-name
 
 # если после слияния ветка не нужна, то можно ее удалить 
 git branch -d branch2-name
