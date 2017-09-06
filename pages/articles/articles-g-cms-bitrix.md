@@ -32,6 +32,7 @@ toc: false
 * [Умный фильтр. Редизайн](/articles_bx-smart-filter-redesign.html)
 * [Умный фильтр. Перестроение фасетного индекса](/articles_bx-smart-filter-faset.html)
 * [Вывод стоимости товаров в одной валюте](/articles_bx-catalog-vivod-stoimosti-tovarov-v-odnoi-valute.html)
+* [Красивое ЧПУ умного фильтра для свойств списка при выгрузке из 1С](/articles_bx-smart-filter-chpu-pri-vigruzke-iz-1c.html)
 
 ## Личный кабинет, корзина, оформление заказа
 
