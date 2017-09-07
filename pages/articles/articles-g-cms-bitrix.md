@@ -45,6 +45,7 @@ toc: false
 ## Обмен с 1С
 
 * [Описание процесса обмена с 1С](/articles_bx-1c-exch-base.html)
+* [Описание процесса обмена с 1С еще одно](http://dermanov.ru/exp/bitrix-integration-with-1c-brief-introduction/)
 
 ## Миграции БД
 
