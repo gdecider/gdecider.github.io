@@ -27,6 +27,23 @@ toc: false
   * [http://kenwheeler.github.io/slick/](http://kenwheeler.github.io/slick/)
 
   * [https://github.com/kenwheeler/slick/](https://github.com/kenwheeler/slick/)
+  
+  **Получение плагина**
+  
+  ```bash
+  yarn add slick-carousel
+  ```
+  
+  **Пути для подключения**
+  
+  ```
+  js: [
+	vendorsPath + '/slick-carousel/slick/slick.js',
+  ],
+  css: [
+  	vendorsPath + '/slick-carousel/slick/slick.css',
+  ],
+  ```
 
 * BXSlider
 
