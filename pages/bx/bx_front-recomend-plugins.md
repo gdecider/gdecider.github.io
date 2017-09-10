@@ -18,6 +18,12 @@ toc: false
 
   * [https://avocode.com/](https://avocode.com/)
 
+## Web-сервисы
+
+* Transfonter - преобразование шрифтов для подключения на сайт
+
+  * [https://transfonter.org/](https://transfonter.org/)
+
 ## Рекомендуемые плагины 
 
 ### Слайдеры
