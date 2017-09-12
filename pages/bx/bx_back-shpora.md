@@ -39,10 +39,13 @@ $this->addExternalJS("/local/libs.js");
 
 ```php
 // С возможностью правки из пользовательской части
-<?$APPLICATION->IncludeFile(SITE_TEMPLATE_PATH.'/inc/popupForms.php');?>
+<?$APPLICATION->IncludeFile(SITE_TEMPLATE_PATH . '/inc/popupForms.php');?>
 
 // Без возможности правки из пользовательской части
-<?$APPLICATION->IncludeFile(SITE_TEMPLATE_PATH.'/inc/popupForms.php', [], ['SHOW_BORDER' => false]);?>
+<?$APPLICATION->IncludeFile(SITE_TEMPLATE_PATH . '/inc/popupForms.php', [], ['SHOW_BORDER' => false]);?>
+
+// С указанием типа правки php, html, text
+<?$APPLICATION->IncludeFile(SITE_TEMPLATE_PATH . '/inc/popupForms.php', [], ["MODE" => "php"]); ?>
 
 // Через включаемую область
 <?$APPLICATION->IncludeComponent(
