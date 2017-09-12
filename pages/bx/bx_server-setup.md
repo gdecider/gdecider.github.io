@@ -10,3 +10,38 @@ toc: false
 
 ## Настройка сервера
 
+### Настройка сжатия
+
+В случае использования связки nginx + apache, т.к. статику (css, js, ...) отдает nginx, то следует отключить сжатие на стороне apache и включить на стороне nginx
+
+```bash
+# отключаем модуль сжатия в apache
+sudo a2dismod deflate
+sudo /etc/init.d/apache2 restart
+```
+Правим конфиг nginx (```/etc/nginx/```) для активации сжатия
+
+```
+server {
+    ....
+    gzip                on;
+    gzip_disable        "msie6";
+    gzip_http_version   1.0;
+    gzip_min_length     1100;
+    gzip_buffers        4 8k;
+    gzip_types 
+      text/plain 
+      text/css 
+      application/json 
+      application/x-javascript 
+      text/xml 
+      application/xml 
+      application/xml+rss 
+      text/javascript 
+      application/javascript;
+      
+    gzip_proxied            expired no-cache no-store private auth;
+    gzip_vary               on;
+    gzip_comp_level         5; # степень сжатия от 1 до 9
+}
+```
