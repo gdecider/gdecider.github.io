@@ -26,7 +26,7 @@ git config --global user.email johndoe@example.com
 # отключить fast-forward при merge (начиная с git version 1.7.6)
 git config --global merge.ff false
 # разрешить fast-forward при pull, т.к. pull == featch+merge  (начиная с git version 1.7.6)
-git config --global pull.ff only
+git config --global pull.ff yes
 
 # установка редактора
 git config --global core.editor subl
