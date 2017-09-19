@@ -31,6 +31,11 @@ git config --list
 
 # проверка настроек конкретного параметра
 git config user.name
+
+# отключить fast-forward при merge (начиная с git version 1.7.6)
+git config --global merge.ff false
+# разрешить fast-forward при pull, т.к. pull == featch+merge  (начиная с git version 1.7.6)
+git config --global pull.ff only
 ```
 
 #### Общие команды
