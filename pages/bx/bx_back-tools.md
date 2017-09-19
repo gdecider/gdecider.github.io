@@ -53,6 +53,10 @@ toc: false
 * reCaptchaFree
 
   * [http://marketplace.1c-bitrix.ru/solutions/twim.recaptchafree/](http://marketplace.1c-bitrix.ru/solutions/twim.recaptchafree/)
+  
+* Кнопки "Поделиться" соц. сетей
+  
+  * [https://marketplace.1c-bitrix.ru/solutions/api.yashare/](https://marketplace.1c-bitrix.ru/solutions/api.yashare/)
 
 ### Проверка сайта на наличие вредоносного кода
 
