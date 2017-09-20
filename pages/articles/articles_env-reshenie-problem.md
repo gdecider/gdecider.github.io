@@ -22,3 +22,21 @@ nano ~/PhpStorm-163.10504.2/bin/phpstorm64.vmoptions
 // Так же указываем верный путь именно для вашей системы
 -javaagent:/home/user/fix/build/LinuxJavaFixes-1.0.0-SNAPSHOT.jar
 ```
+
+### PHPStorm ошибка "User limit of inotify watches reached" в Ubuntu 16.04
+
+* Проверяем текущее ограничение на количество вотчеров
+
+```bash
+cat /proc/sys/fs/inotify/max_user_watches
+
+# результат: 8192
+```
+
+* Увеличиваем количество вотчеров до нужного нам
+
+```bash
+echo fs.inotify.max_user_watches=32768 | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p
+```
+
