@@ -88,6 +88,14 @@ entries:
     - title: Пример разработки модуля
       url: /articles_bx24-module-example.html
       output: web, pdf
+  
+  - title: Git
+    output: web, pdf    
+    folderitems:
+
+    - title: Список статей
+      url: /articles-g-git.html
+      output: web, pdf
       
   - title: Front-end
     output: web, pdf
@@ -133,14 +141,6 @@ entries:
         - title: Статьи и советы
           url: /articles_frontend-adaptiv-articles.html
           output: web, pdf
-          
-  - title: Git
-    output: web, pdf    
-    folderitems:
-
-    - title: Список статей
-      url: /articles-g-git.html
-      output: web, pdf
       
   - title: Прочее
     output: web, pdf
