@@ -149,6 +149,6 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Список статей для прочтения и переработки
+    - title: Список статей
       url: /articles_other-articles-list.html
       output: web, pdf
