@@ -22,11 +22,14 @@ entries:
     output: web, pdf
     folderitems:
     
+    - title: PHPStorm
+      url: /articles-env-phpstorm-index.html
+      output: web, pdf
+    
     - title: Решение проблем
       url: /articles_env-reshenie-problem.html
       output: web, pdf
-      type: homepage
-    
+          
       subfolders:      
       - title: Vagrant
         output: web
