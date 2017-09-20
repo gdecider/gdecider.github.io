@@ -3,7 +3,7 @@ title: Статьи Git | Составление файла .gitignore
 keywords: файл .gitignore
 sidebar: articles_sidebar
 folder: articles
-permalink: articles-g-git-gitignore.html
+permalink: articles-git-gitignore.html
 summary: false
 toc: false
 ---
