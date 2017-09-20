@@ -7,6 +7,9 @@ permalink: articles_other-articles-list.html
 summary: false
 toc: false
 ---
+## Разное
+
+* [Настройка SSH ключей](/articles-other-ssh-keys.html)
 
 ## Список статей для прочтения и переработки
 
