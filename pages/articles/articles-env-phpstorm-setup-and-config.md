@@ -19,3 +19,11 @@ toc: false
 ```File -> Settings -> Plugins -> Browse repositories...```
 
 В открывшемся окне ищем "Bitrix Framework Support", жмем по нему правой кнопкой мыши и выбираем "Download and Install" или жмем кнопку "install" в правой части окна
+
+### Установка плагина [BitrixLangCompletion](https://plugins.jetbrains.com/plugin/8156-bitrixlangcompletion)
+
+Устанавливаем плагин в PhpStorm:
+
+```File -> Settings -> Plugins -> Browse repositories...```
+
+В открывшемся окне ищем "BitrixLangCompletion", жмем по нему правой кнопкой мыши и выбираем "Download and Install" или жмем кнопку "install" в правой части окна
