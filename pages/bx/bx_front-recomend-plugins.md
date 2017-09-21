@@ -177,6 +177,7 @@ toc: false
   * [https://github.com/dimsemenov/Magnific-Popup](https://github.com/dimsemenov/Magnific-Popup)
 
 ### Изменение страницы при прокрутке
+
 * jQuery.Scroolly
 
   * [https://github.com/chayka/jQuery.Scroolly](https://github.com/chayka/jQuery.Scroolly)
@@ -366,3 +367,9 @@ yarn add jquery-smooth-scroll
   * [https://www.highcharts.com/](https://www.highcharts.com/)
 
   * [https://github.com/highcharts/highcharts](https://github.com/highcharts/highcharts)
+
+### Аудио и видео плееры
+
+* MediaElement.js
+
+  * [http://www.mediaelementjs.com/](http://www.mediaelementjs.com/)
