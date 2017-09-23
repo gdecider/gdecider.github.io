@@ -91,6 +91,14 @@ entries:
     - title: Пример разработки модуля
       url: /articles_bx24-module-example.html
       output: web, pdf
+      
+  - title: MySql
+    output: web, pdf    
+    folderitems:
+
+    - title: Список статей
+      url: /articles-g-mysql.html
+      output: web, pdf
   
   - title: Git
     output: web, pdf    
