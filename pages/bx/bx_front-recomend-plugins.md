@@ -178,6 +178,27 @@ toc: false
 
 ### Изменение страницы при прокрутке
 
+* sticky-header 
+
+  Используется для простого закрепления меню/шапки при прокрутке
+  
+  * [https://www.npmjs.com/package/sticky-header](https://www.npmjs.com/package/sticky-header)
+  * [https://github.com/ltebean/sticky-header](https://github.com/ltebean/sticky-header)
+  
+  **Получение плагина**
+  
+  ```bash
+  yarn add sticky-header
+  ```
+  
+  **Пути для подключения**
+  
+  ```
+  js: [
+ 	vendorsPath + '/sticky-header/index.js',
+  ],
+  ```
+
 * jQuery.Scroolly
 
   * [https://github.com/chayka/jQuery.Scroolly](https://github.com/chayka/jQuery.Scroolly)
