@@ -1,16 +1,18 @@
 ---
 title: Статьи 1С | Примеры фильтра для GetList и компонентов
-keywords: sample homepage
+keywords: фильтры в битрикс, getlist filter
 sidebar: articles_sidebar
 folder: articles
 permalink: articles_bx-filter-getlist-examples.html
-summary: false
+summary: Примеры часто используемых настроек при фильтрации элементов, сслыки на статьи и документацию по работе фильтров и с фильтрами в Битрикс
 toc: false
 ---
 
 ## Примеры фильтра для GetList и компонентов
 
-Приведены примеры часто используемых настроек при фильтрации элементов
+**Дополнительные ссылки:**
+
+* [https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=43&LESSON_ID=2683#types](https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=43&LESSON_ID=2683#types)
 
 #### Варианты модификаторов условий фильтрации
 
