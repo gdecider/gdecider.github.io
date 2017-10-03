@@ -26,4 +26,7 @@ Usage: ./bitrix-env.sh [-s] [-p [-H hostname]] [-M mysql_root_password]
 ```
 После выполнения этих команд будет выведена информация о проделаной работе, среди этой информации будет строка **You can find root password at /root/.my.cnf client config file.** забираем пароль для БД и удаляем этот файл.
 
+# Произвольная настройка доменов
 
+* Файл конфигурации хостов apache: ```/etc/httpd/bx/conf/bx_ext_<sitename>.conf```
+* Файл конфигурации хостов nginx: ```/etc/nginx/bx/site_enabled/bx_ext_<sitename>.conf```, ```/etc/nginx/bx/site_enabled/bx_ext_ssl_<sitename>.conf``` - это ссылки на файл из директории ```sites_available```
