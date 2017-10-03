@@ -9,4 +9,4 @@ folder: articles
 
 ## Список статей
 
-* [Быстрая настройка окружения для Битрикс на VDS на основе VM Bitrix](/articles-g-env-bitrix-vm-fast-setup-vds.html)
+* [Быстрая настройка окружения для Битрикс на VDS на основе VM Bitrix](/articles-env-bitrix-vm-fast-setup-vds.html)
