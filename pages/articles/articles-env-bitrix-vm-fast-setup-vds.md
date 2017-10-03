@@ -2,7 +2,7 @@
 title: Быстрая настройка окружения для Битрикс на VDS на основе VM Bitrix | Статьи Рабочее окружение
 sidebar: articles_sidebar
 keywords: bitrix vm vds
-permalink: articles-g-env-bitrix-vm-fast-setup-vds.html
+permalink: articles-env-bitrix-vm-fast-setup-vds.html
 toc: false
 folder: articles
 ---
