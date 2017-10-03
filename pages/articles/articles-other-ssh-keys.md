@@ -63,8 +63,10 @@ subl ~/.ssh/id_rsa.pub
 #### Вариант 1
 
 ```sh
-ssh-copy-id <user_name>@<server_ip_on_domain> [-i <your_pub_key_path>]
+ssh-copy-id [-i <your_pub_key_path>] <user_name>@<server_ip_on_domain>
 ```
+
+**-i <путь_к_публичному_файлу_ключа>** используется, если у Вас файл ключа называется не стандартным образом или расположен в не стандартной директории.
 
 #### Вариант 2
 
