@@ -22,6 +22,10 @@ entries:
     output: web, pdf
     folderitems:
     
+    - title: Список статей
+      url: /articles-g-env.html
+      output: web, pdf
+      
     - title: PHPStorm
       url: /articles-env-phpstorm-index.html
       output: web, pdf
