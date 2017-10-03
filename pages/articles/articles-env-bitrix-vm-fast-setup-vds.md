@@ -30,3 +30,10 @@ Usage: ./bitrix-env.sh [-s] [-p [-H hostname]] [-M mysql_root_password]
 
 * Файл конфигурации хостов apache: ```/etc/httpd/bx/conf/bx_ext_<sitename>.conf```
 * Файл конфигурации хостов nginx: ```/etc/nginx/bx/site_enabled/bx_ext_<sitename>.conf```, ```/etc/nginx/bx/site_enabled/bx_ext_ssl_<sitename>.conf``` - это ссылки на файл из директории ```sites_available```
+
+После правки файлов не забываем рестартовать демонов
+
+```
+systemctl restart httpd
+systemctl restart nginx
+```
