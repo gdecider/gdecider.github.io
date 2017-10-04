@@ -19,6 +19,7 @@ toc: false
 * [Добавление свойства в инфоблок](/articles_bx-add-iblock-property.html)
 * [Получить предыдущий и следующий элементы](/articles_bx-getlist-prev-and-next.html)
 * [Кастомизация функции отправки почты custom_mail](/articles_bx-send-email-custom-mail.html)
+* [Настройка работы Агентов Битрикс по cron](/articles-bx-set-agents-on-cron.html)
 * [Пример создания компонента](/articles_bx-component-creation.html)
 * [Одновременная авторизация только одного пользователя на сайте](/articles_bx-single-user-auth.html)
 * [Поиск товаров по цепочке разделов, переиндексация поиска](/articles-bx-search-group-chain-in-tovar-and-reindex.html)
