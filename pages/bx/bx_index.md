@@ -9,6 +9,9 @@ toc: false
 ---
 
 ## Материалы для обучения
+
+### Битрикс
+
 Для изучения Битрикса рекомендуем ознакомиться со следующими ресурсами:
 
 *  [Видеокурсы от Академии 1С Битрикс](https://academy.1c-bitrix.ru/training/course/)
@@ -105,4 +108,13 @@ toc: false
    *  http://abraxabra.ru/blog/
       
    *  http://vvski.ru
-{% include links.html %}
+   
+### PHP
+
+#### Сайты
+
+  * [http://phpfaq.ru](http://phpfaq.ru)
+
+#### Книги
+
+  * [PHP 7 в подлиннике (Дмитрий Котеров, Игорь Симдянов)](https://www.ozon.ru/context/detail/id/137538198/)
