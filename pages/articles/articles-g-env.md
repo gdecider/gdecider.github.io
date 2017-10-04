@@ -11,3 +11,4 @@ folder: articles
 
 * [Быстрая настройка окружения для Битрикс на VDS на основе VM Bitrix](/articles-env-bitrix-vm-fast-setup-vds.html)
 * [Настройка отправки почты Яндекс.Почта и BitrixVM](/articles-env-bitrix-vm-mail-config.html)
+* [Работа с cron](/articles-env-cron-howto.html)
