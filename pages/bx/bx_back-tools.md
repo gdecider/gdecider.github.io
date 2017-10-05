@@ -57,6 +57,10 @@ toc: false
 * Кнопки "Поделиться" соц. сетей
   
   * [https://marketplace.1c-bitrix.ru/solutions/api.yashare/](https://marketplace.1c-bitrix.ru/solutions/api.yashare/)
+  
+* Параметры заказа в письме
+
+  * [https://marketplace.1c-bitrix.ru/solutions/ipol.mailorder/](https://marketplace.1c-bitrix.ru/solutions/ipol.mailorder/)
 
 ### Проверка сайта на наличие вредоносного кода
 
