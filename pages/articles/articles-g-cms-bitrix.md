@@ -23,6 +23,7 @@ toc: false
 * [Пример создания компонента](/articles_bx-component-creation.html)
 * [Одновременная авторизация только одного пользователя на сайте](/articles_bx-single-user-auth.html)
 * [Поиск товаров по цепочке разделов, переиндексация поиска](/articles-bx-search-group-chain-in-tovar-and-reindex.html)
+* [Обработка текста включаемой области перед выводом](/articles-bx-main-include-preload.html)
 * [Решение проблем](/articles_bx_problems.html)
 
 ## Каталог товаров и умный фильтр
