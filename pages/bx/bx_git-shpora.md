@@ -376,7 +376,7 @@ git submodule update
 git submodule status
 ```
 
-The all removal process would then be:
+* Удаление подмодуля
 
 ```shell
 mv a/submodule a/submodule_tmp
@@ -390,6 +390,20 @@ git rm -f a/submodule
 git rm --cached a/submodule
 mv a/submodule_tmp a/submodule
 ```
+
+В случае получения ошибки "already exists in the index" при добавлении подмодуля:
+ 
+```bash
+#просмотреть наличие проиндексированных данных
+git ls-files --stage projectfolder
+
+# удалить данные из индекса
+git rm --cached projectfolder
+
+# повторно пытаемся добавить подмодуль
+git add submodule <repo> <path>
+```
+
 
 #### Оптимизация репозитория
 
