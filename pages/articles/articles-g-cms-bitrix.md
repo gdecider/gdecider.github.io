@@ -24,6 +24,7 @@ toc: false
 * [Одновременная авторизация только одного пользователя на сайте](/articles_bx-single-user-auth.html)
 * [Поиск товаров по цепочке разделов, переиндексация поиска](/articles-bx-search-group-chain-in-tovar-and-reindex.html)
 * [Обработка текста включаемой области перед выводом](/articles-bx-main-include-preload.html)
+* [Изменить лицензионный ключ Битрикс на сайте](/articles-bx-change-lisens-key.html)
 * [Решение проблем](/articles_bx_problems.html)
 
 ## Каталог товаров и умный фильтр
