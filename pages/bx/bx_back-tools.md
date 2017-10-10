@@ -61,6 +61,10 @@ toc: false
 * Параметры заказа в письме
 
   * [https://marketplace.1c-bitrix.ru/solutions/ipol.mailorder/](https://marketplace.1c-bitrix.ru/solutions/ipol.mailorder/)
+  
+* Лайки для элементов информационных блоков
+
+  * [https://marketplace.1c-bitrix.ru/solutions/vasoft.likeit/](https://marketplace.1c-bitrix.ru/solutions/vasoft.likeit/)
 
 ### Проверка сайта на наличие вредоносного кода
 
