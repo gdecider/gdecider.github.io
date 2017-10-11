@@ -40,9 +40,6 @@ toc: true
        # Необходимо указать почту куда будут приходить уведомления о необходимости
        # продлить сертификат, если что-то пошло не так и автообновление не сработало.
        email = admin@example.com
-       # Если генерация сертификатов настраивается исключительно на один домен
-       # Можно указать их здесь, раскомментировав строки ниже
-       #domains = example.com, www.example.com
        text = True
        non-interactive = True
        agree-tos = True
@@ -66,7 +63,7 @@ toc: true
     if service --status-all | grep -Fq 'apache2'; then
        service apache2 reload
     fi
-    if service --status-all | grep -Fq 'httpd'; then
+    if systemctl list-units --type service | grep -Fq 'httpd'; then
        service httpd reload
     fi
     if service --status-all | grep -Fq 'nginx'; then
@@ -104,6 +101,7 @@ toc: true
     - После чего уже можно проверить работу получения сертификата, запустив команду в режиме для тестов:
 
     ```bash
+    $ rm -f /var/www/letsencrypt/.well-known/acme-challenge/ok.html
     $ sudo certbot certonly --dry-run -d мой-домен.com
     ```
     В конце программа должна отчитаться об успешной работе: `The dry run was successful.`
