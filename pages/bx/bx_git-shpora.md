@@ -36,6 +36,9 @@ git config --list
 
 # проверка настроек конкретного параметра
 git config user.name
+
+# для удаления настройки
+git config --global --unset <param.name>
 ```
 
 #### Общие команды
