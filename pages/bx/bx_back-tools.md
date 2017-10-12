@@ -77,6 +77,15 @@ toc: false
   ```
   rsync -ah --progress --size-only --delete --numeric-ids -e "ssh -T -c arcfour -o Compression=no -x" someuser@somesite.ru:/var/www/some/folder/path/on/serevr/ /some/folder/path/on/your/pc
   ```
+  В случае получения ошибки:
+  
+  ```
+  Unable to negotiate with XX.XX.XX.XX port 22: no matching cipher found. Their offer: chacha20-poly1305@openssh.com,aes128-ctr,aes192-ctr,aes256-ctr,aes128-gcm@openssh.com,aes256-gcm@openssh.com,aes128-cbc,aes192-cbc,aes256-cbc,blowfish-cbc,cast128-cbc,3des-cbc
+rsync: connection unexpectedly closed (0 bytes received so far) [Receiver]
+rsync error: unexplained error (code 255) at io.c(226) [Receiver=3.1.1]
+  ```
+  
+  Эта ошибка означает, что на сервере к которому происходит подключение SSH не поддерживает выбранный протокол шифрования, в данном случае это **arcfour** и сервер приводит список поддерживаемых, нужно выбрать один из поддерживаемых и использовать его, например **-c aes256-ctr**
 
 * Минимизация изображений
 
