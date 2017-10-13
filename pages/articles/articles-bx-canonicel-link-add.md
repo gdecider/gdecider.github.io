@@ -45,6 +45,7 @@ if (!CSite::InDir('/catalog/')) {
 Для разделов каталога разместим код получения каноникал в файле result_midifier.php шаблона компонента catalog.section:
 
 ```php
+<?
 $arResult['CSTM']['CANONICAL'] = '';
 
 if (isset($arResult["ORIGINAL_PARAMETERS"]["CURRENT_BASE_PAGE"]) && strlen($arResult["ORIGINAL_PARAMETERS"]["CURRENT_BASE_PAGE"]) > 0) {
@@ -65,14 +66,17 @@ if (is_object($this->__component)) {
         $arResult['CSTM']['CANONICAL'] = $cp->arResult['CSTM_CANONICAL'];
     }
 }
+?>
 ```
 
 Добавим вывод сформированного каноникола в файл component_epilog.php шаблона компонента catalog.section:
 
 ```php
+<?
 if (strlen($arResult['CSTM_CANONICAL']) > 0 ) {
     \Bitrix\Main\Page\Asset::getInstance()->addString('<link rel="canonical" href="' . $arResult['CSTM_CANONICAL'] . '" />');
 }
+?>
 ```
 
 ##### Элементы каталога
@@ -80,6 +84,7 @@ if (strlen($arResult['CSTM_CANONICAL']) > 0 ) {
 Для элементов каталога разместим код получения каноникал в файле result_midifier.php шаблона компонента catalog.element:
 
 ```php
+<?
 $arResult['CSTM']['CANONICAL'] = '';
 
 if (strlen(trim($arResult['PROPERTIES']['CANONICAL_LINK']['VALUE']))) {
@@ -103,12 +108,15 @@ if (is_object($this->__component)) {
         $arResult['CSTM']['CANONICAL'] = $cp->arResult['CSTM_CANONICAL'];
     }
 }
+?>
 ```
 
 Добавим вывод сформированного каноникола в файл component_epilog.php шаблона компонента catalog.element:
 
 ```php
+<?
 if (strlen($arResult['CSTM_CANONICAL']) > 0 ) {
     \Bitrix\Main\Page\Asset::getInstance()->addString('<link rel="canonical" href="' . $arResult['CSTM_CANONICAL'] . '" />');
 }
+?>
 ```
