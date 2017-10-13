@@ -31,6 +31,7 @@ toc: false
  ```php
 <?
 if (!CSite::InDir('/catalog/')) {
+    $curPage = $APPLICATION->GetCurPage(false);
     $canonical = $_SERVER["REQUEST_SCHEME"] . '://' . $_SERVER["HTTP_HOST"] . $curPage;
     $assets->addString('<link rel="canonical" href="' . $canonical . '" />');
 }
