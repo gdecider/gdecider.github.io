@@ -52,3 +52,37 @@ toc: false
        $_REQUEST['q'] = '"' . $_GET['q'] . '"';
   }?>
   ```
+  
+## Ошибка "Class 'Bitrix\Lists\Update\EcrmPropertyUpdate' not found (0)"
+  
+Может возникать после обновления системы. Связана с работой агента.
+  
+#### Решение
+
+В файле ```/bitrix/php_interface/dbconn.php``` добавить константу для остановки работы агентов:
+
+```php
+<?
+define('NO_AGENT_CHECK', true);
+?>
+```
+
+После этого можно войти в админку и деактивировать агент:
+
+**Модуль агента "lists", функция агента "Bitrix\Lists\Update\EcrmPropertyUpdate::execAgent();"**
+
+Или удалить агент кодом:
+
+```php
+<?
+\CAgent::removeAgent('Bitrix\Lists\Update\EcrmPropertyUpdate::execAgent();', 'lists');
+?>
+```
+
+После удаления агента возвращаем работоспособность агентам...
+
+```php
+<?
+define('NO_AGENT_CHECK', false);
+?>
+```
