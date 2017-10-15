@@ -42,12 +42,14 @@ toc: true
 #### Создание обработчиков событий
 
 ```php
+<?
 $eventManager = \Bitrix\Main\EventManager::getInstance();
 
 // CDec1C
 $eventManager->addEventHandler("catalog", "OnPriceAdd", ["CDec1C", "handlerOnPriceAdd"]);
 $eventManager->addEventHandler("catalog", "OnPriceUpdate", ["CDec1C", "handlerOnPriceUpdate"]);
 $eventManager->addEventHandler("iblock", "OnAfterIBlockElementUpdate", ["CDec1C", "handlerOnAfterIBlockElementUpdate"]);
+?>
 ```
 
 #### Код функций обработчиков
