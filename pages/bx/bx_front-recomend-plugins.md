@@ -235,9 +235,18 @@ toc: false
 
   * [https://www.npmjs.com/package/jquery-smooth-scroll](https://www.npmjs.com/package/jquery-smooth-scroll)
 
-```
-yarn add jquery-smooth-scroll
-```
+  ```
+  yarn add jquery-smooth-scroll
+  ```
+  
+  
+  **Пути для подключения**
+  
+  ```
+  js: [
+	vendorsPath + '/jquery-smooth-scroll/jquery.smooth-scroll.js',
+  ],
+  ```
 
 ### Валидаторы
 
