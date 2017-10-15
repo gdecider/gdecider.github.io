@@ -26,6 +26,7 @@ toc: false
 * [Обработка текста включаемой области перед выводом](/articles-bx-main-include-preload.html)
 * [Изменить лицензионный ключ Битрикс на сайте](/articles-bx-change-lisens-key.html)
 * [Добавление canonical link на страницы сайта](/articles-bx-canonicel-link-add.html)
+* [Добавление неограниченного количества сортировок в компонент catalog.section](/articles-bx-catalog-section-unlimited-sort.html)
 * [Решение проблем](/articles_bx_problems.html)
 
 ## Каталог товаров и умный фильтр
