@@ -20,7 +20,6 @@ toc: false
 <?
 // переменные
 $IBLOCK_ID = 14;
-$PROP_VALUE = 'Да';
 $PROP_CODE = 'SAYT_OPTOVIK';
 $PROP_VALUE = 'Да';
 
