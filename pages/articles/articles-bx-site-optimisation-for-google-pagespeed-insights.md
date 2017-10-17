@@ -21,6 +21,8 @@ toc: false
 * 5) Исключить служебные скрипты и стили битрикс из формирования пользовательских страниц сайта
 * 6) Минифицировать html
 
+[https://github.com/addyosmani/critical-path-css-tools](https://github.com/addyosmani/critical-path-css-tools)
+
 #### Перенос js и css в конец страницы
 
 ##### JS 
