@@ -23,6 +23,7 @@ toc: false
 
 #### Перенос js и css в конец страницы
 
+##### JS 
 Для корректной работы битрикс с файлами стилей и скриптов их нужно подключать при помощи функций Битрикс:
 
 ```php
@@ -57,4 +58,40 @@ $asset->setJsToBody(true);
 <script data-skip-moving=true>
   // your script code
 </script>
+```
+
+##### CSS
+
+Для переноса CSS в конец страницы у Битрикса нет стандартных средств, но т.к. за вывод css отвечает отдельный метод, то мы можем вывести его в footer.php самостоятельно.
+
+Для этого нужно вместо:
+
+```php
+<?
+$APPLICATION->ShowHead();
+?>
+```
+
+В файле **header.php** добавить:
+
+```php
+<?
+// вместо $APPLICATION->ShowHead();
+$bXhtmlStyle = true;
+echo '<meta http-equiv="Content-Type" content="text/html; charset='.LANG_CHARSET.'"'.($bXhtmlStyle? ' /':'').'>'."\n";
+$APPLICATION->ShowMeta("robots", false, $bXhtmlStyle);
+$APPLICATION->ShowMeta("keywords", false, $bXhtmlStyle);
+$APPLICATION->ShowMeta("description", false, $bXhtmlStyle);
+$APPLICATION->ShowLink("canonical", null, $bXhtmlStyle);
+$APPLICATION->ShowHeadStrings();
+$APPLICATION->ShowHeadScripts();
+?>
+```
+
+В файле **footer.php** добавить:
+
+```php
+<?
+$APPLICATION->ShowCSS(true, $bXhtmlStyle);
+?>
 ```
