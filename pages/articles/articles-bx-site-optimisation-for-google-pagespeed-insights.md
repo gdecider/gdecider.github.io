@@ -95,3 +95,85 @@ $APPLICATION->ShowHeadScripts();
 $APPLICATION->ShowCSS(true, $bXhtmlStyle);
 ?>
 ```
+
+#### Исключить служебные скрипты и стили битрикс из формирования пользовательских страниц сайта
+
+Для этого нужно добавить обработку контента страницы перед выдачей его из буфера браузеру.
+
+В init.php должно быть добавлено подключение файлов констант, обработчиков и функций, т.к. все действия уже будем совершать с ними.
+
+Пример подключения файлов в init.php:
+
+```php
+<?php if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
+
+// Подключение констант
+if (file_exists($_SERVER["DOCUMENT_ROOT"]."/local/php_interface/include/constants.php")) {
+    require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/include/constants.php");
+}
+
+// Подключение обработчиков событий
+if (file_exists($_SERVER["DOCUMENT_ROOT"]."/local/php_interface/include/handlers.php")) {
+    require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/include/handlers.php");
+}
+
+// Подключение глобальных функций (чаще всего используется для переноса кода сторонних разработчиков
+// при получении проекта на доработку)
+if (file_exists($_SERVER["DOCUMENT_ROOT"]."/local/php_interface/include/functions.php")) {
+    require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/include/functions.php");
+}
+```
+
+В файл functions.php добавим функции обработчиков событий:
+
+```php
+<?
+// удяляем скрипты ядра при отдаче сайта пользователям
+function deleteKernelJs(&$content) {
+    global $USER, $APPLICATION;
+    if((is_object($USER) && $USER->IsAuthorized()) || strpos($APPLICATION->GetCurDir(), "/bitrix/")!==false) return;
+    if($APPLICATION->GetProperty("save_kernel") == "Y") return;
+
+    $arPatternsToRemove = Array(
+        '/<script.+?src=".+?kernel_main\/kernel_main\.js\?\d+"><\/script\>/',
+        '/<script.+?src=".+?bitrix\/js\/main\/core\/core[^"]+"><\/script\>/',
+        '/<script.+?>BX\.(setCSSList|setJSList)\(\[.+?\]\).*?<\/script>/',
+        '/<script.+?>if\(\!window\.BX\)window\.BX.+?<\/script>/',
+        '/<script[^>]+?>\(window\.BX\|\|top\.BX\)\.message[^<]+<\/script>/',
+    );
+
+    $content = preg_replace($arPatternsToRemove, "", $content);
+    $content = preg_replace("/\n{2,}/", "\n\n", $content);
+}
+
+// удяляем css ядра при отдаче сайта пользователям
+function deleteKernelCss(&$content) {
+    global $USER, $APPLICATION;
+    if((is_object($USER) && $USER->IsAuthorized()) || strpos($APPLICATION->GetCurDir(), "/bitrix/")!==false) return;
+    if($APPLICATION->GetProperty("save_kernel") == "Y") return;
+
+    $arPatternsToRemove = Array(
+        '/<link.+?href=".+?kernel_main\/kernel_main\.css\?\d+"[^>]+>/',
+        '/<link.+?href=".+?bitrix\/js\/main\/core\/css\/core[^"]+"[^>]+>/',
+        '/<link.+?href=".+?bitrix\/templates\/[\w\d_-]+\/styles.css[^"]+"[^>]+>/',
+        '/<link.+?href=".+?bitrix\/templates\/[\w\d_-]+\/template_styles.css[^"]+"[^>]+>/',
+    );
+
+    $content = preg_replace($arPatternsToRemove, "", $content);
+    $content = preg_replace("/\n{2,}/", "\n\n", $content);
+}
+```
+
+В файл handlers.php добавим обработку событий:
+
+```php
+<?php if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
+
+$eventManager = \Bitrix\Main\EventManager::getInstance();
+
+// удяляем скрипты ядра при отдаче сайта пользователям
+$eventManager->addEventHandler("main", "OnEndBufferContent", "deleteKernelJs");
+
+// удяляем css ядра при отдаче сайта пользователям
+$eventManager->addEventHandler("main", "OnEndBufferContent", "deleteKernelCss");
+```
