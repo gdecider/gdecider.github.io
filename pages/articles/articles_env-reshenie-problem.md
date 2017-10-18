@@ -36,8 +36,8 @@ cat /proc/sys/fs/inotify/max_user_watches
 * Увеличиваем количество вотчеров до нужного нам
 
 ```bash
-echo fs.inotify.max_user_watches=32768 | sudo tee -a /etc/sysctl.conf
-sudo sysctl -p
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p --system
 ```
 
 Изменения для IDE вступят в силу при её следующем запуске.
