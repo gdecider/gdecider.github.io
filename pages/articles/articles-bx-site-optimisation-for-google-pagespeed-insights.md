@@ -14,6 +14,11 @@ toc: false
 
 ### Решение
 
+#### Инструменты для проверки скорости
+
+* [https://developers.google.com/speed/pagespeed/insights/?hl=ru](https://developers.google.com/speed/pagespeed/insights/?hl=ru)
+* [https://tools.pingdom.com](https://tools.pingdom.com)
+
 * 1) Привести в соответствие изображения, таким образом, что бы браузеру не приходилось их масштабировать
 * 2) Включить сжатие файлов в nginx
 * 3) При помощи настроек битрикс перенести js и css в конец страницы
