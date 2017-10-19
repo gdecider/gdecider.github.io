@@ -65,6 +65,20 @@ toc: false
 * Лайки для элементов информационных блоков
 
   * [https://marketplace.1c-bitrix.ru/solutions/vasoft.likeit/](https://marketplace.1c-bitrix.ru/solutions/vasoft.likeit/)
+  
+* Дополнительные свойства инфоблоков. Аскарон
+
+  * [https://marketplace.1c-bitrix.ru/solutions/askaron.prop/](https://marketplace.1c-bitrix.ru/solutions/askaron.prop/)
+  
+* Дополнительные свойства инфоблоков. Аскарон
+
+  * [https://marketplace.1c-bitrix.ru/solutions/askaron.prop/](https://marketplace.1c-bitrix.ru/solutions/askaron.prop/)
+  
+* Дополнительные свойства инфоблоков
+  
+  Модуль по каким-то причинам удалили из маркетплейс, может быть вернут...
+  
+  * [https://marketplace.1c-bitrix.ru/embx.iblock](Дополнительные свойства инфоблоков)
 
 ### Проверка сайта на наличие вредоносного кода
 
