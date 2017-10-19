@@ -10,6 +10,13 @@ toc: true
 
 ## Git Список часто используемых команд
 
+### Установка
+
+```bash
+sudo apt-get update
+sudo apt-get install git
+```
+
 ### Рекомендуемые утилиты
 
 * [https://www.gitkraken.com/](https://www.gitkraken.com/)
@@ -422,43 +429,41 @@ git reflog expire --all --expire=now
 git gc --prune=now --aggressive
 ```
 
-### материалы для обучения
+### Материалы для обучения
 
-* Пошаговый учебник https://githowto.com/ru/
+* [Пошаговый учебник](https://githowto.com/ru/)
+* Видеокурс "Git для профессионалов" от [http://pr-of-it.ru](http://pr-of-it.ru) найдете при желании :)
+* [Статья о rebase и слиянии веток](https://habrahabr.ru/post/161009/)
+* Обучающие видео [http://monsterlessons.com/project/categories/git](http://monsterlessons.com/project/categories/git)
+* Полезные алиасы git команд [https://habrahabr.ru/company/mailru/blog/318508/?utm_campaign=email_digest&utm_source=email_habrahabr&utm_medium=email_week_20170110&utm_content=link2post](https://habrahabr.ru/company/mailru/blog/318508/?utm_campaign=email_digest&utm_source=email_habrahabr&utm_medium=email_week_20170110&utm_content=link2post)
+* Шпаргалка по работе с Git [http://eax.me/git-commands/](http://eax.me/git-commands/)
 
-* Видеокурс "Git для профессионалов" от http://pr-of-it.ru найдете при желании )
+### установка средства сравнения 
 
-https://www.digitalocean.com/community/tutorials/git-ubuntu-14-04-ru
+* [https://nathanhoad.net/how-to-meld-for-git-diffs-in-ubuntu-hardy](https://nathanhoad.net/how-to-meld-for-git-diffs-in-ubuntu-hardy)
 
-1) установка
-sudo apt-get update
-sudo apt-get install git
-
-2) Первоначальная настройка
-// установка данных пользователя
-git config --global user.name "Your Name"
-git config --global user.email "youremail@domain.com"
-
-// установка редактора по умолчанию
-git config --global core.editor "subl -n -w"
-
-// установка средства сравнения (https://nathanhoad.net/how-to-meld-for-git-diffs-in-ubuntu-hardy)
 0.1) устанавливаем
-# sudo aptitude install meld
+
+sudo aptitude install meld
+
 0.2) создаем скрипт питона
-#cd ~/scriptHelpers
-#touch diff.py
--------------
+
+cd ~/scriptHelpers
+touch diff.py
+
+```
 #!/usr/bin/python
 
 import sys
 import os
 
 os.system('meld "%s" "%s"' % (sys.argv[2], sys.argv[5]))
--------------
+```
+
 0.3) прописываем в настройках гита
+
 git config --global diff.external ~/scriptHelpers/diff.py
-#### что бы отменить эту настройку используем git config --global --unset diff.external
+что бы отменить эту настройку используем git config --global --unset diff.external
 
 Проверить что настройки применились
 git config --list
@@ -494,7 +499,7 @@ About MELD http://meldmerge.org/help/
 sudo apt-get update
 sudo apt-get install meld
 
---------------
+```
 настройки можно внести в глобальный файл настроек гита, который находится ~/.gitconfig
 [user]
 	name = decider_op
@@ -510,7 +515,8 @@ sudo apt-get install meld
 [mergetool]
 	keepBackup = false
 
---------------------
+```
+
 или через команды
 
 git config --global diff.tool meld
@@ -569,14 +575,5 @@ cat ~/.ssh/<your_ssh_key_name>.pub | ssh <user_name>@<server_ip_on_domain> "mkdi
 ```
 
 
-=== Обучающие видео
-http://monsterlessons.com/project/categories/git
 
-===
-// Полезные алиасы git команд
-https://habrahabr.ru/company/mailru/blog/318508/?utm_campaign=email_digest&utm_source=email_habrahabr&utm_medium=email_week_20170110&utm_content=link2post
 
-// Моя шпаргалка по работе с Git
-http://eax.me/git-commands/
-
-https://githowto.com/ru/
