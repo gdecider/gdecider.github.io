@@ -36,6 +36,7 @@ toc: true
 │   │   │   │   ├── constants.php
 │   │   │   │   ├── env_vars.php
 │   │   │   │   ├── env_vars.example.php
+│   │   │   │   ├── functions.php
 │   │   │   │   ├── handlers.php
 │   │   │   │   └── site_closed.php
 │   │   │   ├── init.php
@@ -188,30 +189,30 @@ templates — шаблоны сайтов, шаблоны компонентов
 ## /local/php_interface/init.php
 
 ```php
-<?php if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
+<?php if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
 // Подключение констант
-if (file_exists($_SERVER["DOCUMENT_ROOT"]."/local/php_interface/include/constants.php")) {
+if (file_exists($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/include/constants.php")) {
     require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/include/constants.php");
 }
 
 // Подключение обработчиков событий
-if (file_exists($_SERVER["DOCUMENT_ROOT"]."/local/php_interface/include/handlers.php")) {
+if (file_exists($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/include/handlers.php")) {
     require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/include/handlers.php");
 }
 
 // Подключение глобальных функций (чаще всего используется для переноса кода сторонних разработчиков
 // при получении проекта на доработку)
-if (file_exists($_SERVER["DOCUMENT_ROOT"]."/local/php_interface/include/functions.php")) {
+if (file_exists($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/include/functions.php")) {
     require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/include/functions.php");
 }
-?>
+
 ```
 
 ## /local/php_interface/include/constants.php
 
 ```php
-<?php if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
+<?php if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
 /**
  * IBlocks IDS
@@ -247,12 +248,13 @@ const PRICE_IDS = [
 /**
  * Other consts
  */
+ 
 ```
 
 ## /local/php_interface/include/handlers.php
 
 ```php
-<?php if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
+<?php if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
 use \Bitrix\Main\Loader;
 
@@ -283,6 +285,20 @@ function loadLocalModule() {
 // $eventManager->addEventHandler("main", "OnBeforeUserLogin", ["\\Local\\Common\\Handlers\\User", "beforeLogin"]);
 
 //$eventManager->addEventHandler("main", "OnEpilog", ["CDecPage", "handlerOnEpilog"]);
+
+```
+
+## /local/php_interface/functions.php
+
+```php
+<?php if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+
+function d($var, $die = false)
+{
+    \Bitrix\Main\Diag\Debug::dump($var);
+    !$die ?: exit;
+}
+
 ```
 
 ## /local/php_interface/include/env_vars.php
@@ -395,6 +411,11 @@ function loadLocalModule() {
 ### общие исключения
 # IDE
 .idea/
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
 
 # dev backups
 *bak20*
@@ -428,7 +449,6 @@ function loadLocalModule() {
 # configs
 /bitrix/php_interface/dbconn.php
 /bitrix/.settings.php
-/bitrix/.settings.php
 
 # backups
 /bitrix/backup/*
@@ -439,7 +459,7 @@ function loadLocalModule() {
 /bitrix/modules/updater.log
 /bitrix/modules/updater_partner.log
 
-# cache 
+# cache
 /bitrix/cache/*
 /bitrix/managed_cache/*
 /bitrix/stack_cache/*
@@ -458,8 +478,9 @@ function loadLocalModule() {
 /public/bitrix/*.log
 /public/bitrix/modules/updater.log
 /public/bitrix/modules/updater_partner.log
+/*.log
 
-# cache 
+# cache
 /public/bitrix/cache/*
 /public/bitrix/managed_cache/*
 /public/bitrix/stack_cache/*
