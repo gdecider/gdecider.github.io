@@ -10,7 +10,7 @@ toc: false
 ## Рабочее окружение
 
 *  [ОС Ubuntu](https://www.ubuntu.com/download/desktop) 
-*  [Vagrat](https://www.vagrantup.com/)
+*  [Vagrant](https://www.vagrantup.com/)
 *  [Sublime Text 3](https://www.sublimetext.com/3)
 *  [IDE PhpStorm](https://www.jetbrains.com/phpstorm/)
 
