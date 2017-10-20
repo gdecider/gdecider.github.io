@@ -28,6 +28,7 @@ toc: false
 * [Добавление canonical link на страницы сайта](/articles-bx-canonicel-link-add.html)
 * [Добавление неограниченного количества сортировок в компонент catalog.section](/articles-bx-catalog-section-unlimited-sort.html)
 * [Оптимизация сайта для PageSpeed Insights](/articles-bx-site-optimisation-for-google-pagespeed-insights.html)
+* [Наложение watermark на изображение](/articles-bx-watermark-place-on-image.html)
 * [Решение проблем](/articles_bx_problems.html)
 
 ## Каталог товаров и умный фильтр
