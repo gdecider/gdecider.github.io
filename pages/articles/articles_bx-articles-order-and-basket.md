@@ -16,3 +16,4 @@ toc: true
 * [Как добавить в корзину вместе с товаром свойство, значение которого заполняет сам пользователь?](https://dev.1c-bitrix.ru/support/forum/forum6/topic86737/)
 * [Правила работы с корзиной "предоставить подарок"](https://dev.1c-bitrix.ru/support/forum/forum6/topic86649/)
 * [26 ошибок в корзинах интернет-магазинов](https://www.intervolga.ru/blog/projects/cherez-ternii-k-zvezdam-ili-26-oshibok-v-korzinakh-internet-magazinov/)
+*[Консоль, «Битрикс» и непрерывная интеграция](http://samokhvalov.info/blog/all/console-jedi/)
