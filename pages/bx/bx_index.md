@@ -38,6 +38,7 @@ toc: false
    *  [Разработка и эксплуатация высоконагруженных проектов](https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=38&INDEX=Y)
    *  [Многосайтовость](https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=103&INDEX=Y)
    *  [Курс для хостеров](https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=32&INDEX=Y)
+   *  [Виртуальная машина BitrixVM](https://dev.1c-bitrix.ru/learning/course/?COURSE_ID=37&INDEX=Y)
    *  [Маркетплейс Bitrix Framework](https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=101&INDEX=Y)
    *  [BitrixMobile - создание кроссплатформенных мобильных приложений](https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=80&INDEX=Y)
    *  [Материалы для подготовки к экзаменам Битрикс](https://github.com/studiofact/wiki-bitrix/wiki)
