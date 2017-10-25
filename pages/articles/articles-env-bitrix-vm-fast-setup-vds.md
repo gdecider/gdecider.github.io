@@ -47,3 +47,11 @@ systemctl restart nginx
 ```
 extension=curl.so
 ```
+
+* поддержка phar
+
+в файл ```/etc/php.d/20-phar.ini``` вносим данные:
+
+```
+extension=phar.so
+```
