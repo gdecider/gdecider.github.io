@@ -43,7 +43,7 @@ toc: false
    *  [BitrixMobile - создание кроссплатформенных мобильных приложений](https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=80&INDEX=Y)
    *  [Материалы для подготовки к экзаменам Битрикс](https://github.com/studiofact/wiki-bitrix/wiki)
    *  [1С - Битрикс Документация по обмену и прочему](http://1c.1c-bitrix.ru/support/doc.php)
-   *  [Учебный курс 1С - Битрикс Документация по обмену и прочему](http://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=42&CHAPTER_ID=1158)
+   *  [Учебный курс 1С - Битрикс Документация по обмену и прочему](http://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=42&CHAPTER_ID=1158)   
 
 *  Документация
    * [Документация для разработчиков](https://dev.1c-bitrix.ru/api_help/index.php)
@@ -53,6 +53,15 @@ toc: false
 *  Прочее
    * [Центр поддержки разработчиков](https://dev.1c-bitrix.ru/)
    * [Модуль Живое АПИ](https://marketplace.1c-bitrix.ru/solutions/bitrix.liveapi/)
+   * [Доклады партнерской конференции 2014 г зима](https://conf.1c-bitrix.ru/winter2014/agenda/broadcast/)
+   * [Доклады партнерской конференции 2014 г лето](https://conf.1c-bitrix.ru/summer2014/agenda/broadcast/)
+   * [Доклады партнерской конференции 2015 г зима](https://conf.1c-bitrix.ru/winter2015/online/)
+   * [Доклады партнерской конференции 2015 г лето](https://conf.1c-bitrix.ru/summer2015/online/)
+   * [Доклады партнерской конференции 2016 г зима](https://conf.1c-bitrix.ru/winter2016/online/)
+   * [Доклады партнерской конференции 2016 г лето](https://conf.1c-bitrix.ru/summer2016/online/)
+   * [Доклады партнерской конференции 2017 г зима](https://conf.1c-bitrix.ru/winter2017/online/)
+   * [Доклады партнерской конференции 2017 г лето](https://conf.1c-bitrix.ru/winter2017/online/)
+   
 
 *  Многочисленные блоги и форумы, вот несколько интересных:
    *  http://meet.bitrix.expert/      
@@ -109,6 +118,8 @@ toc: false
    *  http://abraxabra.ru/blog/
       
    *  http://vvski.ru
+   
+   *  http://alexvaleev.ru/orm-d7/
    
 ### PHP
 
