@@ -434,3 +434,53 @@ if (is_object($this->__component)) {
 ```
 <script data-skip-moving="true">
 ```
+
+### Работа с датами
+
+```php
+<?php
+use Bitrix\Main\Type\DateTime;
+
+$objDateTime = DateTime::createFromPhp(new \DateTime('2000-01-01'));
+$objDateTime = DateTime::createFromTimestamp(1346506620);
+
+// или
+// Текущее время:
+$objDateTime = new DateTime();
+// Из строки в формате текущего сайта
+$objDateTime = new DateTime("25.12.2012 12:30:00");
+// Из строки с указанием формата:
+$objDateTime = new DateTime("2007-05-14 12:10:00", "Y-m-d H:i:s");
+
+// Из объекта можно получить представление в виде timestamp:
+echo $objDateTime->getTimestamp();
+
+// в виде строки в формате текущего сайта:
+echo $objDateTime->toString();
+
+// в произвольном формате (фактически обёртка над DateTime::format):
+echo $objDateTime->format("Y-m-d H:i:s");
+
+// Метод add реализует сложение и вычитание дат, можно указывать смещение словами years, months, days, weeks, hours, minutes, seconds и знаками +/-:
+
+$objDateTime = new DateTime("01.01.2012 00:00:00"); // "2012-01-01 00:00:00"
+$objDateTime->add("1 day"); // "2012-01-01 00:00:00" => "2012-01-02 00:00:00"
+$objDateTime->add("-1 day"); // "2012-01-01 00:00:00" =>"2011-12-31 00:00:00"
+$objDateTime->add("3 months - 5 days + 10 minutes"); // "2012-01-01 00:00:00" =>"2012-03-27 00:10:00"
+
+// Метод add изменяет объект, здесь для наглядности приведены результаты вызова add с начального состояния $objDateTime.
+// Также в add можно указывать смещение в формате DateInterval (но буква P в начале строки необязательна):
+
+$objDateTime = new DateTime("01.01.2012 00:00:00"); // "2012-01-01 00:00:00"
+$objDateTime->add("7M5DT2M"); // "2012-01-01 00:00:00" =>"2012-08-06 00:02:00"
+$objDateTime->add("-2YT10M"); // "2012-01-01 00:00:00" =>"2009-12-31 23:50:00"
+
+// Получение формата даты сайта
+$siteDateShortFormat = \CSite::GetDateFormat("SHORT");
+$siteDateFullFormat = \CSite::GetDateFormat("FULL");
+
+// Преобразование формата сайта к формату PHP
+$phpDateShortFormat = \Bitrix\Main\Type\Date::convertFormatToPhp($siteDateShortFormat);
+
+
+```
