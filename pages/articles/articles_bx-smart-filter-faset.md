@@ -189,10 +189,11 @@ if (!file_exists($filePath)) {
     return;
 }
 
+// сразу удалим файл, что бы не запуститься более 1ого раза
+unlink($filePath);
+
 $arFilter = CCommon::CATALOG_MAIN_FILTER_NOTVALID;
 echo "индекс пересоздан " . CCommon::actualizeProducts(IBID_CATALOG, $arFilter) . "\n";
-
-unlink($filePath);
 ?>
 ```
 
