@@ -484,3 +484,16 @@ $phpDateShortFormat = \Bitrix\Main\Type\Date::convertFormatToPhp($siteDateShortF
 
 
 ```
+
+### Узнать сконвертированы заказы интернет-магазина в новый формат или нет
+
+```php
+<?
+$isOrderConverted = \Bitrix\Main\Config\Option::get("main", "~sale_converted_15", 'N');
+
+if ($isOrderConverted == "Y"){
+	echo "is converted";
+} else {
+	echo "not converted";
+}
+```
