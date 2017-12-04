@@ -121,6 +121,18 @@ toc: false
    
    *  http://alexvaleev.ru/orm-d7/
    
+### HTML
+
+#### Сайты 
+
+  * [HTML и HTML5](https://html5book.ru/html-html5/)
+  
+### CSS
+
+#### Сайты
+
+  * [CSS и CSS3](https://html5book.ru/css-css3/)
+   
 ### PHP
 
 #### Сайты
