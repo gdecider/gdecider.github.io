@@ -79,6 +79,10 @@ toc: false
   Модуль по каким-то причинам удалили из маркетплейс, может быть вернут...
   
   * [https://marketplace.1c-bitrix.ru/embx.iblock](https://marketplace.1c-bitrix.ru/embx.iblock)
+  
+* Модуль миграции сущностей для CMS "1С-Битрикс: Управление сайтом" для разработчиков
+
+  * [https://github.com/intervolga/intervolga.migrato](https://github.com/intervolga/intervolga.migrato)
 
 ### Проверка сайта на наличие вредоносного кода
 
