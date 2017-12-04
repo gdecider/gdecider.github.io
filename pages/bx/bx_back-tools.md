@@ -73,16 +73,12 @@ toc: false
 * Дополнительные свойства инфоблоков. Аскарон
 
   * [https://marketplace.1c-bitrix.ru/solutions/askaron.prop/](https://marketplace.1c-bitrix.ru/solutions/askaron.prop/)
-  
-* Дополнительные свойства инфоблоков. Аскарон
-
-  * [https://marketplace.1c-bitrix.ru/solutions/askaron.prop/](https://marketplace.1c-bitrix.ru/solutions/askaron.prop/)
-  
+    
 * Дополнительные свойства инфоблоков
   
   Модуль по каким-то причинам удалили из маркетплейс, может быть вернут...
   
-  * [https://marketplace.1c-bitrix.ru/embx.iblock](Дополнительные свойства инфоблоков)
+  * [https://marketplace.1c-bitrix.ru/embx.iblock](https://marketplace.1c-bitrix.ru/embx.iblock)
 
 ### Проверка сайта на наличие вредоносного кода
 
