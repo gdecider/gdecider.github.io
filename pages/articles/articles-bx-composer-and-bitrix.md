@@ -37,7 +37,6 @@ php -r "unlink('composer-setup.php');"
 * [http://zhurov.me/blog/bitrix-loves-composer.html](http://zhurov.me/blog/bitrix-loves-composer.html)
 * [http://samokhvalov.info/blog/all/ispravlenie-kompozera-dlya-bitriksa/](http://samokhvalov.info/blog/all/ispravlenie-kompozera-dlya-bitriksa/)
 * [http://samokhvalov.info/blog/all/composer-installers-1-0-24/](http://samokhvalov.info/blog/all/composer-installers-1-0-24/)
-* [http://epages.su/blog/migratsii-bazy-dannykh-v-1s-bitirks-proektakh-s-ispolzovaniem-phinx.html](http://epages.su/blog/migratsii-bazy-dannykh-v-1s-bitirks-proektakh-s-ispolzovaniem-phinx.html)
 
 В общем случае, если позволяет хостинг, и сайт вынесен в отдельную папку, например так:
 
@@ -69,6 +68,157 @@ php -r "unlink('composer-setup.php');"
 └── .gitignore
 ```
 
-Во всех случаях папка вендоров ```vendors``` добавляется в ```.gitignore```
+Во всех случаях папка вендоров ```vendor``` добавляется в ```.gitignore```
 
+Пример содержимого файла ```composer.json```
 
+```json
+{
+    "require": {
+        "composer/installers": "~1.0",
+    },
+}
+```
+
+Для установки модулей, перечисленных в файле ```composer.json``` нужно перейти в папку, в которой находится этот файл и выполнить команду:
+
+```bash
+composer install
+```
+
+После этого composer создаст папку ```vendor```, в нее будут добавлены все нужные модули и создан файл ```autoload.php```
+
+Для того, чтобы Битрикс подключил классы модулей полученных через composer нужно в файл ```init.php``` добавить:
+
+```php
+<?
+// composer for out public
+if (file_exists($_SERVER["DOCUMENT_ROOT"]."/../vendor/autoload.php")) {
+    require_once($_SERVER["DOCUMENT_ROOT"] . "/../vendor/autoload.php");
+}
+
+// composer for local
+if (file_exists($_SERVER["DOCUMENT_ROOT"]."/local/vendor/autoload.php")) {
+    require_once($_SERVER["DOCUMENT_ROOT"] . "/local/vendor/autoload.php");
+}
+?>
+
+### Подготовка модуля Битрикс к установке через composer
+
+Чтобы composer знал о возможности установки модуля Битрикс нужно соблюсти ряд условий:
+
+* Нужно разместить модуль в каком-либо хранилище репозиториев, например github.com.
+* В корне модуля разместить файл ```composer.json``` с информацией о модуле и его зависимостях.
+  
+  Пример файла:
+  
+  ```json
+    {
+        "name": "modvendor/modname",
+        "description": "module description",
+        "type": "bitrix-d7-module",
+        "require": {
+            "altayalp/ftp-client": "^1.0"
+        },
+        "authors": [
+            {
+                "name": "Your Name",
+                "email": "your@email.ru"
+            }
+        ]
+    }
+  ```
+  
+### Установка модуля Битрикс через composer
+
+Есть модуль composer, который помогает в установке специфических расширений для CMS и фреймворков, он учитывает особенности архитектуры этих систем и копирует папки модулей не по стандартному пути composer, которым является папка vendor, а в нужную папку в зависимости от системы в которую ставится модуль.
+
+Для битрикс привычными путями для установки модуля являются:
+
+* ```/bitrix/modules/```
+* ```/local/modules/```
+
+Модуль-помощник называется composer/installers, почитать о нем можно [тут](http://composer.github.io/installers/), [GitHub](https://github.com/composer/installers)
+
+По умолчанию он устанавливает модули Битрикс в папку ```/bitrix/modules/```, что бы это заработало в файле композера нужно разместить такие инструкции:
+
+```json
+{
+    "name": "yourcompany/projectname",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Your Name",
+            "email": "your@email.ru"
+        }
+    ],
+    "require": {
+        "composer/installers": "~1.0",
+        "your/modulename": "dev-master"
+    },
+    "config": {
+    	"github-oauth": {
+			"github.com": "your access token"
+		}
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "https://github.com/yourlogin/your.modulename.git"
+        }        
+    ]
+}
+
+```
+
+Для изменения пути установки и прочих параметров (о которых можно почитать тут), нужно добавить секцию "extra", пример:
+
+```json
+{
+    "name": "yourcompany/projectname",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Your Name",
+            "email": "your@email.ru"
+        }
+    ],
+    "extra": {
+        "installer-paths": {
+            "public/local/modules/{$vendor}.{$name}/": ["type:bitrix-d7-module"]
+        }
+    },
+    "require": {
+        "composer/installers": "~1.0",
+        "your/modulename": "dev-master"
+    },
+    "config": {
+    	"github-oauth": {
+			"github.com": "your access token"
+		}
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "https://github.com/yourlogin/your.modulename.git"
+        }        
+    ]
+}
+
+```
+
+### Получение токена GitHub для Composer
+
+При попытке получения модулей из репозитория, размещенного на GitHub может появиться ошибка: **Could not fetch ######, please create a GitHub OAuth token to go over the API rate limit**
+
+Для исправления этош ошибки в файл ```composer.json``` нужно добавить секцию:
+
+```json
+"config": {
+    "github-oauth": {
+        "github.com": "your access token"
+    }
+},
+```
+
+Получить токен нужно в Вашем аккаунте на GitHub в разделе настроек [https://github.com/settings/tokens](https://github.com/settings/tokens)
