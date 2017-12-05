@@ -211,7 +211,7 @@ if (file_exists($_SERVER["DOCUMENT_ROOT"]."/local/vendor/autoload.php")) {
 
 При попытке получения модулей из репозитория, размещенного на GitHub может появиться ошибка: **Could not fetch ######, please create a GitHub OAuth token to go over the API rate limit**
 
-Для исправления этош ошибки в файл ```composer.json``` нужно добавить секцию:
+Для исправления этой ошибки в файл ```composer.json``` нужно добавить секцию:
 
 ```json
 "config": {
