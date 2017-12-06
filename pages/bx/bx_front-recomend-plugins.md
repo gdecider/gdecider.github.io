@@ -320,6 +320,28 @@ toc: false
   	vendorsPath + '/selectric/src/selectric.scss',
   ],
   ```
+* jQuery Nice Select
+
+  * [http://hernansartorio.com/jquery-nice-select/](http://hernansartorio.com/jquery-nice-select/)
+  
+  * [https://github.com/hernansartorio/jquery-nice-select](https://github.com/hernansartorio/jquery-nice-select)
+  
+  **Получение плагина**
+  
+  ```bash
+  yarn add jquery-nice-select
+  ```
+  
+  **Пути для подключения**
+  
+  ```
+  js: [
+	vendorsPath + '/jquery-nice-select/js/jquery.nice-select.js',
+  ],
+  sass: [
+  	vendorsPath + '/jquery-nice-select/scss/style.scss',
+  ],
+  ```
 
 * Minimalect
 
