@@ -7,12 +7,36 @@ permalink: bx_back-shpora.html
 summary: false
 toc: true
 ---
+## Шпаргалка PHP
+
+### Вызов статичиского метода класса с получением имени метода из переменной
+
+```php
+<?php
+class SomeClass 
+{
+	static private function validateEmail($value) 
+	{
+        return filter_var($value, FILTER_VALIDATE_EMAIL);
+    }
+	
+	$field = [
+		"value" => "q@q.com",
+		"valid" => true,
+		"func"  => "validateEmail",
+	];
+	
+	$func = __CLASS__ . '::' . $field['func'];
+	$field['valid'] = $func($field['value']);
+}
+```
 
 ## Back-end Шпаргалка Битрикс
 
 ### Подключение скриптов и стилей вне шаблона
 
 ```php
+<?php
 $assets = \Bitrix\Main\Page\Asset::getInstance();
 
 // CSS
@@ -28,6 +52,7 @@ $assets->addString("<link href='http://fonts.googleapis.com/css?family=PT+Sans:4
 ### Подключение скриптов и стилей в шаблоне
 
 ```php
+<?php
 // CSS
 $this->addExternalCss("/local/styles.css"); 
 
@@ -190,8 +215,9 @@ $frame->begin();
 ### Формирование ссылки для логина 
 
 ```php
+<?
 // пример формирование ссылок "Logout" и "Регистрация"
-
+?>
 <?if ($USER->IsAuthorized()):?>
 
  <a href="<?echo $APPLICATION->GetCurPageParam("logout=yes", array(
