@@ -19,15 +19,20 @@ class SomeClass
     {
         return filter_var($value, FILTER_VALIDATE_EMAIL);
     }
+    
+    public function someMethod() {
 	
-    $field = [
-	"value" => "q@q.com",
-	"valid" => true,
-	"func"  => "validateEmail",
-    ];
+        $field = [
+	    "value" => "q@q.com",
+	    "valid" => true,
+	    "func"  => "validateEmail",
+        ];
 	
-    $func = __CLASS__ . '::' . $field['func'];
-    $field['valid'] = $func($field['value']);
+        $func = __CLASS__ . '::' . $field['func'];
+        $field['valid'] = $func($field['value']);
+	
+	return $field;
+    }
 }
 ```
 
