@@ -389,7 +389,19 @@ toc: false
   * [http://someweblog.com/hcsticky-jquery-floating-sticky-plugin/](http://someweblog.com/hcsticky-jquery-floating-sticky-plugin/)
 
   * [https://github.com/somewebmedia/hc-sticky](https://github.com/somewebmedia/hc-sticky)
+  
+### Zoom при наведении
 
+* xZoom
+
+  * [https://github.com/payalord/xZoom](https://github.com/payalord/xZoom)
+  
+* jQuery Zoom
+
+  * [http://www.jacklmoore.com/zoom/](http://www.jacklmoore.com/zoom/)
+  
+  * [https://github.com/jackmoore/zoom](https://github.com/jackmoore/zoom)
+  
 ### Элементы интерфейса
 
 #### Меню
