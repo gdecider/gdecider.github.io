@@ -39,6 +39,18 @@ toc: false
 * PHP FTP Client Library
 
   * [https://github.com/altayalp/php-ftp-client](https://github.com/altayalp/php-ftp-client)
+  
+* bukashk0zzz/yml-generator
+  
+  Генерация YML (например для Яндекс.Маркет)
+
+  * [https://github.com/Bukashk0zzz/YmlGenerator](https://github.com/Bukashk0zzz/YmlGenerator)
+  
+* mobiledetect.net
+
+  * [http://mobiledetect.net/](http://mobiledetect.net/)
+  
+  * [https://github.com/serbanghita/Mobile-Detect](https://github.com/serbanghita/Mobile-Detect)
 
 ### Компоненты и модули Битрикс
 
