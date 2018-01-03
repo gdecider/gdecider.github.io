@@ -77,6 +77,8 @@ toc: true
 use \Bitrix\Main\Loader;
 use \Bitrix\Main\Application;
 
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
+
 class ExampleCompSimple extends CBitrixComponent {
     private $_request;
 
