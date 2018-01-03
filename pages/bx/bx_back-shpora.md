@@ -290,12 +290,54 @@ if ( CSite::InGroup( array(4,5) ) ) {
 ### AJAX в отдельном файле
 
 ```php
-<?require_once($_SERVER['DOCUMENT_ROOT']. "/bitrix/modules/main/include/prolog_before.php");?>
+<?
+define("NO_KEEP_STATISTIC", true);
+define("NO_AGENT_STATISTIC", true);
+define("NOT_CHECK_PERMISSIONS", true);
 
-// ... some code ...
-// с этой ф-ей были проблемы
-//\CMain::finalActions();
-die();
+require_once($_SERVER['DOCUMENT_ROOT']. "/bitrix/modules/main/include/prolog_before.php");
+
+$context = \Bitrix\Main\Application::getInstance()->getContext();
+
+$response = new \Bitrix\Main\HttpResponse($context);
+$response->addHeader("Content-Type", "application/json");
+
+$request = $context->getRequest();
+$request->addFilter(new Bitrix\Main\Web\PostDecodeFilter);
+
+$arResult = [
+    'status' => 'success',
+    'text'   => '',
+];
+
+if (!$request->isAjaxRequest())
+{
+    $arResult = [
+        'status' => 'error',
+        'text'   => 'Request is not XHR',
+    ];
+
+    $response->flush(Bitrix\Main\Web\Json::encode($arResult));
+
+    die();
+}
+
+if (!$request->isPost())
+{
+    $arResult = [
+        'status' => 'error',
+        'text'   => 'Request is not POST',
+    ];
+
+    $response->flush(Bitrix\Main\Web\Json::encode($arResult));
+
+    die();
+}
+
+// выполняем вычисления...
+
+// возвращаем результат
+$response->flush(Bitrix\Main\Web\Json::encode($arResult));
 ```
 
 ### AJAX в странице или компоненте
