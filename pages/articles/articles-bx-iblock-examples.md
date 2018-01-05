@@ -76,7 +76,7 @@ function ibTypeDelete($ibTypeCode) {
 function ibAdd($ibName, $ibCode, $ibTypeCode, $arProps) {
 
 	$ib = new CIBlock();
-    $arFields = Array(
+        $arFields = Array(
         "ACTIVE" => 'Y',
         "NAME" => $ibName,
         "CODE" => $ibCode,
@@ -207,10 +207,51 @@ function addIBlockProp($ibId, $propCode) {
 
 ```php
 <?
+function ibRowAdd($ibId, $arField, $arProps) {
+
+    $el = new \CIBlockElement();
+
+    $arItem = [
+        "IBLOCK_SECTION_ID" => false, // элемент лежит в корне раздела
+        "IBLOCK_ID" => $ibId,
+        "PROPERTY_VALUES" => $arProps,
+        "ACTIVE" => "Y", // активен
+    ];
+
+    $arItem = array_merge($arItem, $arField);
+
+    // создаем элемент
+    if ( !($ITEM_ID = $el->Add($arItem)) ) {
+        return false;
+    }
+
+    return true;
+
+}
 ```
 
 ## Обновление данных в инфоблоке
 
 ```php
 <?
+function ibRowUpdate($ibItemId, $arField, $arProps) {
+
+    $el = new \CIBlockElement();
+
+    $arItem = [
+        "IBLOCK_SECTION_ID" => false, // элемент лежит в корне раздела
+        "PROPERTY_VALUES" => $arProps,
+        "ACTIVE" => "Y", // активен
+    ];
+
+    $arItem = array_merge($arItem, $arField);
+
+    // обновляем элемент
+    if ( !($ITEM_ID = $el->Update($ibItemId, $arItem)) ) {
+        return false;
+    }
+
+    return true;
+
+}
 ```
