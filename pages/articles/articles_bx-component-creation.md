@@ -11,6 +11,8 @@ toc: true
 В этой статье предпринята попытка пошагово описать процесс создания простого компонента для 1С Битрикс 
 с минимальным использованием функционала старого ядра и максимально близко к принципам написания кода на D7.
 
+Репозиторий примера можно посмотреть [тут](https://github.com/gdecider/bx-comp-startTmpl)
+
 ## Размещение компонента в файловой структуре сайта
 
 Компоненты в битрикс размещаются по пути от корня вашего сайта ```/bitrix/components```
@@ -224,6 +226,12 @@ $MESS["EXAMPLE_COMPSIMPLE_COMPONENT_DESCRIPTION"] = "Описание тесто
 ```php
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 
+/**
+ * @var string $componentPath
+ * @var string $componentName
+ * @var array $arCurrentValues
+ * */
+ 
 use Bitrix\Main\Loader;
 use Bitrix\Main\Localization\Loc;
 
