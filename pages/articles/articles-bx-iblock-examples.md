@@ -255,3 +255,14 @@ function ibRowUpdate($ibItemId, $arField, $arProps) {
 
 }
 ```
+
+## Удаление данных из инфоблока
+
+```php
+<?
+function ibRowDelete($ibItemId) {
+
+    return \CIBlockElement::Delete($ibItemId);
+
+}
+```
