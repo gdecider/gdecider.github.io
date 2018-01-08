@@ -9,6 +9,13 @@ toc: true
 ---
 ## Шпаргалка PHP
 
+### Валидация email стандартными средствами PHP
+
+```php
+<?
+$isValidEmail = filter_var($emailForCheck, FILTER_VALIDATE_EMAIL);
+```
+
 ### Вызов статичиского метода класса с получением имени метода из переменной
 
 ```php
