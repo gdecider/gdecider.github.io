@@ -9,6 +9,8 @@ toc: false
 ---
 
 ## Общие статьи
+* [Шпаргалка по коду](/bx_back-shpora.html)
+* [Советы по интерфейсу](/bx_back-bitrix-admin-panel-hints.html)
 * [Composer и Битрикс](/articles-bx-composer-and-bitrix.html)
 * [Массовая установка свойства типа "Список" в нужное значение](/articles_bx_set_prop_type_list.html)      
 * [Массовое изменение сортировки на товарах в группе по флагу](/articles_bx-set-sort-on-element-by-group.html)
