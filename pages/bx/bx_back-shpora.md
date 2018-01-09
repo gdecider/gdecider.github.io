@@ -20,7 +20,7 @@ $isValidEmail = filter_var($emailForCheck, FILTER_VALIDATE_EMAIL);
 
 ```php
 <?
-function setFormat($fSum, $strCurrency = 'RUB') {
+function setFormat($fSum) {
     return number_format ( $fSum, 0, '.', ' ' );
 }
 ```
