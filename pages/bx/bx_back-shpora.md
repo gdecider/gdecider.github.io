@@ -16,6 +16,15 @@ toc: true
 $isValidEmail = filter_var($emailForCheck, FILTER_VALIDATE_EMAIL);
 ```
 
+### Форматирование цены
+
+```php
+<?
+function setFormat($fSum, $strCurrency = 'RUB') {
+    return number_format ( $fSum, 0, '.', ' ' );
+}
+```
+
 ### Вызов статичиского метода класса с получением имени метода из переменной
 
 ```php
