@@ -63,6 +63,10 @@ toc: false
 * Безопасный stateless-токен — как JWT, только без его недостатков.
 
   * [https://github.com/paragonie/past](https://github.com/paragonie/past)
+  
+* Виджет для вывода ленты Instagram
+
+  * [https://github.com/aik27/inwidget](https://github.com/aik27/inwidget)
 
 ### Компоненты и модули Битрикс
 
