@@ -51,6 +51,18 @@ toc: false
   * [http://mobiledetect.net/](http://mobiledetect.net/)
   
   * [https://github.com/serbanghita/Mobile-Detect](https://github.com/serbanghita/Mobile-Detect)
+  
+* Реализация Telegram API на PHP 7 с поддержкой асинхронности
+
+  * [https://github.com/unreal4u/telegram-api](https://github.com/unreal4u/telegram-api)
+  
+* Популярный профайлер XHProf не поддерживается и с PHP 7 работает плохо. Однако доступен обновленный форк от компании Tideways
+
+  * [https://github.com/tideways/php-profiler-extension](https://github.com/tideways/php-profiler-extension)
+  
+* Безопасный stateless-токен — как JWT, только без его недостатков.
+
+  * [https://github.com/paragonie/past](https://github.com/paragonie/past)
 
 ### Компоненты и модули Битрикс
 
