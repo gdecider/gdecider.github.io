@@ -27,3 +27,7 @@ toc: false
 ```File -> Settings -> Plugins -> Browse repositories...```
 
 В открывшемся окне ищем "BitrixLangCompletion", жмем по нему правой кнопкой мыши и выбираем "Download and Install" или жмем кнопку "install" в правой части окна
+
+## Список полезных плагинов
+
+[https://skobk.in/2017/11/my-phpstorm-plugins-list/](https://skobk.in/2017/11/my-phpstorm-plugins-list/)
