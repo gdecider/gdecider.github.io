@@ -24,6 +24,10 @@ toc: false
 
   * [https://transfonter.org/](https://transfonter.org/)
   
+* loading.io - создание прелоадеров (svg, gif, png)
+  
+  * [https://loading.io/](https://loading.io/)
+  
 ## CSS Grids
 
 * Bootstrap 3 Grid [Link to npmjs](https://www.npmjs.com/package/bootstrap-sass-grid)
