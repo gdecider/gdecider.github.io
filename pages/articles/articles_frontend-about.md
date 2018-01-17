@@ -8,6 +8,6 @@ summary: false
 toc: false
 ---
 
-## О разделе
+## Статьи front-end
 
-Статьи по front-end
+* [Добавление прелоадера на сайт](/articles-front-add-preloader.html)
