@@ -53,8 +53,8 @@ yarn --version
 ```
 npm uninstall -g gulp 
 npm uninstall -g bower 
-sudo apt-get remove --purge yarn
-sudo apt-get remove --purge node
+sudo apt-get purge --auto-remove yarn
+sudo apt-get purge --auto-remove nodejs
 ```
 
 ## Получение и настройка шаблона для верстки
