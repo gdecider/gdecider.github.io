@@ -23,3 +23,48 @@ toc: false
     <div class="item">some item 5</div>
 </div>
 ```
+
+**Варианты**
+
+```html
+justify-content-start
+justify-content-end
+justify-content-center
+justify-content-between
+justify-content-around
+```
+
+**Классы для разных размеров экранов**
+
+```html
+justify-content-<size>-<type>
+```
+
+
+### Вертикальное выравнивание элементов по центру
+
+```html
+<div class="d-flex align-items-center">
+    <div class="item">some item 1</div>
+    <div class="item">some item 2</div>
+    <div class="item">some item 3</div>
+    <div class="item">some item 4</div>
+    <div class="item">some item 5</div>
+</div>
+```
+
+**Варианты**
+
+```html
+align-items-start
+align-items-end
+align-items-center
+align-items-baseline
+align-items-stretch
+```
+
+**Классы для разных размеров экранов**
+
+```html
+align-items-<size>-<type>
+```
