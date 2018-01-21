@@ -11,3 +11,4 @@ toc: false
 ## Статьи front-end
 
 * [Добавление прелоадера на сайт](/articles-front-add-preloader.html)
+* [Шпаргалка Bootstrap 4](/articles-front-bootstrap-4-shpora.html)
