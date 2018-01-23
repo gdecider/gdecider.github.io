@@ -67,6 +67,10 @@ toc: false
 * Виджет для вывода ленты Instagram
 
   * [https://github.com/aik27/inwidget](https://github.com/aik27/inwidget)
+  
+* Набор библиотек PHP для работы с URI, XML, DAV и прочим...
+
+  * [http://sabre.io](http://sabre.io)
 
 ### Компоненты и модули Битрикс
 
