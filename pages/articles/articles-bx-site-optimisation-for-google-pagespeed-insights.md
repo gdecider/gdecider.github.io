@@ -70,7 +70,7 @@ $asset->setJsToBody(true);
 Не все скрипты нужно помещать в футер. например tagManager от гугла должен быть вверху. Для исключения скрипта из переносимых нужно добавить атрибут **data-skip-moving=true** в тег script. Пример:
  
 ```js
-<script data-skip-moving=true>
+<script data-skip-moving="true">
   // your script code
 </script>
 ```
