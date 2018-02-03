@@ -74,6 +74,9 @@ toc: false
   
 * Анализатор PHP кода
   * [https://github.com/phpstan/phpstan](https://github.com/phpstan/phpstan)
+  
+* Конструктор XML из PHP Array
+  * [https://github.com/bupy7/xml-constructor](https://github.com/bupy7/xml-constructor)
 
 ### Компоненты и модули Битрикс
 
