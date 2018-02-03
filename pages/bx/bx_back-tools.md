@@ -71,6 +71,9 @@ toc: false
 * Набор библиотек PHP для работы с URI, XML, DAV и прочим...
 
   * [http://sabre.io](http://sabre.io)
+  
+* Анализатор PHP кода
+  * [https://github.com/phpstan/phpstan](https://github.com/phpstan/phpstan)
 
 ### Компоненты и модули Битрикс
 
