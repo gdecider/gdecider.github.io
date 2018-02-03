@@ -29,15 +29,12 @@ toc: false
   * [https://github.com/PHPMailer/PHPMailer](https://github.com/PHPMailer/PHPMailer)
 
 * reCAPTCHA PHP client library
-
   * [https://github.com/google/recaptcha](https://github.com/google/recaptcha)
 
 * PHP dotenv
-
   * [https://github.com/vlucas/phpdotenv](https://github.com/vlucas/phpdotenv)
   
 * PHP FTP Client Library
-
   * [https://github.com/altayalp/php-ftp-client](https://github.com/altayalp/php-ftp-client)
   
 * bukashk0zzz/yml-generator
@@ -47,29 +44,22 @@ toc: false
   * [https://github.com/Bukashk0zzz/YmlGenerator](https://github.com/Bukashk0zzz/YmlGenerator)
   
 * mobiledetect.net
-
-  * [http://mobiledetect.net/](http://mobiledetect.net/)
-  
+  * [http://mobiledetect.net/](http://mobiledetect.net/)  
   * [https://github.com/serbanghita/Mobile-Detect](https://github.com/serbanghita/Mobile-Detect)
   
 * Реализация Telegram API на PHP 7 с поддержкой асинхронности
-
   * [https://github.com/unreal4u/telegram-api](https://github.com/unreal4u/telegram-api)
   
 * Популярный профайлер XHProf не поддерживается и с PHP 7 работает плохо. Однако доступен обновленный форк от компании Tideways
-
   * [https://github.com/tideways/php-profiler-extension](https://github.com/tideways/php-profiler-extension)
   
 * Безопасный stateless-токен — как JWT, только без его недостатков.
-
   * [https://github.com/paragonie/past](https://github.com/paragonie/past)
   
 * Виджет для вывода ленты Instagram
-
   * [https://github.com/aik27/inwidget](https://github.com/aik27/inwidget)
   
 * Набор библиотек PHP для работы с URI, XML, DAV и прочим...
-
   * [http://sabre.io](http://sabre.io)
   
 * Анализатор PHP кода
@@ -78,38 +68,33 @@ toc: false
 * Конструктор XML из PHP Array
   * [https://github.com/bupy7/xml-constructor](https://github.com/bupy7/xml-constructor)
 
+* Библиотека для создания Телеграм бота на PHP
+  * [https://github.com/php-telegram-bot/core](https://github.com/php-telegram-bot/core)
+
 ### Компоненты и модули Битрикс
 
 * Базовый компонент Битрикс для простой реализации MVC
-
   * [https://github.com/digitalwand/mvc.base](https://github.com/digitalwand/mvc.base)
   
 * Валюты, запрос курса
-
   * [http://marketplace.1c-bitrix.ru/solutions/asd.currencyrate/](http://marketplace.1c-bitrix.ru/solutions/asd.currencyrate/)
 
 * Форма обратной связи - простой конструктор веб-форм
-
   * [http://marketplace.1c-bitrix.ru/solutions/altasib.feedback/](http://marketplace.1c-bitrix.ru/solutions/altasib.feedback/)
   
 * reCaptchaFree
-
   * [http://marketplace.1c-bitrix.ru/solutions/twim.recaptchafree/](http://marketplace.1c-bitrix.ru/solutions/twim.recaptchafree/)
   
-* Кнопки "Поделиться" соц. сетей
-  
+* Кнопки "Поделиться" соц. сетей  
   * [https://marketplace.1c-bitrix.ru/solutions/api.yashare/](https://marketplace.1c-bitrix.ru/solutions/api.yashare/)
   
 * Параметры заказа в письме
-
   * [https://marketplace.1c-bitrix.ru/solutions/ipol.mailorder/](https://marketplace.1c-bitrix.ru/solutions/ipol.mailorder/)
   
 * Лайки для элементов информационных блоков
-
   * [https://marketplace.1c-bitrix.ru/solutions/vasoft.likeit/](https://marketplace.1c-bitrix.ru/solutions/vasoft.likeit/)
   
 * Дополнительные свойства инфоблоков. Аскарон
-
   * [https://marketplace.1c-bitrix.ru/solutions/askaron.prop/](https://marketplace.1c-bitrix.ru/solutions/askaron.prop/)
     
 * Дополнительные свойства инфоблоков
@@ -119,7 +104,6 @@ toc: false
   * [https://marketplace.1c-bitrix.ru/embx.iblock](https://marketplace.1c-bitrix.ru/embx.iblock)
   
 * Модуль миграции сущностей для CMS "1С-Битрикс: Управление сайтом" для разработчиков
-
   * [https://github.com/intervolga/intervolga.migrato](https://github.com/intervolga/intervolga.migrato)
 
 ### Проверка сайта на наличие вредоносного кода
