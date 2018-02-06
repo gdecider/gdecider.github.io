@@ -32,7 +32,6 @@ toc: false
 
 [https://skobk.in/2017/11/my-phpstorm-plugins-list/](https://skobk.in/2017/11/my-phpstorm-plugins-list/)
 
-* Get gist
-  Получение Gists из GitHub, для получения своих гистов - правая кнопка мыши в любом документе, пункт "Get Gist...", авторизоваться по токену или логину и паролю на github в пункте "settings"
+* **Get gist** Получение Gists из GitHub, для получения своих гистов - правая кнопка мыши в любом документе, пункт "Get Gist...", авторизоваться по токену или логину и паролю на github в пункте "settings"
 
   
