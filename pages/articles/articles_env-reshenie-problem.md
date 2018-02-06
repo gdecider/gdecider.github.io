@@ -9,9 +9,26 @@ folder: articles
 
 ## Статьи Рабочее окружение | Решение проблем
 
+### Настраиваем работу горячих клавиш в сочетании с Alt
+
+[Источник](https://askubuntu.com/questions/521423/how-can-i-disable-altclick-window-dragging/521447#521447)
+
+**Пункт 1**
+
+```bash
+sudo apt-get install compizconfig-settings-manager
+ccsm -p move
+```
+После этого откроется окно, в котором выбираем пункт "Инициировать движение окна", справа от него жмем на кнопку "Alt<Button1>", снимаем галку с "Включено"
+
+**Пункт 2**
+
+Открываем "Параметры системы" Ubuntu (правый верхний угол "шестеренка" -> Параметры системы) -> Клавиатура -> Комбинации клавиш -> Система, заменяем все что с "Alt" на "Super"(кнопка Windows)
+
+
 ### Восстанавливаем работу горячих клавиш в PHPStorm в русской расскладке
 
-[Первоисточник](https://www.kobzarev.com/soft/chinim-goryachie-klavishi-phpstorm-v-russkoy-raskladke-pod-ubuntu/)
+[Источник](https://www.kobzarev.com/soft/chinim-goryachie-klavishi-phpstorm-v-russkoy-raskladke-pod-ubuntu/)
 
 ```bash
 git clone https://github.com/zheludkovm/LinuxJavaFixes.git fix
