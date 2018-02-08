@@ -11,6 +11,7 @@ toc: true
 * [Базовая статья](https://www.intervolga.ru/blog/projects/bitrix-database-migration-new-way/)
 * [Git репозиторий модуля](https://github.com/intervolga/intervolga.migrato)
 * [Wiki](https://github.com/intervolga/intervolga.migrato/wiki)
+* [Видео доклада на конференции Битрикс](https://www.youtube.com/watch?v=f8RsSqIExOA)
 
 ## Описание процесса работы с модулем "миграто"
 
