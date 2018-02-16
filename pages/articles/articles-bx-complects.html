@@ -1,0 +1,140 @@
+---
+title: Работа с комплектами | Статьи CMS "1С Битрикс"
+keywords: комплекты битрикс, вывод состава комплекта
+sidebar: articles_sidebar
+folder: articles
+permalink: articles-bx-complects.html
+summary: false
+toc: false
+---
+
+## Получение списка комплектов, в которых присутствует нужный товар
+
+```php
+class DecComplect 
+{
+  protected static function getSetIDsByOffers($offers) {
+		// Получим ID комплектов, в которых присутствуют ТП товара
+		$arOfferIDs = [];
+		foreach ($offers as $offer) {
+			$arOfferIDs[] = $offer['ID'];
+		}
+
+		$arSetIDs = [];
+		$arFilter = [
+			'TYPE' => \CCatalogProductSet::TYPE_SET,
+			'ITEM_ID' => $arOfferIDs,
+		];
+
+		$dbSetItems = \CCatalogProductSet::getList(['SORT' => 'ASC'], $arFilter, false, false, ['SET_ID']);
+		while ($arSetItem = $dbSetItems->GetNext()) {
+			$arSetIDs[] = $arSetItem['SET_ID'];
+		}
+
+		return $arSetIDs;
+	}
+
+	protected static function fillTreeIDsBySetIDs($arSetIDs) {
+		$arParentIDs = []; // IDs основного товара
+		$arOfferIDs = []; // IDs торговых предложений
+		$arOwnerIDs = []; // IDs комплектов
+		$arSets = []; // Составы комплектов
+
+		$dbSets = \CCatalogProductSet::getList(['SORT' => 'ASC'], ['SET_ID' => $arSetIDs], false, false, []);
+		while ($arSet = $dbSets->GetNext(false, false)) {
+
+			$mainItem = \CCatalogSKU::GetProductInfo($arSet["ITEM_ID"]);
+			$arSet["PARENT_ID"] = $mainItem["ID"];
+
+			if (!in_array($mainItem["ID"], $arParentIDs)) {
+				$arParentIDs[] = $mainItem["ID"];
+			}
+
+			if (!in_array($arSet["ITEM_ID"], $arOfferIDs)) {
+				$arOfferIDs[] = (int)$arSet["ITEM_ID"];
+			}
+
+			$arSets[$arSet["SET_ID"]]['ITEMS'][] = $arSet;
+			if(!isset($arSets[$arSet["SET_ID"]]['OWNER_ID'])) {
+				$arSets[$arSet["SET_ID"]]['OWNER_ID'] = $arSet["OWNER_ID"];
+				$arOwnerIDs[] = (int)$arSet["OWNER_ID"];
+			}
+		}
+
+		return [$arParentIDs, $arOfferIDs, $arOwnerIDs, $arSets];
+	}
+
+	protected static function fillTreesByIDs($arParentIDs, $arOfferIDs, $arOwnerIDs) {
+		// Получаем данные товаров и комплектов
+		$arParents = [];
+		$arOwners = [];
+		$dbParents = \CIBlockElement::GetList(
+			['SORT' => 'ASC'],
+			['IBLOCK_ID' => Config::IB_CATALOG, 'ID' => array_merge($arParentIDs, $arOwnerIDs)],
+			false, false,
+			['ID', 'NAME', 'DETAIL_PICTURE', 'CATALOG_GROUP_' . Config::PRICE_ID_RETAIL]);
+
+		while ($arParent = $dbParents->GetNext(false, false)) {
+			if((int)$arParent['CATALOG_TYPE'] !== \CCatalogProduct::TYPE_SET) {
+				$arParents[$arParent['ID']] = $arParent;
+			} else {
+				$arOwners[$arParent['ID']] = $arParent;
+			}
+		}
+
+		$arOffers = [];
+		$dbOffers = \CIBlockElement::GetList(
+			['SORT' => 'ASC'],
+			['IBLOCK_ID' => Config::IB_OFFERS, 'ID' => $arOfferIDs],
+			false, false,
+			['ID', 'NAME', 'CATALOG_GROUP_' . Config::PRICE_ID_RETAIL]);
+
+		while ($arOffer = $dbOffers->GetNext(false, false)) {
+			$arOffers[$arOffer['ID']] = $arOffer;
+		}
+
+		return [$arParents, $arOffers, $arOwners];
+	}
+  
+  public static function getSetsByOffers($offers)
+	{
+		$arSetIDs = self::getSetIDsByOffers($offers);
+		list($arParentIDs, $arOfferIDs, $arOwnerIDs, $arSets) = self::fillTreeIDsBySetIDs($arSetIDs);
+		list($arParents, $arOffers, $arOwners) = self::fillTreesByIDs($arParentIDs, $arOfferIDs, $arOwnerIDs);
+
+		// Составим массив с нужными данными
+		$arSetFinals = [];
+		foreach ($arSets as $setId => $arSet) {
+			$arSetFinal = [];
+			$oldPrice = 0;
+			foreach ($arSet['ITEMS'] as $arSetItem) {
+				$arParent = $arParents[$arSetItem['PARENT_ID']];
+				$arOffer = $arOffers[$arSetItem['ITEM_ID']];
+				$arSetItemFinal = [
+					'PARENT_ID' => $arParent['ID'],
+					'PARENT_NAME' => $arParent['NAME'],
+					'OFFER_ID' => $arOffer['ID'],
+					'OFFER_NAME' => $arOffer['NAME'],
+					'IMAGE_SRC' => Utils::showImage($arParent['DETAIL_PICTURE'], 170, 170, ['single' => true])['src'],
+					'PRICE' => floatval($arOffer['CATALOG_PRICE_' . Config::PRICE_ID_RETAIL]),
+				];
+				$oldPrice += floatval($arOffer['CATALOG_PRICE_' . Config::PRICE_ID_RETAIL]);
+				$arSetFinal[] = $arSetItemFinal;
+			}
+			$arSetFinals[$setId]['ITEMS'] = $arSetFinal;
+
+			$arOwner = $arOwners[$arSet['OWNER_ID']];
+			$profit = $oldPrice - floatval($arOwner['CATALOG_PRICE_' . Config::PRICE_ID_RETAIL]);
+			$arSetFinals[$setId]['OWNER'] = [
+				'ID' => $arOwner['ID'],
+				'NAME' => $arOwner['NAME'],
+				'PRICE' => floatval($arOwner['CATALOG_PRICE_' . Config::PRICE_ID_RETAIL]),
+				'PRICE_OLD' => $oldPrice,
+				'PROFIT' => $profit,
+			];
+		}
+
+		return $arSetFinals;
+	}
+}
+```
