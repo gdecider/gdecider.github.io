@@ -47,6 +47,7 @@ toc: false
 * [Вывод стоимости товаров в одной валюте](/articles_bx-catalog-vivod-stoimosti-tovarov-v-odnoi-valute.html)
 * [Красивое ЧПУ умного фильтра для свойств списка при выгрузке из 1С](/articles_bx-smart-filter-chpu-pri-vigruzke-iz-1c.html)
 * [Изменение свойств заказа на событие перед сохранением](/articles-bx-onsaleorderbefore-event.html)
+* [Работа с комплектами](/articles-bx-complects.html)
 
 ## Личный кабинет, корзина, оформление заказа
 
