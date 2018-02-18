@@ -196,6 +196,24 @@ toc: false
 
 ### Изменение страницы при прокрутке
 
+* HC-Sticky
+
+  * [https://github.com/somewebmedia/hc-sticky](https://github.com/somewebmedia/hc-sticky)
+  
+  **Получение плагина**
+  
+  ```bash
+  yarn add hc-sticky
+  ```
+  
+  **Пути для подключения**
+  
+  ```
+  js: [
+ 	vendorsPath + '/hc-sticky/dist/hc-sticky.js',
+  ],
+  ```
+
 * sticky-header 
 
   Используется для простого закрепления меню/шапки при прокрутке
