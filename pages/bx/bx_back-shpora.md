@@ -221,7 +221,9 @@ if ($request->isPost()) {
 \Bitrix\Main\Loader::includeSharewareModule($partnerModuleName);
 ```
 
-### Композит
+### Композит 
+
+[Официальный курс](https://dev.1c-bitrix.ru/learning/course/?COURSE_ID=39&INDEX=Y)
 
 * Голосование компонента "ЗА" композит
 
@@ -229,6 +231,7 @@ if ($request->isPost()) {
   <?php
   $this->setFrameMode(true);
   ```
+  
 * Выделение части кода для догрузки композитом
 
   ```php
