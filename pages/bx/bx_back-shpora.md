@@ -83,33 +83,42 @@ $this->addExternalJS("/local/libs.js");
 
 ### Подключение файлов
 
-```php
-// С возможностью правки из пользовательской части
-<?$APPLICATION->IncludeFile(SITE_TEMPLATE_PATH . '/inc/popupForms.php');?>
+* Метод [IncludeFile](https://dev.1c-bitrix.ru/api_help/main/reference/cmain/includefile.php)
 
-// Без возможности правки из пользовательской части
-<?$APPLICATION->IncludeFile(SITE_TEMPLATE_PATH . '/inc/popupForms.php', [], ['SHOW_BORDER' => false]);?>
+  ```php
+  <?
+  // С возможностью правки из пользовательской части
+  $APPLICATION->IncludeFile(SITE_TEMPLATE_PATH . '/inc/popupForms.php');
 
-// С указанием типа правки php, html, text
-<?$APPLICATION->IncludeFile(SITE_TEMPLATE_PATH . '/inc/popupForms.php', [], ["MODE" => "php"]); ?>
+  // Без возможности правки из пользовательской части
+  $APPLICATION->IncludeFile(SITE_TEMPLATE_PATH . '/inc/popupForms.php', false, ['SHOW_BORDER' => false]);
 
-// Через включаемую область
-<?$APPLICATION->IncludeComponent(
-    "bitrix:main.include",
-    "",
-    Array(
-        "AREA_FILE_SHOW" => "file",
-        "AREA_FILE_SUFFIX" => "",
-        "EDIT_TEMPLATE" => "",
-        "PATH" => SITE_TEMPLATE_PATH."/inc/partName.php"
-    )
-);?>
-```
+  // С указанием типа правки php, html, text
+  $APPLICATION->IncludeFile(SITE_TEMPLATE_PATH . '/inc/popupForms.php', false, ["MODE" => "php"]);
+
+  // С указанием передачей переменных в файл (в файле будет доступна переменная $name)
+  $APPLICATION->IncludeFile(SITE_TEMPLATE_PATH . '/inc/popupForms.php', ['name' => $arResult['NAME]], ['SHOW_BORDER' => false]); 
+  ```
+  
+* Компонент "включаемая область"
+
+  ```php
+  <?$APPLICATION->IncludeComponent(
+      "bitrix:main.include",
+      "",
+      Array(
+          "AREA_FILE_SHOW" => "file",
+          "AREA_FILE_SUFFIX" => "",
+          "EDIT_TEMPLATE" => "",
+          "PATH" => SITE_TEMPLATE_PATH."/inc/partName.php"
+      )
+  );?>
+  ```
 
 ### Стандартная проверка в подключаемых файлах
 
 ```php
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+<? if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die(); ?>
 ```
 
 ### Данные текущей страницы
@@ -212,12 +221,20 @@ if ($request->isPost()) {
 \Bitrix\Main\Loader::includeSharewareModule($partnerModuleName);
 ```
 
-### Работа с фреймом
+### Композит
 
-```php
-<?
-$frame = new \Bitrix\Main\Page\FrameBuffered("city_dynamic");
-$frame->begin();
+* Голосование компонента "ЗА" композит
+
+  ```php
+  <?php
+  $this->setFrameMode(true);
+  ```
+* Выделение части кода для догрузки композитом
+
+  ```php
+  <?
+  $frame = new \Bitrix\Main\Page\FrameBuffered("city_dynamic");
+  $frame->begin();
 
     if(isset($_GET['city'])) {
         $_SESSION['USER_CITY'] = $_GET['city'];
@@ -228,10 +245,10 @@ $frame->begin();
     
     <?=$_SESSION['USER_CITY']?>
 
-<?$frame->beginStub();?>
+  <?$frame->beginStub();?>
     Определяется....
-<?$frame->end();?>
-```
+  <?$frame->end();?>
+  ```
 
 ### Формирование ссылки для логина 
 
@@ -257,18 +274,6 @@ $frame->begin();
      "change_password"));?>">Регистрация</a>
 
 <?endif;?>
-```
-
-```php
-<?
-// Подключение модуля 
-use Bitrix\Main\Loader;
-
-Loader::includeModule("sale");
-
-// или
-\Bitrix\Main\Loader::includeModule('sale');
-?>
 ```
 
 ### Редирект
@@ -354,6 +359,24 @@ if (!$request->isPost())
 
 // возвращаем результат
 $response->flush(Bitrix\Main\Web\Json::encode($arResult));
+```
+
+### Очистка буфера вывода
+
+Если уровней вложенности буферов много, то может не сработать
+
+```php
+<?php
+$APPLICATION->restartBuffer();
+```
+
+Гарантированная очистка всех уровней вложенности буферов вывода
+
+```php
+<?php
+while (ob_get_level()) {
+    ob_end_clean();
+}
 ```
 
 ### AJAX в странице или компоненте
@@ -449,20 +472,29 @@ class MyClass {
 
 ### Буферизация и вывод разметки в нужном месте
 
-[Документация](https://dev.1c-bitrix.ru/api_help/main/reference/cmain/showviewcontent.php)
+Помещение контента в буфер, для последующего его вывода:
 
-Добавляем ссылку в h1 в шаблоне компонента header.php:
-
-```php
-<h1><?=$APPLICATION->ShowTitle();?><?$APPLICATION->ShowViewContent('news_detail');?></h1>
-```
-
-Добавляем в шаблон компонента:
+* вариант 1 [SetViewTarget](https://dev.1c-bitrix.ru/api_help/main/reference/cmain/showviewcontent.php)
 
 ```php
 <?$this->SetViewTarget('news_detail');?>
-   <noindex><a rel="nofollow" class="h1-head fancy" href="/develop/change_cover_type.php"><?=$arDataFilter["NAME"]?></a></noindex>
+    <a href="#">Some buffered data</a>
 <?$this->EndViewTarget();?> 
+```
+
+* вариант 2 [AddViewContent](https://dev.1c-bitrix.ru/api_help/main/reference/cmain/addviewcontent.php)
+
+```php
+<? ob_start(); ?>
+    <a href="#">Some buffered data</a>
+<? $APPLICATION->AddViewContent('news_detail', ob_get_clean());?>
+
+```
+
+Вывод буферизированной области в нужном месте [ShowViewContent](https://dev.1c-bitrix.ru/api_help/main/reference/cmain/showviewcontent.php):
+
+```php
+<?$APPLICATION->ShowViewContent('news_detail');?>
 ```
 
 ### Передача данных формы
