@@ -58,6 +58,8 @@ if ($arResult["FILE"] <> '') {
         "AREA_FILE_SHOW" => "sect",
         "AREA_FILE_SUFFIX" => "file-name",
         "EDIT_TEMPLATE" => "Y"
-    )
+    ),
+    false,
+    ['SHOW_BORDER' => false]
 ); ?>
 ```
