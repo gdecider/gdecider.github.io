@@ -97,7 +97,7 @@ $this->addExternalJS("/local/libs.js");
   $APPLICATION->IncludeFile(SITE_TEMPLATE_PATH . '/inc/popupForms.php', false, ["MODE" => "php"]);
 
   // С указанием передачей переменных в файл (в файле будет доступна переменная $name)
-  $APPLICATION->IncludeFile(SITE_TEMPLATE_PATH . '/inc/popupForms.php', ['name' => $arResult['NAME]], ['SHOW_BORDER' => false]); 
+  $APPLICATION->IncludeFile(SITE_TEMPLATE_PATH . '/inc/popupForms.php', ['name' => $arResult['NAME']], ['SHOW_BORDER' => false]); 
   ```
   
 * Компонент "включаемая область"
