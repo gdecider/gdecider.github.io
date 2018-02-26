@@ -233,23 +233,26 @@ if ($request->isPost()) {
   ```
   
 * Выделение части кода для догрузки композитом
+  
+  **В шаблоне**
+  
+  ```php
+  <?$frame = $this->createFrame("top-search-input-container", false)->begin();?>
+    Динамическая часть, подгрузится позже
+  <?$frame->beginStub();?>    
+    Заглушка
+  <?$frame->end();?>
+  ```
 
+  **В других частях сайта**
+  
   ```php
   <?
   $frame = new \Bitrix\Main\Page\FrameBuffered("city_dynamic");
-  $frame->begin();
-
-    if(isset($_GET['city'])) {
-        $_SESSION['USER_CITY'] = $_GET['city'];
-    }
-    elseif(!isset($_SESSION['USER_CITY']) || !trim($_SESSION['USER_CITY'])) {
-        $_SESSION['USER_CITY'] = CCommon::getCityByIP();
-    }?>
-    
-    <?=$_SESSION['USER_CITY']?>
-
+  $frame->begin();?>
+    Динамическая часть, подгрузится позже
   <?$frame->beginStub();?>
-    Определяется....
+    Заглушка
   <?$frame->end();?>
   ```
 
