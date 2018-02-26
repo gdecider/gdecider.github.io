@@ -609,6 +609,8 @@ $siteDateFullFormat = \CSite::GetDateFormat("FULL");
 // Преобразование формата сайта к формату PHP
 $phpDateShortFormat = \Bitrix\Main\Type\Date::convertFormatToPhp($siteDateShortFormat);
 
+// Пример из компонента новостей Пример формата "j F Y"
+$arItem["DISPLAY_ACTIVE_FROM"] = CIBlockFormatProperties::DateFormat($arParams["ACTIVE_DATE_FORMAT"], MakeTimeStamp($arItem["ACTIVE_FROM"], CSite::GetDateFormat()));
 
 ```
 
