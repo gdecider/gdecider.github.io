@@ -287,12 +287,44 @@ toc: false
 ### Валидаторы
 
 * jQuery Validation Plugin
+  
+  Валидация полей формы
 
   * [https://jqueryvalidation.org/](https://jqueryvalidation.org/)
+  
+  **Получение плагина**
+  
+  ```bash
+  yarn add jquery-validation
+  ```
+  
+  **Пути для подключения**
+  
+  ```
+  js: [
+	vendorsPath + '',
+  ],
+  ```
 
 * validPic.js
+  
+  Валидация файлов изображений на основе mimetypes
 
   * [https://github.com/alvarotrigo/validPic.js](https://github.com/alvarotrigo/validPic.js)
+  
+  **Получение плагина**
+  
+  ```bash
+  yarn add validpic.js
+  ```
+  
+  **Пути для подключения**
+  
+  ```
+  js: [
+	vendorsPath + '',
+  ],
+  ```
 
 ### Кастомизация элементов
 
