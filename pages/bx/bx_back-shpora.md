@@ -10,6 +10,7 @@ toc: true
 ## Шпаргалка PHP
 
 ### Валидация email стандартными средствами PHP
+Rjvgjpbn
 
 ```php
 <?
@@ -265,6 +266,8 @@ if ($request->isPost()) {
 
   **В других частях сайта**
   
+  **Способ 1 - красивый**
+  
   ```php
   <?
   $frame = new \Bitrix\Main\Page\FrameBuffered("city_dynamic");
@@ -274,6 +277,27 @@ if ($request->isPost()) {
     Заглушка
   <?$frame->end();?>
   ```
+  
+  **Способ 2 - статичный, для помещения в него компонентов и отложенных функций**
+  
+  ```php
+  <? // открываем динамическую зону
+  $dynamicArea = new \Bitrix\Main\Composite\StaticArea("my_dynamic");
+  
+  // опционально
+  // $dynamicArea->setAnimation(true);
+  // $dynamicArea->setStub("заглушка");
+  // $dynamicArea->setContainerID("my-div-id");
+  
+  $dynamicArea->startDynamicArea();?>
+  
+  <? // тут динамическая зона, к примеру отложенная функция
+  $APPLICATION->ShowViewContent('someMarker'); ?>
+  
+  <? // закрываем динамическую зону
+  $dynamicArea->finishDynamicArea(); ?>
+  ```
+  
 
 ### Формирование ссылки для логина 
 
