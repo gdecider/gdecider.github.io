@@ -210,7 +210,7 @@ if($arResult['DETAIL_PICTURE']) {
 	];
 	$sizes = ['width' => 420, 'height' => 300];
 	$arResult['DETAIL_PICTURE']['SRC'] = \CFile::ResizeImageGet(
-		$arResult['DEATIL_PICTURE']['ID'],
+		$arResult['DETAIL_PICTURE']['ID'],
 		$sizes, BX_RESIZE_IMAGE_PROPORTIONAL, true,
 		$filters, false, 85)['src'];
 }
