@@ -10,7 +10,6 @@ toc: true
 ## Шпаргалка PHP
 
 ### Валидация email стандартными средствами PHP
-Rjvgjpbn
 
 ```php
 <?
@@ -199,6 +198,23 @@ endif;
 if (CSite::InDir('/catalog/index.php')) :
     // только основная страница раздела каталог
 endif;
+```
+
+### Изменение размеров изображения
+
+```php
+<?
+if($arResult['DEATIL_PICTURE']) {
+	$filters = [
+		["name" => "sharpen", "precision" => 15],
+	];
+	$sizes = ['width' => 400, 'height' => 250];
+	$arResult['DEATIL_PICTURE']['SRC'] = \CFile::ResizeImageGet(
+		$arResult['DEATIL_PICTURE']['ID'],
+		$sizes, BX_RESIZE_IMAGE_PROPORTIONAL, true,
+		$filters, false, 85)['src'];
+}
+?>
 ```
 
 ### Получение объектов приложения, контекста и запроса
