@@ -204,12 +204,12 @@ endif;
 
 ```php
 <?
-if($arResult['DEATIL_PICTURE']) {
+if($arResult['DETAIL_PICTURE']) {
 	$filters = [
 		["name" => "sharpen", "precision" => 15],
 	];
-	$sizes = ['width' => 400, 'height' => 250];
-	$arResult['DEATIL_PICTURE']['SRC'] = \CFile::ResizeImageGet(
+	$sizes = ['width' => 420, 'height' => 300];
+	$arResult['DETAIL_PICTURE']['SRC'] = \CFile::ResizeImageGet(
 		$arResult['DEATIL_PICTURE']['ID'],
 		$sizes, BX_RESIZE_IMAGE_PROPORTIONAL, true,
 		$filters, false, 85)['src'];
