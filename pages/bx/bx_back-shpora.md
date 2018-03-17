@@ -103,7 +103,8 @@ $this->addExternalJS("/local/libs.js");
 * Компонент "включаемая область"
 
   ```php
-  <?$APPLICATION->IncludeComponent(
+  <?
+  $APPLICATION->IncludeComponent(
       "bitrix:main.include",
       "",
       Array(
@@ -112,7 +113,19 @@ $this->addExternalJS("/local/libs.js");
           "EDIT_TEMPLATE" => "",
           "PATH" => SITE_TEMPLATE_PATH."/inc/partName.php"
       )
-  );?>
+  );
+  
+  // Скрываем служебные кнопки в режиме редактирования
+  $APPLICATION->IncludeComponent(
+      "bitrix:main.include",
+      "",
+      Array(
+          "AREA_FILE_SHOW" => "file",
+          "AREA_FILE_SUFFIX" => "",
+          "EDIT_TEMPLATE" => "",
+          "PATH" => SITE_TEMPLATE_PATH."/inc/partName.php"
+      ), false, ["HIDE_ICONS"=>true]
+  );  
   ```
 
 ### Стандартная проверка в подключаемых файлах
