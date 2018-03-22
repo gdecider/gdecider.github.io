@@ -152,6 +152,9 @@ rsync error: unexplained error (code 255) at io.c(226) [Receiver=3.1.1]
   # ищем только в файлах с расширением "php"
   grep --include="*.php" -nRHIi "some text in file" .
   
+  # ищем без учета регистра в файлах php исключая каталог bitrix
+  grep --include="*.php" --exclude-dir="bitrix" -iR "some text in file"
+  
   # описание ключей  
   --include=PATTERN - Recurse in directories only searching file matching PATTERN.
   -n, --line-number - Prefix each line of output with the line number within its input file.
