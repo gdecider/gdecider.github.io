@@ -17,3 +17,4 @@ toc: true
 * [Правила работы с корзиной "предоставить подарок"](https://dev.1c-bitrix.ru/support/forum/forum6/topic86649/)
 * [26 ошибок в корзинах интернет-магазинов](https://www.intervolga.ru/blog/projects/cherez-ternii-k-zvezdam-ili-26-oshibok-v-korzinakh-internet-magazinov/)
 * [Консоль, «Битрикс» и непрерывная интеграция](http://samokhvalov.info/blog/all/console-jedi/)
+* [Полезные Gists от Gurov Dmitry](https://gist.github.com/di7spider)
