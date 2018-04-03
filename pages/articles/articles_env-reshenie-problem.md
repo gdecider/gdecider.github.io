@@ -78,3 +78,14 @@ sudo sysctl -p --system
 ```sh
 ssh -o 'IdentitiesOnly=yes' username@some-server.ru
 ```
+
+### Частые зависания соединения ssh
+
+Попробовать отправлять через равные интервалы времени null пакеты на сервер для поддержания соединения
+В файл **/etc/ssh/ssh_config** на клиентской машине добавить параметр:
+
+```sh
+Host *
+ServerAliveInterval 100
+```
+
