@@ -218,8 +218,9 @@ rsync error: unexplained error (code 255) at io.c(226) [Receiver=3.1.1]
     # x: tar can collect files or extract them. x does the latter.
     # v: makes tar talk a lot. Verbose output shows you all the files being extracted.
     
-  # Исключение папки из архивируемых файлов
-  tar -cvzf test.tar.bz --exclude /path/for/exclude /archiveThis
+  # Исключение папки из архивируемых файлов и создать архив в той же папке, которую архивируем
+  touch p.tar.gz
+  tar --exclude='upload/*' --exclude='bitrix/*' --exclude='*.zip' --exclude='p.tar.gz' -czvf p.tar.gz .
     
   # To zip up an entire directory (including all subdirectories), type the following command:
   zip -r data *
