@@ -302,7 +302,8 @@ toc: false
   
   ```
   js: [
-	vendorsPath + '',
+    vendorsPath + '/jquery-validation/dist/jquery.validate.js',
+    vendorsPath + '/jquery-validation/dist/localization/messages_ru.js',
   ],
   ```
 
