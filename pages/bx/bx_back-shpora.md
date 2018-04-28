@@ -719,3 +719,26 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.ph
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/epilog_after.php");
 ```
+
+### Вывод ошибки в административной части
+
+```php
+<?php
+require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_admin_before.php");
+
+// ... some code ...
+
+if ($hasError)
+{
+    require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_admin_after.php");
+    CAdminMessage::ShowMessage(array(
+	"MESSAGE" => 'Some error message',
+	"DETAILS" => 'Some error details',
+	"HTML" => true,
+	"TYPE" => "ERROR"
+    ));
+	
+    require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/epilog_admin.php");
+    return;
+}
+```
