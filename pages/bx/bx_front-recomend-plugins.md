@@ -28,6 +28,10 @@ toc: false
   
   * [https://loading.io/](https://loading.io/)
   
+* kto-dostavit.ru - расчет стоимости доставки товара
+
+  * [https://kto-dostavit.ru/](https://kto-dostavit.ru/)
+  
 ## CSS Grids
 
 * Bootstrap 3 Grid [Link to npmjs](https://www.npmjs.com/package/bootstrap-sass-grid)
