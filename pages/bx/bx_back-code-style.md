@@ -44,3 +44,6 @@ toc: false
 
   * Фильтр в комплексном компоненте каталога: ```arrFilterCatalog```
   
+### Полезные статьи
+
+* [5 PHP Coding Standards You Will Love and How to Use them](https://blog.sideci.com/5-php-coding-standards-you-will-love-and-how-to-use-them-adf6a4855696)
