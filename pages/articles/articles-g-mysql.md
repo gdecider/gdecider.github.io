@@ -15,3 +15,4 @@ toc: false
 ## Полезное
 
 * habr [Настройка и оптимизация MySQL сервера](https://habr.com/post/108418/)
+* losst [Оптимизация производительности MySQL](https://losst.ru/optimizatsiya-proizvoditelnosti-mysql)
