@@ -11,3 +11,7 @@ toc: false
 ## Общие статьи
 
 * [Восстановление БД MySql после сбоя](/articles-mysql-restore.html)      
+
+## Полезное
+
+* habr [Настройка и оптимизация MySQL сервера](https://habr.com/post/108418/)
