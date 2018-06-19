@@ -78,6 +78,10 @@ server {
 
 [Как работает mode_rewrite и как правильно писать и читать правила RewriteRule и RewriteCond](https://andew.ru/ru/pages/page/apache-mod-rewrite)
 
+[Синтаксис htaccess, полное руководство](https://www.imbf.org/vebmaster/htaccess-sintaksis-polnoe-rukovodstvo.html)
+
+[Настройка файла htaccess](https://losst.ru/nastrojka-fajla-htaccess)
+
 301 редирект (переадресация) через .htaccess – на все случаи жизни
 
 [http://web-optimizator.com/301-redirekt-htaccess/](http://web-optimizator.com/301-redirekt-htaccess/)
