@@ -73,6 +73,12 @@ toc: false
 
 ### Компоненты и модули Битрикс
 
+* Живое описание АПИ
+  * [http://marketplace.1c-bitrix.ru/solutions/bitrix.liveapi/](http://marketplace.1c-bitrix.ru/solutions/bitrix.liveapi/)
+  
+* Инфоблоки, инструменты
+  * [http://marketplace.1c-bitrix.ru/solutions/asd.iblock/](http://marketplace.1c-bitrix.ru/solutions/asd.iblock/)
+
 * Базовый компонент Битрикс для простой реализации MVC
   * [https://github.com/digitalwand/mvc.base](https://github.com/digitalwand/mvc.base)
   
