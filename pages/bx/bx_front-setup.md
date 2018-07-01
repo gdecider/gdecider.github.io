@@ -13,7 +13,7 @@ toc: false
 ### Установка node.js и npm
 [источник](https://github.com/nodesource/distributions#installation-instructions)
 
-8.x - меняем на нужную версию (Пример: 4.x, 8.x, 10.x)
+10.x - меняем на нужную версию (Пример: 4.x, 8.x, 10.x)
 
 ``` bash
 cd ~
