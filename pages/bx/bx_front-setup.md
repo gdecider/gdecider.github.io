@@ -13,11 +13,11 @@ toc: false
 ### Установка node.js и npm
 [источник](https://github.com/nodesource/distributions#installation-instructions)
 
-8.x - меняем на нужную версию (Пример: 4.x, 6.x, 7.x, 8.x, 9.x)
+8.x - меняем на нужную версию (Пример: 4.x, 8.x, 10.x)
 
 ``` bash
 cd ~
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo apt-get install -y build-essential
 ```
