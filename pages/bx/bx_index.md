@@ -64,6 +64,7 @@ toc: false
    
 
 *  Многочисленные блоги и форумы, вот несколько интересных:
+   *  https://mrcappuccino.ru/blog/      
    *  http://meet.bitrix.expert/      
    *  http://samokhvalov.info/blog/
    *  http://bitrix.expert/index.html
@@ -71,54 +72,29 @@ toc: false
    *  https://www.youtube.com/watch?v=5R2_TyklEpg
    *  http://blog.d-it.ru/dev/
    *  http://zhurov.me/blog/      
-   *  http://dev.1c-bitrix.ru/api_d7/index.php
-      
-   *  http://epages.su/blog/
-      
-   *  http://quickstart.info-expert.ru/documentation
-      
-   *  http://bitrixcode.ru
-      
-   *  http://ydmitry.ru/
-      
-   *  https://verstaem.com/
-      
-   *  https://www.olegpro.ru/post/
-      
-   *  https://tuning-soft.ru/articles/
-      
-   *  http://thisis-blog.ru/category/1s-bitrix/
-      
-   *  http://www.intervolga.ru/blog/
-      
-   *  https://mrcappuccino.ru/blog/
-      
-   *  https://dev.1c-bitrix.ru/community/blogs/product_features/
-      
-   *  http://kreativsites.ru/articles/
-      
-   *  https://www.acrit-studio.ru/pantry-programmer/
-      
-   *  http://devdocs.ru/category/cms/1s-bitriks/
-      
-   *  http://www.skillz.ru/dev/
-      
-   *  http://bxit.ru/development/
-      
-   *  http://www.miraweb-studio.ru/blog/
-      
-   *  http://samokhvalov.info/blog/
-      
-   *  https://habrahabr.ru/hub/bitrix/
-      
-   *  http://codeblog.pro/bitrix1c/
-      
-   *  http://blog.budagov.ru
-      
-   *  http://abraxabra.ru/blog/
-      
-   *  http://vvski.ru
-   
+   *  http://dev.1c-bitrix.ru/api_d7/index.php      
+   *  http://epages.su/blog/      
+   *  http://quickstart.info-expert.ru/documentation      
+   *  http://bitrixcode.ru      
+   *  http://ydmitry.ru/      
+   *  https://verstaem.com/      
+   *  https://www.olegpro.ru/post/      
+   *  https://tuning-soft.ru/articles/      
+   *  http://thisis-blog.ru/category/1s-bitrix/      
+   *  http://www.intervolga.ru/blog/      
+   *  https://dev.1c-bitrix.ru/community/blogs/product_features/      
+   *  http://kreativsites.ru/articles/      
+   *  https://www.acrit-studio.ru/pantry-programmer/      
+   *  http://devdocs.ru/category/cms/1s-bitriks/      
+   *  http://www.skillz.ru/dev/      
+   *  http://bxit.ru/development/      
+   *  http://www.miraweb-studio.ru/blog/      
+   *  http://samokhvalov.info/blog/      
+   *  https://habrahabr.ru/hub/bitrix/      
+   *  http://codeblog.pro/bitrix1c/      
+   *  http://blog.budagov.ru      
+   *  http://abraxabra.ru/blog/      
+   *  http://vvski.ru   
    *  http://alexvaleev.ru/orm-d7/
    
 ### HTML
