@@ -334,7 +334,26 @@ toc: false
 	vendorsPath + '',
   ],
   ```
+### Работа с буфером обмена
 
+* clipboard.js
+
+  * [https://clipboardjs.com/](https://clipboardjs.com/)
+  
+  **Получение плагина**
+  
+  ```bash
+  yarn add clipboard
+  ```
+  
+  **Пути для подключения**
+  
+  ```
+  js: [
+	vendorsPath + '...',
+  ],
+  ```
+  
 ### Кастомизация элементов
 
 #### Маски ввода
