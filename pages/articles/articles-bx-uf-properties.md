@@ -22,7 +22,7 @@ toc: false
  */
 public static function getUserField($entity_id, $value_id, $property_id)
 {
-	$arUF = $GLOBALS["USER_FIELD_MANAGER"]->GetUserFields($entity_id, $value_id);
-	return $arUF[$property_id]["VALUE"];
+    $arUF = $GLOBALS["USER_FIELD_MANAGER"]->GetUserFields($entity_id, $value_id);
+    return $arUF[$property_id]["VALUE"];
 }
 ```
