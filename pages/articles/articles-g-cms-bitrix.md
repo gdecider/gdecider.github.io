@@ -33,6 +33,7 @@ toc: false
 * [Добавление неограниченного количества сортировок в компонент catalog.section](/articles-bx-catalog-section-unlimited-sort.html)
 * [Оптимизация сайта для PageSpeed Insights](/articles-bx-site-optimisation-for-google-pagespeed-insights.html)
 * [Наложение watermark на изображение](/articles-bx-watermark-place-on-image.html)
+* [Работа с highload блоками](/articles-bx-highload-block-examples.html)
 * [Работа с инфоблоками](/articles-bx-iblock-examples.html)
 * [Работа с пользовательскими свойствами](/articles-bx-uf-properties.html)
 * [Решение проблем](/articles_bx_problems.html)
