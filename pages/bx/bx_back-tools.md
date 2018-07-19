@@ -111,6 +111,9 @@ toc: false
   
 * Модуль миграции сущностей для CMS "1С-Битрикс: Управление сайтом" для разработчиков
   * [https://github.com/intervolga/intervolga.migrato](https://github.com/intervolga/intervolga.migrato)
+  
+* Галерея Инстаграм LITE (Instagram)
+  * [http://marketplace.1c-bitrix.ru/solutions/zaiv.instagramgallerylite/](http://marketplace.1c-bitrix.ru/solutions/zaiv.instagramgallerylite/)
 
 ### Проверка сайта на наличие вредоносного кода
 
