@@ -108,7 +108,14 @@ toc: false
 #### Сайты
 
   * [CSS и CSS3](https://html5book.ru/css-css3/)
-   
+
+### JavaScript
+  * [learn.javascript.ru](https://learn.javascript.ru/)
+  * [You-Dont-Know-JS](https://github.com/getify/You-Dont-Know-JS)
+  * [Руководство по написанию JavaScript кода от Airbnb](https://github.com/leonidlebedev/javascript-airbnb)
+  * [Учебные материалы на GitHub](https://github.com/topics/javascript)
+  
+
 ### PHP
 
 #### Сайты
