@@ -261,6 +261,12 @@ git checkout -b new-branch
 git branch -d branch-name
 ```
 
+* переименование ветки
+
+```bash
+git branch -m old_name new_name
+```
+
 * просмотр веток
 
 ```bash
