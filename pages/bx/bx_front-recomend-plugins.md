@@ -19,6 +19,8 @@ toc: false
   * [https://avocode.com/](https://avocode.com/)
 
 ## Web-сервисы
+* https://www.bertal.ru/ - проверка ответов страниц, редиректов и т.п.
+  * [https://www.bertal.ru/](https://www.bertal.ru/)
 
 * Transfonter - преобразование шрифтов для подключения на сайт
 
