@@ -96,6 +96,7 @@ toc: false
    *  http://abraxabra.ru/blog/      
    *  http://vvski.ru   
    *  http://alexvaleev.ru/orm-d7/
+   *  https://bxnotes.ru/
    
 ### HTML
 
