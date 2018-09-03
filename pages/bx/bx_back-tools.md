@@ -70,6 +70,9 @@ toc: false
 
 * Библиотека для создания Телеграм бота на PHP
   * [https://github.com/php-telegram-bot/core](https://github.com/php-telegram-bot/core)
+  
+* Парсинг robots.txt
+  * [https://github.com/t1gor/Robots.txt-Parser-Class](https://github.com/t1gor/Robots.txt-Parser-Class)
 
 ### Компоненты и модули Битрикс
 
