@@ -63,3 +63,25 @@ if ($arResult["FILE"] <> '') {
     ['SHOW_BORDER' => false]
 ); ?>
 ```
+
+Для вывода телефона или email в адресе ссылки можно поступить так:
+
+```php
+<? 
+ob_start();
+$APPLICATION->IncludeFile(SITE_TEMPLATE_PATH . "/include/phone.php", [], ['SHOW_BORDER' => false] );
+$phone = ob_get_clean(); 
+?>
+<a href="tel:<?=str_replace([' ','(',')'],'',$phone);?>">
+    <? $APPLICATION->IncludeComponent(
+		"bitrix:main.include",
+	    "",
+		Array(
+			"AREA_FILE_SHOW" => "file",
+		    "AREA_FILE_SUFFIX" => "",
+			"EDIT_TEMPLATE" => "",
+			"PATH" => SITE_TEMPLATE_PATH."/include/phone.php"
+		)
+    );?>
+</a>
+```
