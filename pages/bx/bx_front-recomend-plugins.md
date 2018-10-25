@@ -536,6 +536,12 @@ toc: false
 
   * [http://www.mediaelementjs.com/](http://www.mediaelementjs.com/)
   
+### Прочее
+
+* Holder.js - создание paceholders картинок на стороне клиента.
+
+  * [https://github.com/imsky/holder](https://github.com/imsky/holder)
+  
 ## Требующие рассмотрения
 
 * [https://push.world](https://push.world)
