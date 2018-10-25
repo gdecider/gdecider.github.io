@@ -203,6 +203,14 @@ toc: false
   * [http://dimsemenov.com/plugins/magnific-popup/](http://dimsemenov.com/plugins/magnific-popup/)
 
   * [https://github.com/dimsemenov/Magnific-Popup](https://github.com/dimsemenov/Magnific-Popup)
+  
+### Всплывающие подсказки (tooltips)
+
+* popper.js
+
+  * [https://popper.js.org/](https://popper.js.org/)
+  
+  * [https://github.com/FezVrasta/popper.js](https://github.com/FezVrasta/popper.js)
 
 ### Изменение страницы при прокрутке
 
