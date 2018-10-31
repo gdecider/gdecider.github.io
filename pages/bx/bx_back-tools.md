@@ -10,6 +10,14 @@ toc: false
 
 ## Back-end Инструменты
 
+### Сервисы
+
+* https://www.mail-tester.com проверка корректности отправляемых писем
+
+  * [https://www.mail-tester.com](https://www.mail-tester.com)
+
+### Классы и библиотеки
+
 * bxApiDocs
 
   Документированное ядро битрикса для подключения к IDE. PhpStorm В настройках PHP IDE PhpStorm (File -> Settings -> Project Settings -> PHP или File -> Settings -> Languages & Frameworks -> PHP) области Include Path нажав на "+" добавляем путь к папке modules.
