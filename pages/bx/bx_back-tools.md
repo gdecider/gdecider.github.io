@@ -81,6 +81,9 @@ toc: false
   
 * Парсинг robots.txt
   * [https://github.com/t1gor/Robots.txt-Parser-Class](https://github.com/t1gor/Robots.txt-Parser-Class)
+  
+* instagram php scraper
+  * [https://github.com/postaddictme/instagram-php-scraper](https://github.com/postaddictme/instagram-php-scraper)
 
 ### Компоненты и модули Битрикс
 
