@@ -67,6 +67,9 @@ toc: false
 * Виджет для вывода ленты Instagram
   * [https://github.com/aik27/inwidget](https://github.com/aik27/inwidget)
   
+* instagram php scraper
+  * [https://github.com/postaddictme/instagram-php-scraper](https://github.com/postaddictme/instagram-php-scraper)
+  
 * Набор библиотек PHP для работы с URI, XML, DAV и прочим...
   * [http://sabre.io](http://sabre.io)
   
@@ -81,9 +84,7 @@ toc: false
   
 * Парсинг robots.txt
   * [https://github.com/t1gor/Robots.txt-Parser-Class](https://github.com/t1gor/Robots.txt-Parser-Class)
-  
-* instagram php scraper
-  * [https://github.com/postaddictme/instagram-php-scraper](https://github.com/postaddictme/instagram-php-scraper)
+
 
 ### Компоненты и модули Битрикс
 
