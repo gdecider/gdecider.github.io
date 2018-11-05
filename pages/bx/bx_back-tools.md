@@ -84,7 +84,10 @@ toc: false
   
 * Парсинг robots.txt
   * [https://github.com/t1gor/Robots.txt-Parser-Class](https://github.com/t1gor/Robots.txt-Parser-Class)
-
+  
+* RedBeanPHP - ORM для небольших проектов
+  * [https://redbeanphp.com/](https://redbeanphp.com/)
+  * [https://github.com/gabordemooij/redbean](https://github.com/gabordemooij/redbean)
 
 ### Компоненты и модули Битрикс
 
