@@ -390,6 +390,9 @@ toc: false
 
 #### Выпадающие списки
 
+* jquery-custom-select
+  * [https://kvlsrg.github.io/jquery-custom-select/](https://kvlsrg.github.io/jquery-custom-select/)
+
 * jQuery Selectric
 
   * [http://selectric.js.org/](http://selectric.js.org/)
