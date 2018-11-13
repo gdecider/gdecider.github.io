@@ -392,6 +392,23 @@ toc: false
 
 * jquery-custom-select
   * [https://kvlsrg.github.io/jquery-custom-select/](https://kvlsrg.github.io/jquery-custom-select/)
+  
+  **Получение плагина**
+  
+  ```bash
+  yarn add jquery-custom-select
+  ```
+  
+  **Пути для подключения**
+  
+  ```
+  js: [
+	vendorsPath + '/jquery-custom-select/dist/js/jquery.custom-select.js',
+  ],
+  css: [
+  	vendorsPath + '/jquery-custom-select/dist/css/jquery.custom-select.css',
+  ],
+  ```
 
 * jQuery Selectric
 
