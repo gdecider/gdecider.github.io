@@ -12,6 +12,24 @@ toc: false
 
 Основное правило - код проекта должен выглядеть так, будто его писал один человек.
 
+### Настройка IDE
+
+Для PHPStorm установить плагин [https://plugins.jetbrains.com/plugin/7294-editorconfig](https://plugins.jetbrains.com/plugin/7294-editorconfig).
+
+Добавить в корень проекта конфиг файл ```.editorconfig```:
+
+```
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+```
+
 ### Командные стандарты
 
 
