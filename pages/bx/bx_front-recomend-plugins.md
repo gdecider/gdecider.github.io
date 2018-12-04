@@ -253,6 +253,13 @@ toc: false
   ],
   ```
 
+* Sticky-Kit
+
+  Закрепление меню, нескольких меню при прокрутке
+  
+  * [http://leafo.net/sticky-kit/](http://leafo.net/sticky-kit/)
+  * [https://github.com/leafo/sticky-kit](https://github.com/leafo/sticky-kit)
+
 * jQuery.Scroolly
 
   * [https://github.com/chayka/jQuery.Scroolly](https://github.com/chayka/jQuery.Scroolly)
