@@ -13,8 +13,10 @@ toc: false
 ### Сервисы
 
 * https://www.mail-tester.com проверка корректности отправляемых писем
-
   * [https://www.mail-tester.com](https://www.mail-tester.com)
+  
+* https://temp-mail.org/ru/ одноразовая почта
+  * [https://temp-mail.org/ru/](https://temp-mail.org/ru/)
 
 ### Классы и библиотеки
 
