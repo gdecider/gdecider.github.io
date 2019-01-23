@@ -7,6 +7,10 @@ permalink: articles-other-ssh-keys.html
 summary: false
 toc: false
 ---
+### Стоит прочесть
+
+* [Памятка пользователям ssh](https://habr.com/ru/post/122445/)
+* [Магия SSH](https://habr.com/ru/post/331348/)
 
 ### Создание ключа на локальной машине
 
