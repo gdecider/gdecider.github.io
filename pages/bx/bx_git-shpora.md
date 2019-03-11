@@ -397,6 +397,12 @@ git diff HEAD fileName.ext
 git diff [commit_code_1] [commit_code_2]
 ```
 
+* просмотр объема правок перед коммитом
+
+```bash
+git count-objects -vH
+```
+
 
 #### Работа с подмодулями
 
