@@ -10,6 +10,10 @@ toc: false
 
 ## Настройка редиректов
 
+### Сервисы
+
+* [https://bertal.ru/](Тестирование редиректов)
+
 ### Nginx
 
 [http://stackoverflow.com/questions/7947030/nginx-no-www-to-www-and-www-to-no-www](http://stackoverflow.com/questions/7947030/nginx-no-www-to-www-and-www-to-no-www)
@@ -355,4 +359,11 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 ```
 RewriteCond %{HTTPS} =on
 RewriteRule ^(.*)$ http://%{HTTP_HOST}/$1 [R=301,L]
+```
+
+18. Удалить повторяющиеся слеши
+
+```
+RewriteCond %{THE_REQUEST} //
+RewriteRule (.*) /$0 [R=301,L]
 ```
