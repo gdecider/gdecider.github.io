@@ -97,6 +97,12 @@ toc: false
 
   * [http://www.pixedelic.com/plugins/camera/](http://www.pixedelic.com/plugins/camera/)
 
+### Счетчики
+
+* FlipClock.js
+  * [http://flipclockjs.com/](http://flipclockjs.com/)
+  * [https://github.com/objectivehtml/FlipClock](https://github.com/objectivehtml/FlipClock)
+
 ### Parallax
 
 * Parallax.js
