@@ -36,7 +36,6 @@ toc: false
 * [Работа с highload блоками](/articles-bx-highload-block-examples.html)
 * [Работа с инфоблоками](/articles-bx-iblock-examples.html)
 * [Работа с пользовательскими свойствами](/articles-bx-uf-properties.html)
-* [Отмена отправки письма](/articles-bx-email-send-cancel.html)
 * [Решение проблем](/articles_bx_problems.html)
 
 ## Каталог товаров и умный фильтр
@@ -59,6 +58,7 @@ toc: false
 * [Добавление товара в корзину](/articles_bx-cart-product-add.html)
 * [Добавление товара в список сравнения](/articles_bx-compare-product-add.html)
 * [component_epilog.php пример работы](/articles_bx-component-epilog-example.html)
+* [Отмена отправки письма о новом заказе](/articles-bx-new-order-email-send-cancel.html)
 * [Статьи для ознакомления и переработки](/articles_bx-articles-order-and-basket.html)
           
 ## Обмен с 1С
