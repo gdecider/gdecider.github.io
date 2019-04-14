@@ -36,6 +36,7 @@ toc: false
 * [Работа с highload блоками](/articles-bx-highload-block-examples.html)
 * [Работа с инфоблоками](/articles-bx-iblock-examples.html)
 * [Работа с пользовательскими свойствами](/articles-bx-uf-properties.html)
+* [Отмена отправки письма](/articles-bx-email-send-cancel.html)
 * [Решение проблем](/articles_bx_problems.html)
 
 ## Каталог товаров и умный фильтр
