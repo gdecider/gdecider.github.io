@@ -23,30 +23,29 @@ toc: false
   * [https://www.bertal.ru/](https://www.bertal.ru/)
 
 * Transfonter - преобразование шрифтов для подключения на сайт
-
   * [https://transfonter.org/](https://transfonter.org/)
   
-* loading.io - создание прелоадеров (svg, gif, png)
-  
+* loading.io - создание прелоадеров (svg, gif, png)  
   * [https://loading.io/](https://loading.io/)
   
 * Конвертер видео в OGV и WEBM
-
   * [https://www.online-convert.com/ru/#](https://www.online-convert.com/ru/#)
   
 * kto-dostavit.ru - расчет стоимости доставки товара
-
   * [https://kto-dostavit.ru/](https://kto-dostavit.ru/)
+  
+* svgsprit - создание svg спрайтов
+  *[https://svgsprit.es/](https://svgsprit.es/)
   
 ## CSS Grids
 
-* Bootstrap 3 Grid [Link to npmjs](https://www.npmjs.com/package/bootstrap-sass-grid)
+* Bootstrap 3 Grid SASS [Link to npmjs](https://www.npmjs.com/package/bootstrap-sass-grid)
   
   ```sh
   yarn add bootstrap-sass-grid
   ```
   
-* Bootstrap 4 Grid [Link to npmjs](https://www.npmjs.com/package/bootstrap-4-grid)
+* Bootstrap 4 Grid SASS [Link to npmjs](https://www.npmjs.com/package/bootstrap-4-grid)
   
   ```sh
   yarn add bootstrap-4-grid
