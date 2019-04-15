@@ -35,7 +35,7 @@ toc: false
   * [https://kto-dostavit.ru/](https://kto-dostavit.ru/)
   
 * svgsprit - создание svg спрайтов
-  *[https://svgsprit.es/](https://svgsprit.es/)
+  * [https://svgsprit.es/](https://svgsprit.es/)
   
 ## CSS Grids
 
