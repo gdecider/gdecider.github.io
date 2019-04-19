@@ -135,6 +135,9 @@ toc: false
 * Модуль "Миграции для разработчиков"
   * [http://marketplace.1c-bitrix.ru/solutions/sprint.migration/#tab-install-link](http://marketplace.1c-bitrix.ru/solutions/sprint.migration/#tab-install-link)
   
+* Модуль "Bitrix-migrations - Миграции БД для Битрикса и не только"
+  * [https://github.com/arrilot/bitrix-migrations](https://github.com/arrilot/bitrix-migrations)
+  
 * Галерея Инстаграм LITE (Instagram)
   * [http://marketplace.1c-bitrix.ru/solutions/zaiv.instagramgallerylite/](http://marketplace.1c-bitrix.ru/solutions/zaiv.instagramgallerylite/)
 
