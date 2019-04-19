@@ -20,6 +20,10 @@ toc: false
 
 ### Классы и библиотеки
 
+* Склонение слов phpMorphy
+  * [https://github.com/cijic/phpmorphy](https://github.com/cijic/phpmorphy)
+  * [http://phpmorphy.sourceforge.net/dokuwiki/](http://phpmorphy.sourceforge.net/dokuwiki/)
+
 * bxApiDocs
 
   Документированное ядро битрикса для подключения к IDE. PhpStorm В настройках PHP IDE PhpStorm (File -> Settings -> Project Settings -> PHP или File -> Settings -> Languages & Frameworks -> PHP) области Include Path нажав на "+" добавляем путь к папке modules.
