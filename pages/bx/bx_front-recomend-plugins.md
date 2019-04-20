@@ -56,7 +56,7 @@ toc: false
 ### Иконочные шрифты
 
 * Font awesome
-  * []()
+  * [https://fontawesome.com](https://fontawesome.com)
  
   **Получение**
  
@@ -67,13 +67,12 @@ toc: false
   **Пути для подключения**
   
   ```
-  js: [
-	vendorsPath + '/slick-carousel/slick/slick.js',
-  ],
   css: [
-  	vendorsPath + '/slick-carousel/slick/slick.css',
-  ],
+  	vendorsPath + '/@fortawesome/fontawesome-free/css/all.min.css',
+  ],  
   ```
+  
+  **Скопировать папку со шрифтами ```/node_modules/@fortawesome/fontawesome-free/webfonts``` в ```/src/```**
   
 ### Слайдеры
 
