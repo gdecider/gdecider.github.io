@@ -51,8 +51,30 @@ toc: false
   yarn add bootstrap-4-grid
   ```
 
-## Рекомендуемые плагины 
+## Рекомендуемые плагины, библиотеки и дополнения
 
+### Иконочные шрифты
+
+* Font awesome
+  * []()
+ 
+  **Получение**
+ 
+  ```bash
+  yarn add --dev @fortawesome/fontawesome-free
+  ```
+  
+  **Пути для подключения**
+  
+  ```
+  js: [
+	vendorsPath + '/slick-carousel/slick/slick.js',
+  ],
+  css: [
+  	vendorsPath + '/slick-carousel/slick/slick.css',
+  ],
+  ```
+  
 ### Слайдеры
 
 * Slick slider
