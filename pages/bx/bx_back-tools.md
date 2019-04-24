@@ -23,6 +23,9 @@ toc: false
 * Склонение слов phpMorphy
   * [https://github.com/cijic/phpmorphy](https://github.com/cijic/phpmorphy)
   * [http://phpmorphy.sourceforge.net/dokuwiki/](http://phpmorphy.sourceforge.net/dokuwiki/)
+  
+* работа с Excel (xls, xlsx, ods)
+  * [https://github.com/PHPOffice/PhpSpreadsheet](https://github.com/PHPOffice/PhpSpreadsheet)
 
 * bxApiDocs
 
@@ -35,6 +38,10 @@ toc: false
   Работа с изображениями
 
   * [https://github.com/wapmorgan/Imagery](https://github.com/wapmorgan/Imagery)
+
+* SwiftMailer
+  Отправка почты
+  * [https://github.com/swiftmailer/swiftmailer](https://github.com/swiftmailer/swiftmailer)
 
 * PHPMailer
 
