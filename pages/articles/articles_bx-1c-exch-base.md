@@ -10,8 +10,27 @@ toc: true
 
 ## Описание процесса обмена с 1С
 
+### Инструменты
+
+* [https://github.com/parserme/bitrexchange](https://github.com/parserme/bitrexchange)
+
+* [https://github.com/gdecider/bxc-1c.exchange.checker](https://github.com/gdecider/bxc-1c.exchange.checker)
+
+### Статьи
+
 [Процесс обмена Битрикса и 1С](https://mrcappuccino.ru/blog/post/1c-exchange)
 
+### Ручной пошаговый вызов
+
+[https://mrcappuccino.ru/blog/post/delete-1c-bx-import-php-urgently](https://mrcappuccino.ru/blog/post/delete-1c-bx-import-php-urgently)
+
+* кинуть файлы обмена в /upload/1c_exchange/
+* загрузка товаров
+  ```/bitrix/admin/1c_exchange.php?type=catalog&mode=import&filename=ИМЯ_ФАЙЛА{import.xml, offers.xml и т.д.}```
+* выгрузка заказов с сайта
+  ```/bitrix/admin/1c_exchange.php?type=sale&mode=query```
+* импорт заказа из 1с
+  ```/bitrix/admin/1c_exchange.php?type=sale&mode=import&sessid=SESSID&filename=FILENAME```
 
 ### Шаги
 
