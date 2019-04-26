@@ -152,6 +152,12 @@ toc: false
 * Галерея Инстаграм LITE (Instagram)
   * [http://marketplace.1c-bitrix.ru/solutions/zaiv.instagramgallerylite/](http://marketplace.1c-bitrix.ru/solutions/zaiv.instagramgallerylite/)
 
+* Модуль "Подготовка прайс-листа для Маркета и Беру"
+  * [https://marketplace.1c-bitrix.ru/solutions/yandex.market/](https://marketplace.1c-bitrix.ru/solutions/yandex.market/)
+  
+* Модуль "Официальный модуль интернет-эквайринг Сбербанк"
+  * [https://marketplace.1c-bitrix.ru/solutions/sberbank.ecom/](https://marketplace.1c-bitrix.ru/solutions/sberbank.ecom/)
+
 ### Проверка сайта на наличие вредоносного кода
 
 * [AI-Bolit](https://www.revisium.com/aibo/)
