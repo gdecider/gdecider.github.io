@@ -17,6 +17,9 @@ toc: false
   
 * https://temp-mail.org/ru/ одноразовая почта
   * [https://temp-mail.org/ru/](https://temp-mail.org/ru/)
+  
+* html to pdf
+  * [https://wkhtmltopdf.org/](https://wkhtmltopdf.org/)
 
 ### Классы и библиотеки
 
