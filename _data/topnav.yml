@@ -13,6 +13,6 @@ topnav_dropdowns:
     - title: Документация
       folderitems:
         - title: 1С Битрикс
-          url: /
+          url: /bx_index.html
         - title: Symfony
           url: /sf-index.html
