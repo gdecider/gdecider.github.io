@@ -12,9 +12,7 @@ topnav_dropdowns:
   folders:
     - title: Документация
       folderitems:
-        - title: Проект на CMS 1С Битрикс
-          url: /bx_index.html
-        - title: Проект без CMS
-          url: /nocms_index.html
-        - title: Проект на Laravel
-          url: /laravel_index.html
+        - title: 1С Битрикс
+          url: /
+        - title: Symfony
+          url: /symfony_index.html
