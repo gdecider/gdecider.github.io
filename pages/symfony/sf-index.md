@@ -15,3 +15,5 @@ toc: false
 * Data faker
   * [https://github.com/fzaninotto/Faker](https://github.com/fzaninotto/Faker)
   
+* StofDoctrineExtensionsBundle
+  * [https://github.com/stof/StofDoctrineExtensionsBundle](https://github.com/stof/StofDoctrineExtensionsBundle)
