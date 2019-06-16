@@ -12,3 +12,6 @@ toc: false
 * Перевод времени в читаемый интервал
   * [https://github.com/KnpLabs/KnpTimeBundle](https://github.com/KnpLabs/KnpTimeBundle)
 
+* Data faker
+  * [https://github.com/fzaninotto/Faker](https://github.com/fzaninotto/Faker)
+  
