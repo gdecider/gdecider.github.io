@@ -97,6 +97,7 @@ toc: false
    *  http://vvski.ru   
    *  http://alexvaleev.ru/orm-d7/
    *  https://bxnotes.ru/
+   *  http://estrin.pw/bitrix-d7-snippets/
    
 ### HTML
 
