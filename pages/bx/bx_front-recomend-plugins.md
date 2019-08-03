@@ -503,6 +503,9 @@ toc: false
   * [https://github.com/antennaio/jquery-bar-rating](https://github.com/antennaio/jquery-bar-rating)
 
 #### Scrollbar
+* Perfect scrollbar
+  * [https://mdbootstrap.com/freebies/perfect-scrollbar/](https://mdbootstrap.com/freebies/perfect-scrollbar/)
+  * [https://github.com/mdbootstrap/perfect-scrollbar](https://github.com/mdbootstrap/perfect-scrollbar)
 
 * jQuery custom content scroller
 
