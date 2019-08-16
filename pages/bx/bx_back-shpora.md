@@ -757,3 +757,15 @@ if ($hasError)
     return;
 }
 ```
+
+### Вывод viewContent по условию
+
+```php
+$APPLICATION->AddBufferContent(function(){
+    global $APPLICATION;
+    if($v = $APPLICATION->GetProperty('some_code')) {
+        return $v;
+    }
+    return $APPLICATION->GetViewContent('SOME_VIEW');
+});
+```
