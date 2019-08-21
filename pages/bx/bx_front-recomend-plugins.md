@@ -278,7 +278,11 @@ toc: false
  	vendorsPath + '/sticky-header/index.js',
   ],
   ```
-
+* Affix
+  Закрепление области при прокрутке
+  
+  * [https://github.com/jasonujmaalvis/affix](https://github.com/jasonujmaalvis/affix)
+  
 * Sticky-Kit
 
   Закрепление меню, нескольких меню при прокрутке
