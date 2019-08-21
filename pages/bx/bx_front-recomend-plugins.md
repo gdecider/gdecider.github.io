@@ -50,8 +50,12 @@ toc: false
   ```sh
   yarn add bootstrap-4-grid
   ```
+## Рекомендуемые плагины, библиотеки и дополнения Vue
+* [https://antoniandre.github.io/vueper-slides/](https://antoniandre.github.io/vueper-slides/)
 
-## Рекомендуемые плагины, библиотеки и дополнения
+  Слайдер
+
+## Рекомендуемые плагины, библиотеки и дополнения jQuery
 
 ### Иконочные шрифты
 
