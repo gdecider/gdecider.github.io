@@ -54,6 +54,9 @@ toc: false
 * [https://antoniandre.github.io/vueper-slides/](https://antoniandre.github.io/vueper-slides/)
 
   Слайдер
+  
+* Работа с датами
+  * [https://date-fns.org/](https://date-fns.org/)
 
 ## Рекомендуемые плагины, библиотеки и дополнения jQuery
 
