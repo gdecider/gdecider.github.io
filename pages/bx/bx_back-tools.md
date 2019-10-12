@@ -23,6 +23,9 @@ toc: false
 
 ### Классы и библиотеки
 
+* Проверка параметров Webmozart Assert
+  * [https://github.com/webmozart/assert](https://github.com/webmozart/assert)
+
 * Склонение слов phpMorphy
   * [https://github.com/cijic/phpmorphy](https://github.com/cijic/phpmorphy)
   * [http://phpmorphy.sourceforge.net/dokuwiki/](http://phpmorphy.sourceforge.net/dokuwiki/)
