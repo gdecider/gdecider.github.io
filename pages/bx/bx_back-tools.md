@@ -23,6 +23,9 @@ toc: false
 
 ### Классы и библиотеки
 
+* Генерация идентификаторов ramsey/uuid
+  *[https://github.com/ramsey/uuid](https://github.com/ramsey/uuid)
+
 * Проверка параметров Webmozart Assert
   * [https://github.com/webmozart/assert](https://github.com/webmozart/assert)
 
