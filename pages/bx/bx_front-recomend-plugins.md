@@ -408,6 +408,12 @@ toc: false
   ],
   ```
   
+### Библиотеки
+
+* js-cookie работа с куками
+
+  * [https://github.com/js-cookie/js-cookie](https://github.com/js-cookie/js-cookie)
+  
 ### Кастомизация элементов
 
 #### Маски ввода
