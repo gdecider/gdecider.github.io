@@ -60,6 +60,9 @@ toc: false
 
 ## Рекомендуемые плагины, библиотеки и дополнения jQuery
 
+* Версия сайта для слабовидящих
+  * [https://github.com/veks/button-visually-impaired-jquery](https://github.com/veks/button-visually-impaired-jquery)
+
 ### Иконочные шрифты
 
 * Font awesome
