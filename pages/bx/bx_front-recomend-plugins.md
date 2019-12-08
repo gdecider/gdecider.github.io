@@ -50,7 +50,14 @@ toc: false
   ```sh
   yarn add bootstrap-4-grid
   ```
+## Рекомендуемые плагины, библиотеки и дополнения Vanilla JS
+
+* Загрузка файлов drug and drop
+  [https://www.dropzonejs.com/](https://www.dropzonejs.com/)
+  [https://gitlab.com/meno/dropzone](https://gitlab.com/meno/dropzone)
+
 ## Рекомендуемые плагины, библиотеки и дополнения Vue
+
 * [https://antoniandre.github.io/vueper-slides/](https://antoniandre.github.io/vueper-slides/)
 
   Слайдер
