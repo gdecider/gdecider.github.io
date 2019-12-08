@@ -52,9 +52,10 @@ toc: false
   ```
 ## Рекомендуемые плагины, библиотеки и дополнения Vanilla JS
 
-* Загрузка файлов drug and drop
-  [https://www.dropzonejs.com/](https://www.dropzonejs.com/)
-  [https://gitlab.com/meno/dropzone](https://gitlab.com/meno/dropzone)
+### Загрузка файлов drug and drop
+
+  * [https://www.dropzonejs.com/](https://www.dropzonejs.com/)
+    [https://gitlab.com/meno/dropzone](https://gitlab.com/meno/dropzone)
 
 ## Рекомендуемые плагины, библиотеки и дополнения Vue
 
