@@ -9,6 +9,6 @@ toc: false
 ---
 
 ## Статьи front-end
-
+* [Примеры](/articles_frontend-examples.html)
 * [Добавление прелоадера на сайт](/articles-front-add-preloader.html)
 * [Шпаргалка Bootstrap 4](/articles-front-bootstrap-4-shpora.html)
