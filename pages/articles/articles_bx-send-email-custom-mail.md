@@ -14,8 +14,10 @@ toc: false
 Переопределить стандартную функцию отправки почты на свою реализацию.
 
 ### Решение
+Использовать модуль [local.custommail](https://github.com/gdecider/bx-module-custommail)
 
-Стандартным способом переопределения процесса отправки почты в Битрикс является переопределение функции custom_mail.
+### Как это работает
+Стандартным способом переопределения процесса отправки почты в Битрикс является переопределение функции [custom_mail](https://dev.1c-bitrix.ru/api_help/main/functions/other/bxmail.php).
 
 **Параметры функции:**
 
@@ -29,44 +31,46 @@ toc: false
 
 Переопределим функцию custom_mail. Делаем это в init.php, а еще лучше в подключенном к нему файле ```functions.php```
 
-Для отправки ф-ии используем класс [PHPMailer](https://github.com/PHPMailer/PHPMailer)
+В примере, для отправки ф-ии используем класс [PHPMailer](https://github.com/PHPMailer/PHPMailer). Так же можно использовать, что угодно, лишь бы оно выполняло поставленную задачу. Например есть [swiftmailer](https://swiftmailer.symfony.com/docs/introduction.html)
 
 ```php
 <?php
 function custom_mail($to, $subject, $message, $additional_headers='', $additional_parameters='') {
 	require 'PHPMailerAutoload.php';
 
-	$mail = new PHPMailer;
+	$mail = new PHPMailer();
 
-	$mail->isSMTP();                                      // Set mailer to use SMTP
-	$mail->Host = 'smtp1.example.com;smtp2.example.com';  // Specify main and backup SMTP servers
-	$mail->SMTPAuth = true;                               // Enable SMTP authentication
-	$mail->Username = 'user@example.com';                 // SMTP username
-	$mail->Password = 'secret';                           // SMTP password
-	$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-	$mail->Port = 587;                                    // TCP port to connect to
+        $mail->CharSet = 'UTF-8';
+        $mail->isSMTP();
+        $mail->SMTPAuth = true;
 
-	$mail->setFrom('from@example.com', 'Mailer');
-	$mail->addAddress('joe@example.net', 'Joe User');     // Add a recipient
-	$mail->addAddress('ellen@example.com');               // Name is optional
-	$mail->addReplyTo('info@example.com', 'Information');
-	$mail->addCC('cc@example.com');
-	$mail->addBCC('bcc@example.com');
+        $addresses = array_map('trim', explode(',', $to));
 
-	$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-	$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-	$mail->isHTML(true);                                  // Set email format to HTML
+        foreach ($addresses as $address) {
+            $mail->addAddress($address);
+        }
 
-	$mail->Subject = 'Here is the subject';
-	$mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-	$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+        $mail->Host = 'тут ваш хост';
+        $mail->Username = 'тут ваш логин к почте';
+        $mail->Password = 'тут ваш пароль к почте';
+        $mail->SMTPSecure = 'тут ваша настройка к почте';
+        $mail->Port = 'тут ваш порт к почте';
+        $mail->setFrom('тут ваш логин к почте');
 
-	if(!$mail->send()) {
-	    echo 'Message could not be sent.';
-	    echo 'Mailer Error: ' . $mail->ErrorInfo;
-	} else {
-	    echo 'Message has been sent';
-	}
+        $arRows = preg_split("/((\r?\n)|(\r\n?))/", $additional_headers);
+        foreach ($arRows as $header) {
+            $mail->addCustomHeader($header);
+        }
+
+        $mail->ContentType = $mail::CONTENT_TYPE_MULTIPART_ALTERNATIVE;
+        $mail->Subject = $subject;
+        $mail->Body = $message;
+
+        if (!$mail->send()) {
+            return false;
+        }
+
+        return true;
 }
 ?>
 ```
