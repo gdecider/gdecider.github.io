@@ -128,6 +128,9 @@ git pull
 git pull origin
 # или
 git pull origin master
+
+# при возникновении ошибки fatal: refusing to merge unrelated histories
+git pull origin master --allow-unrelated-histories
 ```
 
 * удаление удаленной ветки
