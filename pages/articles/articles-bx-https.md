@@ -15,30 +15,35 @@ toc: false
 
 Код определения протокола таков: 
 
-```php <?
+```php
+<?
 $protocol = (CMain::IsHTTPS() ? "https" : "http");
 ```
 Сам метод является оберткой над
 
-```php <?
+```php
+<?
 \Bitrix\Main\Context::getCurrent()->getRequest()->isHttps();
 ```
 
 Который, в свою очередь, смотрит на 3 параметра системы:
 
 1) Серверная переменная **SERVER_PORT**
-   ```php <?
+   ```php
+   <?
    $this->server->get("SERVER_PORT") == 443
    ```
 2) Серверная переменная **HTTPS**
-   ```php <?
+   ```php
+   <?
    $https = $this->server->get("HTTPS");
    if($https <> '' && strtolower($https) <> "off") {
 			return true;
-	 }
+   }
    ```
 3) Конфигурационная переменная **https_request** в файле настроек ```.settings.php```
-   ```php <?
+   ```php
+   <?
    Config\Configuration::getValue("https_request") === true
    ```
    
