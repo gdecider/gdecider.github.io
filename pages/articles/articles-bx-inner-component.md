@@ -73,3 +73,16 @@ toc: false
     $arResult["CACHED_TPL"]
   );
   ```
+### Решение 2
+
+* В шаблоне первого компонента
+  ```php
+  <? $this->setViewTarget('view_marker'); ?>
+  тут код шаблона компонента
+  <? $this->endViewTarget(); ?>
+  ```
+
+* В шаблоне второго компонента
+  ```php
+  <?= $APPLICATION->getViewContent('view_marker') ?>
+  ```
