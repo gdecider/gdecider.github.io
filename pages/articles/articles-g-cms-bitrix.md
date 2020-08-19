@@ -68,6 +68,8 @@ toc: false
 * [Описание процесса обмена с 1С](/articles_bx-1c-exch-base.html)
 * [Описание процесса обмена с 1С еще одно](http://dermanov.ru/exp/bitrix-integration-with-1c-brief-introduction/)
 * [Кастомизация данных при обмене с 1С](/articles-bx-1c-exch-customisation.html)
+* [Как подогнать стандартный импорт из 1С под готовое решение из маркетплейс Битрикс](https://dev.1c-bitrix.ru/community/webdev/user/30123/blog/7252/)
+* [Импорт скидок номенклатуры из 1С Предприятия в 1С Битрикс](https://dev.1c-bitrix.ru/community/webdev/user/30123/blog/7438/)
 
 ## Миграции БД
 
