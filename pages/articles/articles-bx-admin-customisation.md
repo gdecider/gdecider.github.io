@@ -5,7 +5,7 @@ sidebar: articles_sidebar
 folder: articles
 permalink: articles-bx-admin-customisation.html
 summary: Пример внесения правок в страницы административного раздела для CMS 1С Битрикс
-toc: true
+toc: false
 ---
 
 ## Задача
