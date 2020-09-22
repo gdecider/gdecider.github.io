@@ -37,6 +37,7 @@ toc: false
 * [Работа с инфоблоками](/articles-bx-iblock-examples.html)
 * [Работа с пользовательскими свойствами](/articles-bx-uf-properties.html)
 * [Протокол HTTPS, редиректы](/articles-bx-https.html)
+* [Кастомизация административного раздела](/articles-bx-admin-customisation.html)
 * [Решение проблем](/articles_bx_problems.html)
 
 ## Каталог товаров и умный фильтр
