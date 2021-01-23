@@ -497,6 +497,7 @@ git gc --prune=now --aggressive
 * Обучающие видео [http://monsterlessons.com/project/categories/git](http://monsterlessons.com/project/categories/git)
 * Полезные алиасы git команд [https://habrahabr.ru/company/mailru/blog/318508/?utm_campaign=email_digest&utm_source=email_habrahabr&utm_medium=email_week_20170110&utm_content=link2post](https://habrahabr.ru/company/mailru/blog/318508/?utm_campaign=email_digest&utm_source=email_habrahabr&utm_medium=email_week_20170110&utm_content=link2post)
 * Шпаргалка по работе с Git [http://eax.me/git-commands/](http://eax.me/git-commands/)
+* [Поддержание аккуратной истории в Git с помощью интерактивного rebase](https://habr.com/ru/company/flant/blog/536698/)
 
 ### установка средства сравнения 
 
