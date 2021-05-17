@@ -36,7 +36,7 @@ git config --global merge.ff false
 git config --global pull.ff yes
 
 # установка редактора
-git config --global core.editor subl
+git config --global core.editor "code --wait"
 
 # проверка настроек общая
 git config --list
@@ -46,6 +46,10 @@ git config user.name
 
 # для удаления настройки
 git config --global --unset <param.name>
+
+# добавление глобального .gitignore - нужен для внесения исключений, общих для всех проектов, например .idea
+# сам файл ~/.gitignore создаем и вносим в него нужные правила
+git config --global core.excludesfile ~/.gitignore
 ```
 
 #### Общие команды
